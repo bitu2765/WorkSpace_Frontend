@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -12,6 +13,11 @@ import{ MatButtonModule} from '@angular/material/button';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { PlansComponent } from './plans/plans.component'
 import { HttpClientModule } from '@angular/common/http';
+import { UserauthGuard } from './Authentication/user/userauth.guard';
+
+
+export const domain_URL='http://localhost:5000';
+
 
 @NgModule({
   declarations: [
@@ -29,9 +35,10 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     MatButtonModule,
     MatToolbarModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [UserauthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

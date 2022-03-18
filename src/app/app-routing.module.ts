@@ -5,6 +5,7 @@ import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
 import { PlansComponent } from './plans/plans.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
+import { UserauthGuard } from './Authentication/user/userauth.guard';
 
 const routes: Routes = [
   {path:'',component:LoginComponent },
@@ -12,7 +13,7 @@ const routes: Routes = [
   {path: 'register-component', component:RegisterComponent},
   {path: 'home-component', component:HomeComponent},
   {path: 'aboutus-component', component:AboutusComponent},
-  {path: 'plans-component', component:PlansComponent},
+  {path: 'plans-component', component:PlansComponent,canActivate:[UserauthGuard]},
  
 ]
 

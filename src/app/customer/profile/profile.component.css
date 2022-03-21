@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Coda');
+
+.modal-content {
+  opacity: 1;
+  padding: 0 18px;
+  margin-top: 35%;
+  border-radius: 15px !important;
+  border: 0px !important;
+  backdrop-filter: blur( 4px );
+}
+
+.login p {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  font-size: 30px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  font-family: Coda;
+}
+
+.form-input {
+  padding: 3%;
+}
+
+.form-group input, .form-group select {
+  height: 42px;
+  border-radius: 10px;
+  border: 0;
+  font-size: 18px;
+  letter-spacing: 0.5px;
+  margin-bottom: 15px;
+  margin-top: 1px;
+  box-shadow: inset 3px 3px 4px 0 rgba(0, 0, 0, 0.15), inset -3px -3px 4px 0 rgba(255, 255, 255, 0.5);
+}
+
+  .form-group input::placeholder {
+    color: #c0c0c0;
+  }
+
+.form-group p {
+  font-size: 18px;
+  letter-spacing: 0.5px;
+  margin-bottom: 1px;
+  margin-left: 3px;
+  font-weight: bold;
+  text-align: left;
+}
+
+.form-group button {
+  width: 45%;
+  display: inline-block;
+  margin: 3% 2%;
+  margin-bottom: 30px;
+}

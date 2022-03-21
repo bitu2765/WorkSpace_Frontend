@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Coda');
+
+.card {
+  border-radius: 15px !important;
+  background-color: rgba(255,255,255, 0.3) !important;
+  margin: 3% 7%;
+  border: 3px solid white !important;
+  backdrop-filter: blur( 4px );
+}
+
+.card-header {
+  background-color: white;
+  margin: -2px;
+  padding: 1% 2% !important;
+  border-radius: 15px !important;
+  font-size: 200%;
+  font-family: Coda;
+  font-weight: bold;
+  text-shadow: 2px 2px 2px grey;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.card-body {
+  padding: 2% !important;
+  font-size: 120%;
+  text-align: center;
+}
+
+#active-plan {
+    text-align: left;
+}

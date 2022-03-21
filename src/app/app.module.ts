@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,6 +14,10 @@ import { AboutusComponent } from './aboutus/aboutus.component';
 import { PlansComponent } from './plans/plans.component'
 import { HttpClientModule } from '@angular/common/http';
 import { CustomerModule } from './customer/customer.module';
+import { FormsModule } from '@angular/forms';
+
+
+export const domain_URL =  "http://localhost:5000"
 
 @NgModule({
   declarations: [
@@ -31,9 +36,12 @@ import { CustomerModule } from './customer/customer.module';
     MatButtonModule,
     MatToolbarModule,
     HttpClientModule,
-    CustomerModule
+    CustomerModule,
+    FormsModule,
+    SweetAlert2Module
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }

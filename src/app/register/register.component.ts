@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import Swal from 'sweetalert2';
-import { domain_URL } from '../app.module';
+import { user_register } from '../app.module';
 
 @Component({
   selector: 'app-register',
@@ -45,7 +45,7 @@ export class RegisterComponent implements OnInit {
       return;
     }
 
-    this.http.post<any>(domain_URL+'/user/register',{
+    this.http.post<any>(user_register,{
       customer_id:this.username,
       password:this.password,
       name:this.name,
@@ -53,7 +53,7 @@ export class RegisterComponent implements OnInit {
       mobile_no:this.mobileno,
     }).subscribe({
       next: data => {
-          console.log(data)
+          // console.log(data)
           // console.log('done');
           if(data['status_code'] == 200)
           {

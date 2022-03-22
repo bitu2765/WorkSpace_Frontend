@@ -9,34 +9,29 @@
     <app-customer-navbar></app-customer-navbar>
     <h1 style="text-align: center;">Plan History</h1>
 
-    <div class="card">
+    <div class="card" *ngFor="let ind of plan_history" >
       <h2 class="card-header">
         <div style="display: flex; justify-content: space-between">
-          <span>Mini Pack</span>
-          <span>399/Month</span>
+          <span>{{ ind.plan_type }}<span class="h6" >({{ ind.duration }} days)</span></span>
+          <span>{{ ind.price }} /-</span>
         </div>
       </h2>
 
       <div class="card-body">
-        <p>
-          Plan Details <br />
-          Expired on: 27th February, 2022
-        </p>
-      </div>
-    </div>
-
-    <div class="card">
-      <h2 class="card-header">
-        <div style="display: flex; justify-content: space-between">
-          <span>Mini Pack</span>
-          <span>399/Month</span>
-        </div>
-      </h2>
-
-      <div class="card-body">
-        <p>
-          Plan Details <br />
-          Expired on: 27th January, 2022
+        <!-- <p id="active-plan">
+          
+        </p> -->
+        <p id="active-plan">
+          Desk : <span *ngFor="let des of ind.desk_no;let isLast=last" >
+            {{ des }}
+            <span *ngIf="!isLast">,</span>            
+          </span>
+          <br/>
+          Purchase Date : {{ ind.purchase_date }} 
+          <br/>
+          <!-- Expiry Date : {{ ind.expiry_date }} 
+          <br/> -->
+          Address : {{ ind.address }} , {{ ind.state }}
         </p>
       </div>
     </div>

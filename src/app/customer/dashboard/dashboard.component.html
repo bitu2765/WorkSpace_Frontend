@@ -8,18 +8,34 @@
 <body>
   <body>
     <app-customer-navbar></app-customer-navbar>
-    <div class="card">
+    
+    <div class="text-center mt-2" >
+      <h1>
+        Active Plans
+      </h1>
+    </div>
+
+    <div class="card" *ngFor="let ind of active_plans" >
       <h2 class="card-header">
         <div style="display: flex; justify-content: space-between">
-          <span>Mini Pack</span>
-          <span>399/Month</span>
+          <span>{{ ind.plan_type }}<span class="h6" >({{ ind.duration }} days)</span></span>
+          <span>{{ ind.price }} /-</span>
         </div>
       </h2>
 
       <div class="card-body">
+        <!-- <p id="active-plan">
+          
+        </p> -->
         <p id="active-plan">
-          Active Plan Details <br />
-          Active till: 27th March, 2022
+          Desk : <span *ngFor="let des of ind.desk_no;let isLast=last" >
+            {{ des }}
+            <span *ngIf="!isLast">,</span>            
+          </span>
+          <br/>
+          Expiry Date : {{ ind.expiry_date }} 
+          <br/>
+          Address : {{ ind.address }} , {{ ind.state }}
         </p>
       </div>
     </div>
@@ -122,7 +138,7 @@
       </div>
     </div>
 
-    <div>
+    <!-- <div>
       <h1 style="text-align: center;">Upcoming Plans</h1>
 
       <div class="container">
@@ -167,7 +183,40 @@
           </div>
         </div>
       </div>
+    </div> -->
+
+    <div class="text-center mt-2" >
+      <h1>
+        Upcoming Plans
+      </h1>
     </div>
+
+    <div class="card" *ngFor="let ind of upcoming_plans" >
+      <h2 class="card-header">
+        <div style="display: flex; justify-content: space-between">
+          <span>{{ ind.plan_type }}<span class="h6" >({{ ind.duration }} days)</span></span>
+          <span>{{ ind.price }} /-</span>
+        </div>
+      </h2>
+
+      <div class="card-body">
+        <!-- <p id="active-plan">
+          
+        </p> -->
+        <p id="active-plan">
+          Desk : <span *ngFor="let des of ind.desk_no;let isLast=last" >
+            {{ des }}
+            <span *ngIf="!isLast">,</span>            
+          </span>
+          <br/>
+          Start Date : {{ ind.start_date }} 
+          <br/>
+          Address : {{ ind.address }} , {{ ind.state }}
+        </p>
+      </div>
+    </div>
+
+
   </body>
 </body>
 </html>

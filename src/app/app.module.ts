@@ -15,9 +15,21 @@ import { PlansComponent } from './plans/plans.component'
 import { HttpClientModule } from '@angular/common/http';
 import { CustomerModule } from './customer/customer.module';
 import { FormsModule } from '@angular/forms';
+import { UserauthGuard } from './Authentication/user/userauth.guard';
 
 
 export const domain_URL =  "http://localhost:5000"
+export const admin_verify =  domain_URL + "/admin/verify"
+export const user_verify =  domain_URL + "/user/verify"
+export const login =  domain_URL + "/login"
+export const logout =  domain_URL + "/logout"
+export const user_register =  domain_URL + "/user/register"
+
+export const admin_profile =  domain_URL + "/admin/profile"
+export const user_profile =  domain_URL + "/user/profile"
+export const user_active_plan =  domain_URL + "/user/active_plan"
+export const user_upcoming_plan =  domain_URL + "/user/upcoming_plan"
+export const user_purchase_history =  domain_URL + "/user/purchase_history"
 
 @NgModule({
   declarations: [
@@ -40,7 +52,7 @@ export const domain_URL =  "http://localhost:5000"
     FormsModule,
     SweetAlert2Module
   ],
-  providers: [],
+  providers: [UserauthGuard],
   bootstrap: [AppComponent]
 })
 

@@ -15,11 +15,13 @@
             <p>Please enter your credentials to login.</p>
           </div>
         </div>
-        <form class="login-form">
-          <input type="text" placeholder="Username" />
-          <input type="password" placeholder="Password" />
-          <button routerLink="/customer">login</button>
-          <p class="message">Not registered? <a routerLink="/register-component">Create an account</a></p>
+        <form class="login-form" >
+          <input [(ngModel)]="username" type="text" placeholder="Username" name="user"/>
+          <!-- <div [innerHTML]="username"></div> -->
+          <input [(ngModel)]="password" type="password" placeholder="Password" name="password" />
+          <!-- <div [innerHTML]="password"></div> -->
+          <button (click)="login_fun()" >login</button>
+          <p class="message">Not registered? <a routerLink="/register">Create an account</a></p>
         </form>
       </div>
     </div>

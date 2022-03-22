@@ -10,22 +10,23 @@ import { ProfileComponent } from './customer/profile/profile.component';
 import { DashboardComponent } from './customer/dashboard/dashboard.component';
 import { HistoryComponent } from './customer/history/history.component';
 import { BookingComponent } from './customer/booking/booking.component';
+import { UserauthGuard } from './Authentication/user/userauth.guard';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
-  { path: 'login-component', component: LoginComponent },
-  { path: 'register-component', component: RegisterComponent },
-  { path: 'home-component', component: HomeComponent },
-  { path: 'aboutus-component', component: AboutusComponent },
-  { path: 'plans-component', component: PlansComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
+  { path: 'home', component: HomeComponent },
+  { path: 'aboutus', component: AboutusComponent },
+  { path: 'plans', component: PlansComponent },
 
   {
     path: 'customer', children: [
-      { path: '', component: DashboardComponent },
-      { path: 'dashboard', component: DashboardComponent },
-      { path: 'profile', component: ProfileComponent },
-      { path: 'history', component: HistoryComponent },
-      { path: 'booking', component: BookingComponent }
+      { path: '', component: DashboardComponent,canActivate:[UserauthGuard] },
+      { path: 'dashboard', component: DashboardComponent,canActivate:[UserauthGuard] },
+      { path: 'profile', component: ProfileComponent,canActivate:[UserauthGuard] },
+      { path: 'history', component: HistoryComponent,canActivate:[UserauthGuard] },
+      { path: 'booking', component: BookingComponent,canActivate:[UserauthGuard] }
     ]
   }
  

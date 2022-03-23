@@ -29,6 +29,7 @@ export const admin_verify =  domain_URL + "/admin/verify"
 export const user_verify =  domain_URL + "/user/verify"
 export const login =  domain_URL + "/login"
 export const logout =  domain_URL + "/logout"
+export const plans =  domain_URL + "/plans"
 export const user_register =  domain_URL + "/user/register"
 
 export const admin_profile =  domain_URL + "/admin/profile"

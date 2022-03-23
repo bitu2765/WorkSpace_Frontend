@@ -5,17 +5,23 @@ import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import{ MatButtonModule} from '@angular/material/button';
+
+// import { MatGridList } from '@angular/material/grid-list'
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+
 import { AboutusComponent } from './aboutus/aboutus.component';
-import { PlansComponent } from './plans/plans.component'
+import { PlansComponent } from './plans/plans.component';
+
 import { HttpClientModule } from '@angular/common/http';
 import { CustomerModule } from './customer/customer.module';
 import { FormsModule } from '@angular/forms';
 import { UserauthGuard } from './Authentication/user/userauth.guard';
+import { AdminModule } from './admin/admin.module';
 
 
 export const domain_URL =  "http://localhost:5000"
@@ -41,8 +47,10 @@ export const user_purchase_history =  domain_URL + "/user/purchase_history"
     AboutusComponent,
     PlansComponent,
 
+    
   ],
   imports: [
+    AdminModule,
     BrowserModule,
     AppRoutingModule,
     MatButtonModule,
@@ -50,10 +58,13 @@ export const user_purchase_history =  domain_URL + "/user/purchase_history"
     HttpClientModule,
     CustomerModule,
     FormsModule,
-    SweetAlert2Module
+    SweetAlert2Module,
+    BrowserAnimationsModule
+    
   ],
   providers: [UserauthGuard],
   bootstrap: [AppComponent]
 })
 
 export class AppModule { }
+

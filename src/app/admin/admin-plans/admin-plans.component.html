@@ -1,0 +1,68 @@
+<mat-drawer-container>
+    <mat-drawer mode="side" [opened]="sideBarOpen">
+        <app-admin-sidenav></app-admin-sidenav>
+    </mat-drawer>
+    <mat-drawer-content>
+      <app-admin-header (toggleSidebarForMe)="sideBarToggler()"></app-admin-header>
+      
+     <div class="container-fluid page">
+        <div class="d-flex page__box p-3 mt-2">Plans</div>
+        <div class="page__content shadow p-3 position-relative">
+          <div class="page__content-data position-absolute text-center w-50">
+          <!-- <table>
+            <tr>Name: XYZ</tr>
+            <br>
+            <tr>Contact No. 8748933200</tr>
+            <br>
+            <tr>Email: xyz@gmail.com</tr>
+          </table> -->
+    
+            <div class="table-row">
+                <div class="table-cell first-cell">
+                    <p>MINI PACK</p>
+                </div>
+                <div class="table-cell">
+                    <p>Description: <br>For 28 days<br>4G Wifi<br>guefhbskxzgfeibkdsjxzigkjbscwtfquavs </p>
+                </div>
+                <div class="table-cell last-cell">
+                    <a href="https://youtu.be/99vHH_6F0Ko">Rs399</a>
+                </div>   
+            </div>
+            <div class="table-row">
+                <div class="table-cell first-cell">
+                    <p>MINI PACK1</p>
+                </div>
+                <div class="table-cell">
+                    <p>Description: <br>For 56 days<br>4G Wifi<br>guefhbskxzgfeibkdsjxzigkjbscwtfquavs </p>
+                </div>
+                <div class="table-cell last-cell">
+                    <a href="https://youtu.be/99vHH_6F0Ko">Rs599</a>
+                </div>   
+            </div>
+            <div class="table-row">
+                <div class="table-cell first-cell">
+                    <p>MINI PACK2</p>
+                </div>
+                <div class="table-cell">
+                    <p>Description: <br>For 128 days<br>4G Wifi<br>guefhbskxzgfeibkdsjxzigkjbscwtfquavs </p>
+                </div>
+                <div class="table-cell last-cell">
+                    <a href="https://youtu.be/99vHH_6F0Ko">Rs1599</a>
+                </div>   
+            </div>
+            <div class="table-row">
+                <div class="table-cell first-cell">
+                    <p>MAHA PACK</p>
+                </div>
+                <div class="table-cell">
+                    <p>Description: <br>For 258 days<br>4G Wifi<br>guefhbskxzgfeibkdsjxzigkjbscwtfquavs </p>
+                </div>
+                <div class="table-cell last-cell">
+                    <a href="https://youtu.be/99vHH_6F0Ko">Rs3999</a>
+                </div>   
+            </div>
+           </div>   
+          </div>
+        </div>  
+    </mat-drawer-content>
+</mat-drawer-container>

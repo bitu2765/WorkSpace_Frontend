@@ -1,0 +1,56 @@
+<mat-drawer-container>
+    <mat-drawer mode="side" [opened]="sideBarOpen">
+        <app-admin-sidenav></app-admin-sidenav>
+    </mat-drawer>
+    <mat-drawer-content>
+      <app-admin-header (toggleSidebarForMe)="sideBarToggler()"></app-admin-header>
+      <router-outlet></router-outlet>
+   
+      <div class="container-fluid page">
+        <div class="d-flex page__box p-3 mt-2">Admin Profile</div>
+        <div class="page__content shadow p-3 position-relative">
+          <div class="page__content-data position-absolute text-center w-50">
+            <table [border] ="1"cellpadding = "5" cellspacing = "5">
+                <tr>
+                   <th>SR NO.</th>
+                   <th>USER EMAIL</th>
+                   <th>ACTIVE PACKS</th>
+                </tr>
+                <tr>
+                   <td>1.</td>
+                   <td>xyz@gmail.com</td>
+                   <td>Mini Pack</td>
+                </tr>
+                <tr>
+                    <td>2.</td>
+                    <td>abc@gmail.com</td>
+                    <td>Mini Pack1</td>
+                </tr>
+                <tr>
+                    <td>3.</td>
+                    <td>pqr@gmail.com</td>
+                    <td>Maha Pack</td>
+                </tr>
+                <tr>
+                    <td>1.</td>
+                    <td>xyz@gmail.com</td>
+                    <td>Mini Pack</td>
+                 </tr>
+                 <tr>
+                     <td>2.</td>
+                     <td>abc@gmail.com</td>
+                     <td>Mini Pack1</td>
+                 </tr>
+                 <tr>
+                     <td>3.</td>
+                     <td>pqr@gmail.com</td>
+                     <td>Maha Pack</td>
+                 </tr>
+             </table>
+           </div>   
+          </div>
+        </div>  
+    </mat-drawer-content>
+</mat-drawer-container>
+  
+    

@@ -1,0 +1,84 @@
+<html>
+  <body>
+    <body>
+      <!-- <app-admin></app-admin> -->
+      <mat-drawer-container>
+        <mat-drawer mode="side" [opened]="sideBarOpen">
+            <app-admin-sidenav></app-admin-sidenav>
+        </mat-drawer>
+        <mat-drawer-content>
+          <app-admin-header (toggleSidebarForMe)="sideBarToggler()"></app-admin-header>
+          <router-outlet></router-outlet>
+       
+<div class="container-fluid page">
+  <div class="d-flex page__box p-3 mt-2">Slots Details</div>
+  <div class="page__content shadow p-3 position-relative">
+    <div class="page__content-data position-absolute text-center w-50">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <h1>Slots details information:</h1>
+      <div class="row">
+        <div class="column" style="background-color:rgb(23, 182, 44);">
+          <h2>DESK 1</h2>
+          <p><a class="button" routerLink="/admin/slot-details">Booked</a></p>
+        </div>
+        <div class="column" style="background-color:rgb(23, 182, 44);">
+          <h2>DESK 2</h2>
+          <p><a class="button" routerLink="/admin/slot-details">Booked</a></p>
+        </div>
+        <div class="column" style="background-color:rgb(167, 163, 163);">
+          <h2>DESK 3</h2>
+          <p><a class="button" routerLink="/admin/slot-details">Available</a></p>
+        </div>
+        <div class="column" style="background-color:rgb(23, 182, 44);">
+          <h2>DESK 4</h2>
+          <p><a class="button" routerLink="/admin/slot-details">Booked</a></p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="column" style="background-color:rgb(167, 163, 163);">
+          <h2>DESK 5</h2>
+          <p><a class="button" routerLink="/admin/slot-details">Available</a></p>
+        </div>
+        <div class="column" style="background-color:rgb(23, 182, 44);">
+          <h2>DESK 6</h2>
+          <p><a class="button" routerLink="/admin/slot-details">Booked</a></p>
+        </div>
+        <div class="column" style="background-color:rgb(167, 163, 163);">
+          <h2>DESK 7</h2>
+          <p><a class="button" routerLink="/admin/slot-details">Available</a></p>
+        </div>
+        <div class="column" style="background-color:rgb(23, 182, 44);">
+          <h2>DESK 8</h2>
+          <p><a class="button" routerLink="/admin/slot-details">Booked</a></p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="column" style="background-color:rgb(167, 163, 163);">
+          <h2>DESK 9</h2>
+          <p><a class="button" routerLink="/admin/slot-details">Available</a></p>
+        </div>
+        <div class="column" style="background-color:rgb(167, 163, 163);">
+          <h2>DESK10</h2>
+          <p><a class="button" routerLink="/admin/slot-details">Available</a></p>
+        </div>
+        <div class="column" style="background-color:rgb(167, 163, 163);">
+          <h2>DESK11</h2>
+          <p><a class="button" routerLink="/admin/slot-details">Available</a></p>
+        </div>
+        <div class="column" style="background-color:rgb(23, 182, 44);">
+          <h2>DESK12</h2>
+          <p><a class="button" routerLink="/admin/slot-details">Booked</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</mat-drawer-content>
+</mat-drawer-container>
+</body>
+</body>
+</html>
+
+

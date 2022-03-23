@@ -18,6 +18,7 @@ import { AdminUserdetailsComponent } from './admin/admin-userdetails/admin-userd
 import { AdminSidenavComponent } from './admin/admin-sidenav/admin-sidenav.component';
 import { AdminSlotDetailsComponent } from './admin/admin-slot-details/admin-slot-details.component';
 import { AdminHomeComponent } from './admin/admin-home/admin-home.component';
+import { AdminauthGuard } from './Authentication/admin/adminauth.guard';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -37,13 +38,13 @@ const routes: Routes = [
     ]
   },
   {path: 'admin', children: [
-    {path: '', component:AdminDashboardComponent},
-    {path: 'dashboard', component:AdminDashboardComponent},
-    {path: 'home', component:AdminHomeComponent},
-    {path: 'plans', component:AdminPlansComponent},
-    {path: 'userdetails', component:AdminUserdetailsComponent},
-    {path: 'sidenav' , component:AdminSidenavComponent},
-    {path: 'slot-details', component:AdminSlotDetailsComponent},
+    {path: '', component:AdminDashboardComponent,canActivate:[AdminauthGuard]},
+    {path: 'dashboard', component:AdminDashboardComponent,canActivate:[AdminauthGuard]},
+    {path: 'home', component:AdminHomeComponent,canActivate:[AdminauthGuard]},
+    {path: 'plans', component:AdminPlansComponent,canActivate:[AdminauthGuard]},
+    {path: 'userdetails', component:AdminUserdetailsComponent,canActivate:[AdminauthGuard]},
+    {path: 'sidenav' , component:AdminSidenavComponent,canActivate:[AdminauthGuard]},
+    {path: 'slot-details', component:AdminSlotDetailsComponent,canActivate:[AdminauthGuard]},
   ]}
 ]
 

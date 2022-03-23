@@ -9,11 +9,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { NavbarComponent } from './navbar/navbar.component';
-
-// import { MatGridList } from '@angular/material/grid-list'
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
-
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { PlansComponent } from './plans/plans.component';
 
@@ -22,6 +19,7 @@ import { CustomerModule } from './customer/customer.module';
 import { FormsModule } from '@angular/forms';
 import { UserauthGuard } from './Authentication/user/userauth.guard';
 import { AdminModule } from './admin/admin.module';
+import { AdminauthGuard } from './Authentication/admin/adminauth.guard';
 
 
 export const domain_URL =  "http://localhost:5000"
@@ -63,7 +61,10 @@ export const user_purchase_history =  domain_URL + "/user/purchase_history"
     BrowserAnimationsModule
     
   ],
-  providers: [UserauthGuard],
+  providers: [
+    UserauthGuard,
+    AdminauthGuard
+  ],
   bootstrap: [AppComponent]
 })
 

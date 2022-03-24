@@ -1,37 +1,37 @@
 <mat-drawer-container>
   <mat-drawer mode="side" [opened]="sideBarOpen">
-      <app-admin-sidenav></app-admin-sidenav>
+    <app-admin-sidenav></app-admin-sidenav>
   </mat-drawer>
   <mat-drawer-content>
     <app-admin-header (toggleSidebarForMe)="sideBarToggler()"></app-admin-header>
-    
+
     <router-outlet></router-outlet>
     <div class="container-fluid page">
       <div class="d-flex page__box p-3 mt-2">Admin Profile</div>
       <div class="page__content shadow p-3 position-relative">
         <div class="page__content-data position-absolute text-center w-50">
-          <table [border] ="2"cellpadding = "5" cellspacing = "5">
+          <table [border]="2" cellpadding="5" cellspacing="5">
             <tr>
-               <th>Name:</th>
-               <td>xyz abc</td>
+              <th>Name:</th>
+              <td [innerHTML]="name"></td>
             </tr>
             <tr>
-              <th>Contact No.:</th>
-              <td>9876543210</td>
-           </tr>
-           <tr>
-            <th>E-mail:</th>
-            <td>xyzabc@gmail.com</td>
-         </tr>
-         <tr>
-          <th>Location:</th>
-          <td>Jamnagar</td>
-       </tr>
-           
-         </table>
+              <th>E-mail:</th>
+              <td [innerHTML]="email"></td>
+            </tr>
+            <tr>
+              <th>City :</th>
+              <td [innerHTML]="city"></td>
+            </tr>
+            <tr>
+              <th>Location:</th>
+              <td [innerHTML]="address"></td>
+            </tr>
 
-         </div>   
+          </table>
+
         </div>
-      </div>  
-    </mat-drawer-content>
-  </mat-drawer-container>
+      </div>
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container>

@@ -41,7 +41,7 @@ export class LoginComponent implements OnInit {
           document.cookie = "auth_id=" + (data['auth_id'] || "")  + expires + ";domain:localhost:5000; path=/";
           document.cookie = "auth_token=" + (data['auth_token'] || "")  + expires + ";domain:localhost:5000; path=/";
           // console.log('done');
-          this._router.navigateByUrl('customer/dashboard');
+          this._router.navigateByUrl('customer');
       },
       error: error => {
           // this.errorMessage = error.message;

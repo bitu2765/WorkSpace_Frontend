@@ -1,24 +1,28 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>Customer</title>
   <link type="text/css" rel="stylesheet" href="dashboard.component.css" />
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
+
 <body>
+
   <body>
     <app-customer-navbar></app-customer-navbar>
-    
-    <div class="text-center mt-2" >
+
+    <div class="text-center mt-2">
       <h1>
         Active Plans
       </h1>
     </div>
 
-    <div class="card" *ngFor="let ind of active_plans" >
+    <div class="card" *ngFor="let ind of active_plans">
       <h2 class="card-header">
         <div style="display: flex; justify-content: space-between">
-          <span>{{ ind.plan_type }}<span class="h6" >({{ ind.duration }} days)</span></span>
+          <span>{{ ind.plan_type }}<span class="h6">({{ ind.duration }} days)</span></span>
           <span>{{ ind.price }} /-</span>
         </div>
       </h2>
@@ -28,13 +32,13 @@
           
         </p> -->
         <p id="active-plan">
-          Desk : <span *ngFor="let des of ind.desk_no;let isLast=last" >
+          Desk : <span *ngFor="let des of ind.desk_no;let isLast=last">
             {{ des }}
-            <span *ngIf="!isLast">,</span>            
+            <span *ngIf="!isLast">,</span>
           </span>
-          <br/>
-          Expiry Date : {{ ind.expiry_date }} 
-          <br/>
+          <br />
+          Expiry Date : {{ ind.expiry_date }}
+          <br />
           Address : {{ ind.address }} , {{ ind.state }}
         </p>
       </div>
@@ -47,7 +51,7 @@
         <div class="row">
 
 
-          <div class="col-sm">
+          <!-- <div class="col-sm">
             <div class="card">
               <h2 class="card-header">
                 Mini Pack 1
@@ -62,26 +66,26 @@
                 <button type="submit">Book Now</button>
               </div>
             </div>
-          </div>
+          </div> -->
 
-          <div class="col-sm">
-            <div class="card">
-              <h2 class="card-header">
-                Mini Pack 1
-              </h2>
+          <!-- <div class="col-sm"> -->
+          <div class="card" *ngFor="let ind of available_plans">
+            <h2 class="card-header">
+              Mini Pack 1
+            </h2>
 
-              <div class="card-body">
-                <p>
-                  Plan 1 <br />
-                  Price: 399/Month
-                </p>
+            <div class="card-body">
+              <p>
+                Plan 1 <br />
+                Price: 399/Month
+              </p>
 
-                <button type="submit">Book Now</button>
-              </div>
+              <button type="submit">Book Now</button>
             </div>
           </div>
+          <!-- </div> -->
 
-          <div class="col-sm">
+          <!-- <div class="col-sm">
             <div class="card">
               <h2 class="card-header">
                 Mini Pack 2
@@ -96,9 +100,9 @@
                 <button type="submit">Book Now</button>
               </div>
             </div>
-          </div>
+          </div> -->
 
-          <div class="col-sm">
+          <!-- <div class="col-sm">
             <div class="card">
               <h2 class="card-header">
                 Mini Pack 3
@@ -113,7 +117,7 @@
                 <button type="submit">Book Now</button>
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
 
         <div class="row">
@@ -203,16 +207,16 @@
       </div>
     </div> -->
 
-    <div class="text-center mt-2" >
+    <div class="text-center mt-2">
       <h1>
         Upcoming Plans
       </h1>
     </div>
 
-    <div class="card" *ngFor="let ind of upcoming_plans" >
+    <div class="card" *ngFor="let ind of upcoming_plans">
       <h2 class="card-header">
         <div style="display: flex; justify-content: space-between">
-          <span>{{ ind.plan_type }}<span class="h6" >({{ ind.duration }} days)</span></span>
+          <span>{{ ind.plan_type }}<span class="h6">({{ ind.duration }} days)</span></span>
           <span>{{ ind.price }} /-</span>
         </div>
       </h2>
@@ -222,13 +226,13 @@
           
         </p> -->
         <p id="active-plan">
-          Desk : <span *ngFor="let des of ind.desk_no;let isLast=last" >
+          Desk : <span *ngFor="let des of ind.desk_no;let isLast=last">
             {{ des }}
-            <span *ngIf="!isLast">,</span>            
+            <span *ngIf="!isLast">,</span>
           </span>
-          <br/>
-          Start Date : {{ ind.start_date }} 
-          <br/>
+          <br />
+          Start Date : {{ ind.start_date }}
+          <br />
           Address : {{ ind.address }} , {{ ind.state }}
         </p>
       </div>
@@ -237,4 +241,5 @@
 
   </body>
 </body>
+
 </html>

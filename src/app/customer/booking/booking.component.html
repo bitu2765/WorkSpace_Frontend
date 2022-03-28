@@ -9,10 +9,70 @@
   <body>
     <app-customer-navbar></app-customer-navbar>
     
-    <div class="text-center mt-2" >
+    <div class="text-center mt-2">
       <h1>
-        Booking Works!
+        Slot Booking
       </h1>
+
+      <!-- Slot Details -->
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-3">
+            <input type="checkbox" name="slots" value="1" id="one" /> &nbsp;
+            <label for="one">Slot 1</label>
+          </div>
+
+          <div class="col-3 booked">
+            <input type="checkbox" name="slots" value="2" id="two" disabled /> &nbsp;
+            <label for="two">Slot 2</label>
+          </div>
+
+          <div class="col-3">
+            <input type="checkbox" name="slots" value="3" id="three" /> &nbsp;
+            <label for="three">Slot 3</label>
+          </div>
+
+          <div class="col-3">
+            <input type="checkbox" name="slots" value="4" id="four" /> &nbsp;
+            <label for="four">Slot 4</label>
+          </div>
+
+          <div class="col-3">
+            <input type="checkbox" name="slots" value="5" id="five" /> &nbsp;
+            <label for="five">Slot 5</label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Button trigger modal -->
+      <button type="button" class="btn btn-primary book" data-toggle="modal" data-target="#exampleModalCenter">
+        Confirm Booking
+      </button>
+
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+
+            <div class="modal-header">
+              <h2 class="modal-title" id="exampleModalCenterTitle">Booking Details</h2>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+
+            <div class="modal-body">
+              <p>Selected Slots: 1,2,3</p>
+              <p>Total Price: 20000 INR</p>
+            </div>
+
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+              <button type="button" class="btn btn-primary">Book</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </body>
 </body>

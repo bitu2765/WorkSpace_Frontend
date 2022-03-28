@@ -7,27 +7,34 @@
 <body>
   <body>
     <app-navbar></app-navbar>
-    <div class="login-page">
-      <div class="form">
-        <div class="login">
-          <div class="login-header">
-            <h3>REGISTER</h3>
-            <p>Please enter your details to register.</p>
+
+    <div class="modal-dialog text-center">
+      <div class="col-sm-9 main-section">
+        <div class="modal-content">
+          <div class="login">
+            <p>REGISTER</p>
+          </div>
+
+          <div class="col-12 form-input">
+            <div class="form-group">
+              <input class="form-control" [(ngModel)]="username" name="username" type="text" placeholder="Username" />
+              <input class="form-control" [(ngModel)]="name" name="name" type="text" placeholder="Name" />
+              <input class="form-control" [(ngModel)]="email" name="email" type="text" placeholder="E-mail" />
+              <input class="form-control" [(ngModel)]="mobileno" name="mobileno" type="text" placeholder="Contact No." />
+              <!-- <input [(ngModel)]="address" name="address" type="text" placeholder="Address"/> -->
+              <input class="form-control" [(ngModel)]="password" name="password" type="password" placeholder="Password" />
+              <input class="form-control" [(ngModel)]="confirm_password" name="Confirm_password" type="password" placeholder="Confirm Password" />
+              <button type="submit" id="login_btn" class="btn btn-success" (click)="user_registration()">REGISTER</button>
+
+              <p>Already have an account?
+                <a routerLink="/login">Click here to Login</a>
+              </p>
+            </div>
           </div>
         </div>
-        <form class="login-form">
-          <input [(ngModel)]="username" name="username" type="text" placeholder="Username"/>
-          <input [(ngModel)]="name" name="name" type="text" placeholder="Name"/>
-          <input [(ngModel)]="email" name="email" type="text" placeholder="E-mail"/>
-          <input [(ngModel)]="mobileno" name="mobileno" type="text" placeholder="Contact No."/>
-          <!-- <input [(ngModel)]="address" name="address" type="text" placeholder="Address"/> -->
-          <input [(ngModel)]="password" name="password" type="password" placeholder="Password"/>
-          <input [(ngModel)]="confirm_password" name="Confirm_password" type="password" placeholder="Confirm Password"/>
-          <button (click)="user_registration()" >REGISTER</button>
-          <p class="message">Already have an account? <a routerLink="/login">Log in</a></p>
-        </form>
       </div>
     </div>
+
   </body>
 </body>
 </html>

@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 import { user_register } from '../app.module';
 
@@ -18,7 +19,7 @@ export class RegisterComponent implements OnInit {
   public confirm_password=``;
   public name=``;
 
-  constructor(private http:HttpClient) {  
+  constructor(private http: HttpClient, private _router: Router) {
   }
 
   ngOnInit(): void {
@@ -78,6 +79,10 @@ export class RegisterComponent implements OnInit {
       }
     })
 
+  }
+
+  public login() {
+    this._router.navigate(['login']);
   }
 
 }

@@ -1,3 +1,7 @@
 .spacer{
     flex: 1 1 auto;
 }
+
+.dropdown-menu {
+    min-width: fit-content;
+}

@@ -1,10 +1,21 @@
 <link rel="stylesheet" href="customer-navbar.component.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-light bg-light">
   <a class="navbar-brand" routerLink="/customer"> Workspace</a>
 
-  <a class="dropdown-item" routerLink="/customer/profile">Profile</a>
-  <a class="dropdown-item" routerLink="/customer/dashboard">Dashboard</a>
-  <a class="dropdown-item" routerLink="/customer/history">History Plans</a>
-  <a class="dropdown-item" (click)="logout_fun()">Log Out</a>
+  <div class="dropdown">
+    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <i class="bi bi-person-fill"> Hello, User!</i>
+    </a>
+
+    <div class="dropdown-menu">
+      <a class="dropdown-item" routerLink="/customer/profile">Profile</a>
+      <a class="dropdown-item" routerLink="/customer/dashboard">Dashboard</a>
+      <a class="dropdown-item" routerLink="/customer/booking">Book Slots</a>
+      <a class="dropdown-item" routerLink="/customer/history">History Plans</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item" (click)="logout_fun()">Log Out</a>
+    </div>
+  </div>
 </nav>

@@ -1,31 +1,53 @@
 <link rel="stylesheet" href="navbar.component.css">
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" routerLink="/login" > Workspace</a>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+
+<nav class="navbar navbar-light bg-light">
+  <a class="navbar-brand" routerLink="/customer"> Workspace</a>
+
+  <div class="dropdown">
+    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <i class="bi bi-person-fill"> Options</i>
+    </a>
+
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+      <a class="dropdown-item" routerLink="/home">Home</a>
+      <a class="dropdown-item" routerLink="/aboutus">About Us</a>
+      <a class="dropdown-item" routerLink="/plans">Plans</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item" routerLink="/login">Log In</a>
+      <a class="dropdown-item" routerLink="/register">Register</a>
+    </div>
+  </div>
+
+  <!--<a class="navbar-brand" routerLink="/login"> Workspace</a>
+
   <div class="spacer"></div>
+
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
+
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav">
       <li class="nav-item active">
-        <a class="nav-link"  routerLink="/home">Home <span class="sr-only"></span></a>
+        <a class="nav-link" routerLink="/home">Home <span class="sr-only"></span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link"  routerLink="/aboutus">About Us</a>
+        <a class="nav-link" routerLink="/aboutus">About Us</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link"  routerLink="/plans">Plans</a>
+        <a class="nav-link" routerLink="/plans">Plans</a>
       </li>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle"  routerLink="/login" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle" routerLink="/login" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Login/Register
         </a>
-        <!-- <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           <a class="dropdown-item" href="#">Profile</a>
           <a class="dropdown-item" href="#">History Plans</a>
           <a class="dropdown-item" href="#">Log Out</a>
-        </div> -->
+        </div>
       </li>
     </ul>
-  </div>
+  </div>-->
 </nav>

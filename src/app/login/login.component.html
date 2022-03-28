@@ -5,25 +5,41 @@
 <title> Login Screen</title>
 </head>
 <body>
+  <body>
     <app-navbar></app-navbar>
-    <div class="login-page">
-      <div class="form">
-        <div class="login">
-          <div class="login-header">
-            <h3>LOGIN</h3>
-            <p>Please enter your credentials to login.</p>
+
+    <div class="modal-dialog text-center">
+      <div class="col-sm-9 main-section">
+        <div class="modal-content">
+
+          <div class="login">
+            <p>LOGIN</p>
+          </div>
+
+          <div class="switch">
+            <input type="radio" id="user" name="userType" value="user" (click)="userLogin()" checked />
+            <label for="user">USER</label>
+            <input type="radio" id="admin" name="userType" value="admin" (click)="adminLogin()" />
+            <label for="admin">ADMIN</label>
+          </div>
+
+          <div class="col-12 form-input">
+            <div class="form-group">
+              <input type="text" class="form-control" [(ngModel)]="username" name="user" placeholder="Enter Username" autocomplete="off" required>
+              <input type="password" class="form-control" [(ngModel)]="password" name="password" placeholder="Enter Password" autocomplete="off" required>
+
+              <button type="submit" id="login_btn" class="btn btn-success" (click)="login_fun()">LOGIN</button>
+
+              <p id="goToRegister">
+                Don't have an account?
+                <a routerLink="/register">Click here to Register</a>
+              </p>
+            </div>
           </div>
         </div>
-        <form class="login-form" >
-          <input [(ngModel)]="username" type="text" placeholder="Username" name="user"/>
-          <!-- <div [innerHTML]="username"></div> -->
-          <input [(ngModel)]="password" type="password" placeholder="Password" name="password" />
-          <!-- <div [innerHTML]="password"></div> -->
-          <button (click)="login_fun()" >login</button>
-          <p class="message">Not registered? <a routerLink="/register">Create an account</a></p>
-        </form>
       </div>
     </div>
+
+  </body>
 </body>
 </html>
-  

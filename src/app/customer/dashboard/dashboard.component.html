@@ -9,7 +9,6 @@
 </head>
 
 <body>
-
   <body>
     <app-customer-navbar></app-customer-navbar>
 
@@ -19,29 +18,45 @@
       </h1>
     </div>
 
-    <div class="card" *ngFor="let ind of active_plans">
-      <h2 class="card-header">
-        <div style="display: flex; justify-content: space-between">
-          <span>{{ ind.plan_type }}<span class="h6">({{ ind.duration }} days)</span></span>
-          <span>{{ ind.price }} /-</span>
-        </div>
-      </h2>
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="3000">
+      <div class="carousel-inner">
+        <div class="carousel-item" *ngFor="let ind of active_plans; index as i" [ngClass]="{'active': i==0}">
+          <div class="card">
+            <h2 class="card-header">
+              <div style="display: flex; justify-content: space-between">
+                <span>{{ ind.plan_type }} <span class="h6">({{ ind.duration }} days)</span></span>
+                <span>{{ ind.price }} /-</span>
+              </div>
+            </h2>
 
-      <div class="card-body">
-        <!-- <p id="active-plan">
-          
-        </p> -->
-        <p id="active-plan">
-          Desk : <span *ngFor="let des of ind.desk_no;let isLast=last">
-            {{ des }}
-            <span *ngIf="!isLast">,</span>
-          </span>
-          <br />
-          Expiry Date : {{ ind.expiry_date }}
-          <br />
-          Address : {{ ind.address }} , {{ ind.state }}
-        </p>
+            <div class="card-body">
+              <!-- <p id="active-plan">
+
+            </p> -->
+              <p id="active-plan">
+                Desk : <span *ngFor="let des of ind.desk_no;let isLast=last">
+                  {{ des }}
+                  <span *ngIf="!isLast">,</span>
+                </span>
+                <br />
+                Expiry Date : {{ ind.expiry_date }}
+                <br />
+                Address : {{ ind.address }} , {{ ind.state }}
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
+
+      <!-- Buttons -->
+      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
     </div>
 
     <div>
@@ -52,24 +67,7 @@
 
 
           <!-- <div class="col-sm">
-            <div class="card">
-              <h2 class="card-header">
-                Mini Pack 1
-              </h2>
-
-              <div class="card-body">
-                <p>
-                  Plan 1 <br />
-                  Price: 399/Month
-                </p>
-
-                <button type="submit">Book Now</button>
-              </div>
-            </div>
-          </div> -->
-
-          <!-- <div class="col-sm"> -->
-          <div class="card" *ngFor="let ind of available_plans">
+          <div class="card">
             <h2 class="card-header">
               Mini Pack 1
             </h2>
@@ -83,41 +81,55 @@
               <button type="submit">Book Now</button>
             </div>
           </div>
+        </div> -->
+          <!-- <div class="col-sm"> -->
+          <div class="card" *ngFor="let ind of available_plans">
+            <h2 class="card-header">
+              Mini Pack 1
+            </h2>
+
+            <div class="card-body">
+              <p>
+                Plan 1 <br />
+                Price: 399/Month
+              </p>
+
+              <button type="submit" class="btn btn-primary">Book Now</button>
+            </div>
+          </div>
           <!-- </div> -->
-
           <!-- <div class="col-sm">
-            <div class="card">
-              <h2 class="card-header">
-                Mini Pack 2
-              </h2>
+          <div class="card">
+            <h2 class="card-header">
+              Mini Pack 2
+            </h2>
 
-              <div class="card-body">
-                <p>
-                  Plan 2 <br />
-                  Price: 599/Month
-                </p>
+            <div class="card-body">
+              <p>
+                Plan 2 <br />
+                Price: 599/Month
+              </p>
 
-                <button type="submit">Book Now</button>
-              </div>
+              <button type="submit">Book Now</button>
             </div>
-          </div> -->
-
+          </div>
+        </div> -->
           <!-- <div class="col-sm">
-            <div class="card">
-              <h2 class="card-header">
-                Mini Pack 3
-              </h2>
+          <div class="card">
+            <h2 class="card-header">
+              Mini Pack 3
+            </h2>
 
-              <div class="card-body">
-                <p>
-                  Plan 3 <br />
-                  Price: 799/Month
-                </p>
+            <div class="card-body">
+              <p>
+                Plan 3 <br />
+                Price: 799/Month
+              </p>
 
-                <button type="submit">Book Now</button>
-              </div>
+              <button type="submit">Book Now</button>
             </div>
-          </div> -->
+          </div>
+        </div> -->
         </div>
 
         <div class="row">
@@ -161,51 +173,51 @@
     </div>
 
     <!-- <div>
-      <h1 style="text-align: center;">Upcoming Plans</h1>
+    <h1 style="text-align: center;">Upcoming Plans</h1>
 
-      <div class="container">
-        <div class="row">
+    <div class="container">
+      <div class="row">
 
-          <div class="col-sm">
-            <div class="card">
-              <h2 class="card-header">
-                Mini Pack 1
-              </h2>
+        <div class="col-sm">
+          <div class="card">
+            <h2 class="card-header">
+              Mini Pack 1
+            </h2>
 
-              <div class="card-body">
-                <p>
-                  Plan 1 <br />
-                  Price: 399/Month
-                </p>
+            <div class="card-body">
+              <p>
+                Plan 1 <br />
+                Price: 399/Month
+              </p>
 
-                <button type="submit">Book Now</button>
-              </div>
+              <button type="submit">Book Now</button>
             </div>
-          </div>
-
-          <div class="col-sm">
-            <div class="card">
-              <h2 class="card-header">
-                Mini Pack 2
-              </h2>
-
-              <div class="card-body">
-                <p>
-                  Plan 2 <br />
-                  Price: 599/Month
-                </p>
-
-                <button type="submit">Book Now</button>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-sm">
-
           </div>
         </div>
+
+        <div class="col-sm">
+          <div class="card">
+            <h2 class="card-header">
+              Mini Pack 2
+            </h2>
+
+            <div class="card-body">
+              <p>
+                Plan 2 <br />
+                Price: 599/Month
+              </p>
+
+              <button type="submit">Book Now</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm">
+
+        </div>
       </div>
-    </div> -->
+    </div>
+  </div> -->
 
     <div class="text-center mt-2">
       <h1>
@@ -213,31 +225,46 @@
       </h1>
     </div>
 
-    <div class="card" *ngFor="let ind of upcoming_plans">
-      <h2 class="card-header">
-        <div style="display: flex; justify-content: space-between">
-          <span>{{ ind.plan_type }}<span class="h6">({{ ind.duration }} days)</span></span>
-          <span>{{ ind.price }} /-</span>
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="3000">
+      <div class="carousel-inner">
+        <div class="carousel-item" *ngFor="let ind of upcoming_plans; index as i" [ngClass]="{'active': i==0}">
+          <div class="card">
+            <h2 class="card-header">
+              <div style="display: flex; justify-content: space-between">
+                <span>{{ ind.plan_type }}<span class="h6"> ({{ ind.duration }} days)</span></span>
+                <span>{{ ind.price }} /-</span>
+              </div>
+            </h2>
+
+            <div class="card-body">
+              <!-- <p id="active-plan">
+
+    </p> -->
+              <p id="active-plan">
+                Desk : <span *ngFor="let des of ind.desk_no;let isLast=last">
+                  {{ des }}
+                  <span *ngIf="!isLast">,</span>
+                </span>
+                <br />
+                Start Date : {{ ind.start_date }}
+                <br />
+                Address : {{ ind.address }} , {{ ind.state }}
+              </p>
+            </div>
+          </div>
         </div>
-      </h2>
-
-      <div class="card-body">
-        <!-- <p id="active-plan">
-          
-        </p> -->
-        <p id="active-plan">
-          Desk : <span *ngFor="let des of ind.desk_no;let isLast=last">
-            {{ des }}
-            <span *ngIf="!isLast">,</span>
-          </span>
-          <br />
-          Start Date : {{ ind.start_date }}
-          <br />
-          Address : {{ ind.address }} , {{ ind.state }}
-        </p>
       </div>
-    </div>
 
+      <!-- Buttons -->
+      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
 
   </body>
 </body>

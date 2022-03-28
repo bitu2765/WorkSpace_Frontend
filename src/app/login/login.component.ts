@@ -1,3 +1,4 @@
+import { style } from '@angular/animations';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
@@ -48,6 +49,14 @@ export class LoginComponent implements OnInit {
           console.error('There was an error!', error);
       }
     })
+  }
+
+  public adminLogin() {
+    document.getElementById('goToRegister')?.setAttribute("style", "display: none;");
+  }
+
+  public userLogin() {
+    document.getElementById('goToRegister')?.setAttribute("style", "display: block;");
   }
 
 }

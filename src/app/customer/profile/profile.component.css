@@ -1,12 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Coda');
 
+.main-section {
+  text-align: center !important;
+  margin: auto;
+  width: 80%;
+}
+
 .modal-content {
+  background-color: rgba(255,255,255, 0.5) !important;
   opacity: 1;
-  padding: 0 18px;
-  margin-top: 35%;
-  border-radius: 15px !important;
+  margin-top: 40%;
+  box-shadow: 6px 6px 8px 0 rgba(0, 0, 0, 0.25) /*, -4px -4px 6px 0 rgba(255, 255, 255, 0.5)*/;
+  border-radius: 25px !important;
   border: 0px !important;
   backdrop-filter: blur( 4px );
+  padding: 5%;
+  font-size: 14px;
 }
 
 .login p {
@@ -16,13 +25,14 @@
   font-weight: bold;
   letter-spacing: 2px;
   font-family: Coda;
+  text-shadow: 2px 2px 2px rgba(255, 255, 255, 0.2);
 }
 
 .form-input {
   padding: 3%;
 }
 
-.form-group input, .form-group select {
+.form-group input:disabled {
   height: 42px;
   border-radius: 10px;
   border: 0;
@@ -31,6 +41,7 @@
   margin-bottom: 15px;
   margin-top: 1px;
   box-shadow: inset 3px 3px 4px 0 rgba(0, 0, 0, 0.15), inset -3px -3px 4px 0 rgba(255, 255, 255, 0.5);
+  color: rgba(0,0,0, 0.65);
 }
 
   .form-group input::placeholder {
@@ -44,11 +55,4 @@
   margin-left: 3px;
   font-weight: bold;
   text-align: left;
-}
-
-.form-group button {
-  width: 45%;
-  display: inline-block;
-  margin: 3% 2%;
-  margin-bottom: 30px;
 }

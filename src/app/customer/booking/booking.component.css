@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Coda');
+@import url('https://fonts.googleapis.com/css2?family=Roboto');
+
+/* Heading */
+h1 {
+  margin: 3% 2% 2%;
+  font-family: 'Coda';
+  font-weight: bold;
+  font-size: 300%;
+  text-shadow: 2px 2px 2px rgba(255,255,255, 0.5);
+}
+
+/* Modal Heading */
+h2 {
+    margin: 0%;
+}
+
+/* Slots */
+.container {
+  width: 40%;
+  background-color: wheat;
+  box-shadow: 6px 6px 8px 0 rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+}
+
+.col-3 {
+  padding: 0%;
+  border: solid 2px #000000;
+}
+
+.col-3:first-child {
+    border-top-left-radius: 10px;
+}
+
+.col-3:nth-child(4) {
+    border-top-right-radius: 10px;
+}
+
+/* Check Box */
+input[type=checkbox] {
+    display: none;
+}
+
+  input[type=checkbox] + label {
+    width: 100%;
+    display: inline-block;
+    padding: 5% 0%;
+  }
+
+  input[type=checkbox]:not(:disabled):hover + label {
+    background-color: rgba(0, 0, 255, 0.5);
+  }
+  input[type=checkbox]:not(:disabled):checked + label {
+    background-color: blue;
+  }
+
+.booked {
+    background-color: grey;
+}
+
+/* Button */
+.book {
+  background-color: #0060ff;
+  border-radius: 10px;
+  border: 0px !important;
+  padding: 1%;
+  margin: 2% 0%;
+  letter-spacing: 0.5px;
+  box-shadow: 4px 4px 6px 0 rgba(0, 0, 0, 0.2) /*, -4px -4px 6px 0 rgba(255, 255, 255, 0.5)*/;
+}
+
+  .book:active {
+    box-shadow: 4px 4px 6px 0 rgba(0, 0, 0, 0.2) /*, -4px -4px 6px 0 rgba(255, 255, 255, 0.5)*/;
+  }
+
+  .book:hover {
+    box-shadow: 2px 2px 3px 0 rgba(0, 0, 0, 0.2) /*, -3px -3px 3px 0 rgba(255, 255, 255, 0.5)*/;
+  }

@@ -63,35 +63,16 @@
       <h1 style="text-align: center;">Recommended Plans</h1>
 
       <div class="container">
-        <div class="row">
-
-
-          <!-- <div class="col-sm">
-          <div class="card">
+        <div class="plans-container">
+          <div class="card" style="height: 180px;width: 300px;" *ngFor="let ind of available_plans">
             <h2 class="card-header">
-              Mini Pack 1
+              {{ ind.plan_name }}
             </h2>
 
             <div class="card-body">
               <p>
-                Plan 1 <br />
-                Price: 399/Month
-              </p>
-
-              <button type="submit">Book Now</button>
-            </div>
-          </div>
-        </div> -->
-          <!-- <div class="col-sm"> -->
-          <div class="card" *ngFor="let ind of available_plans">
-            <h2 class="card-header">
-              Mini Pack 1
-            </h2>
-
-            <div class="card-body">
-              <p>
-                Plan 1 <br />
-                Price: 399/Month
+                discount: {{ ind.discount }}% <br />
+                Duration: {{ ind.duration }}
               </p>
 
               <button type="submit" class="btn btn-primary">Book Now</button>
@@ -132,7 +113,7 @@
         </div> -->
         </div>
 
-        <div class="row">
+        <!-- <div class="row">
           <div class="col-sm">
             <div class="card">
               <h2 class="card-header">
@@ -168,7 +149,7 @@
           </div>
 
           <div class="col-sm"></div>
-        </div>
+        </div> -->
       </div>
     </div>
 

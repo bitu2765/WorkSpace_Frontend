@@ -12,7 +12,7 @@
     <div class="card" *ngFor="let ind of plan_history" >
       <h2 class="card-header">
         <div style="display: flex; justify-content: space-between">
-          <span>{{ ind.plan_type }}<span class="h6"> ({{ ind.duration }} days)</span></span>
+          <span>{{ ind.plan_type }}<span class="h6" >({{ ind.plan_status }})</span></span>
           <span>{{ ind.price }} /-</span>
         </div>
       </h2>

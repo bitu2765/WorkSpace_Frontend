@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
   }
 
   public login_fun() {
-    this.http.post<any>(login,{id:1,username:this.username,password:this.password}).subscribe({
+    this.http.post<any>(login,{id:2,username:this.username,password:this.password}).subscribe({
       next: data => {
           // console.log(data)
           if(data['status_code']!=200)
@@ -42,7 +42,7 @@ export class LoginComponent implements OnInit {
           document.cookie = "auth_id=" + (data['auth_id'] || "")  + expires + ";domain:localhost:5000; path=/";
           document.cookie = "auth_token=" + (data['auth_token'] || "")  + expires + ";domain:localhost:5000; path=/";
           // console.log('done');
-          this._router.navigateByUrl('customer');
+          this._router.navigateByUrl('admin');
       },
       error: error => {
           // this.errorMessage = error.message;

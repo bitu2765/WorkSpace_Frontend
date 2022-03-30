@@ -4,19 +4,20 @@
 <nav class="navbar navbar-light bg-primary">
   <a class="navbar-brand" routerLink="/customer"> Workspace</a>
 
-  <div class="dropdown">
-    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
-      aria-haspopup="true" aria-expanded="false">
-      <i class="bi bi-person-fill"> Options</i>
-    </a>
+  <div class="buttons">
+    <a routerLink="/home">Home</a>
+    <a routerLink="/aboutus">About Us</a>
+    <a routerLink="/plans">Plans</a>
 
-    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-      <a class="dropdown-item" routerLink="/home">Home</a>
-      <a class="dropdown-item" routerLink="/aboutus">About Us</a>
-      <a class="dropdown-item" routerLink="/plans">Plans</a>
-      <div class="dropdown-divider"></div>
-      <a class="dropdown-item" routerLink="/login">Log In</a>
-      <a class="dropdown-item" routerLink="/register">Register</a>
+    <div class="dropdown">
+      <a class="btn btn-warning dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <i class="bi bi-person-fill"> Join Us</i>
+      </a>
+
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+        <a class="dropdown-item" routerLink="/login">Log In</a>
+        <a class="dropdown-item" routerLink="/register">Register</a>
+      </div>
     </div>
   </div>
 

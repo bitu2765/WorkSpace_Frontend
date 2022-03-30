@@ -5,6 +5,45 @@
 .dropdown-menu {
     min-width: fit-content;
 }
+
+.navbar {
+  background-color: rgb(3, 68, 247) !important;
+  font-weight: bold;
+}
+
+  .navbar-brand {
+    color: rgb(255,255,255);
+    letter-spacing: 1px;
+  }
+
+  .navbar-brand:hover {
+    color: rgba(255,255,255, 0.7);
+  }
+
+.buttons a {
+  color: #ffffff;
+  text-decoration: none;
+  margin-right: 15px;
+  font-weight: normal;
+}
+
+  .buttons a:hover {
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: normal;
+  }
+
+.buttons {
+    width: fit-content;
+}
+
+.navbar .dropdown {
+  display: inline-block;
+}
+
+.dropdown a {
+    color: black;
+}
+/*
 .navbar{
     background-color: rgb(8, 47, 156);
     color: blanchedalmond; 
@@ -25,3 +64,4 @@
     padding-left: 50px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
+*/

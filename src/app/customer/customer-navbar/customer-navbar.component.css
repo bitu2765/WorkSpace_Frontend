@@ -1,3 +1,24 @@
 .dropdown-menu {
   min-width: fit-content !important;
 }
+
+
+.navbar {
+  background-color: rgb(3, 68, 247) !important;
+  font-weight: bold;
+}
+
+.navbar-brand {
+  color: rgb(255,255,255) !important;
+  letter-spacing: 1px;
+}
+
+  .navbar-brand:hover {
+    color: rgba(255,255,255, 0.7) !important;
+  }
+
+.btn-outline-primary {
+  color: rgb(3, 68, 247);
+  font-weight: 500;
+  background-color: white;
+}

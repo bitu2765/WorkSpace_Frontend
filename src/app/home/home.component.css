@@ -1,76 +1,4 @@
-/* <style>
-	* {
-		margin: 0;
-		padding: 0;
-	} */
-
-	.navbar {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		position: sticky;
-		top: 0;
-		cursor: pointer;
-	}
-
-	.background {
-		background: black;
-		background-blend-mode: darken;
-		background-size: cover;
-	}
-
-	.nav-list {
-		width: 70%;
-		display: flex;
-		align-items: center;
-	}
-
-	.logo {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-	}
-
-	.logo img {
-		width: 180px;
-		border-radius: 50px;
-	}
-
-	.nav-list li {
-		list-style: none;
-		padding: 26px 30px;
-	}
-
-	.nav-list li a {
-		text-decoration: none;
-		color: white;
-	}
-
-	.nav-list li a:hover {
-		color: grey;
-	}
-
-	.rightnav {
-		width: 30%;
-		text-align: right;
-	}
-
-	#search {
-		padding: 5px;
-		font-size: 17px;
-		border: 2px solid grey;
-		border-radius: 9px;
-	}
-
-	.firstsection {
-		background-color: rgb(10, 151, 233);
-		height: 400px;
-	}
-
-	.secondsection {
-		background-color: rgb(35, 75, 161);
-		height: 400px;
-	}
+@import url('https://fonts.googleapis.com/css2?family=Coda');
 
 	.box-main {
 		display: flex;
@@ -82,84 +10,245 @@
 		height: 80%;
 	}
 
+	/* home page*/
+	.homesection {
+		background-color: rgb(253, 253, 253);
+		height: 100%;
+	}
+
 	.firsthalf {
 		width: 100%;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 	}
+.banner{
+    width: 80%;
+    height: 70%;
+    position: absolute;
+    top: 25%;
+    left: 150px;
+    color: #fff;
+}
 
-	.secondhalf {
-		width: 30%;
+.app-text{
+    width: 50%;
+    float: left;
+    padding-left: 50px;
+}
+
+.app-text h3{
+    margin-top: 40px;
+    font-size: 17px;
+    color: #000;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.app-text h1{
+	font-size: 51px;
+    position: relative;
+    color: #000;
+    margin-top: 30px;
+    font-weight: 700;
+    line-height: 1;
+    
+}
+
+.app-text p{
+    font-size: 19px;
+    margin: 30px 0px 30px 0;
+    letter-spacing: 1px;
+    color: #000;
+    padding-right: 150px;
+}
+
+.btn-group{
+    display: flex;
+    width: 100%;
+    position: relative;
+}
+
+.btn-group .signup-btn{
+    cursor: pointer;
+    display: block;
+    color: #000;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 700;
+    border-radius: 32px;
+    background-color: #ffa037;
+    padding: 15px 50px;
+}
+
+
+.app-picture {
+	padding-left: 70px;
+	align-content: center;
+
+}
+
+.app-picture p{
+	padding-left: 60px;
+}
+
+/* aboutus */
+
+.aboutussection {
+	background-color:rgb(3, 68, 247);
+	height: 550px;
+}
+
+.secondhalf {
+	width: 30%;
+}
+.aboutus-banner{
+    height: fit-content;
+}
+.aboutus-text h1{
+    font-size: 40px;
+    position: relative;
+    color: rgb(255, 255, 255);
+    margin-top: 30px;
+    font-weight: 150;
+    line-height: 1.5;
+	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+	
+	
+}
+.aboutus-text h3{
+    font-size: 19px;
+	margin: 10px 70px 30px 50px;
+	padding-right: 150px;
+    color: rgb(255, 255, 255);
+    font-weight: 400;
+    letter-spacing: 2px;
+	font-weight: bold;
+	font-style: italic;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-transform: uppercase;
+}
+
+.aboutus-text p{
+	width: 80%;
+    font-size: 20px;
+    margin: 30px 70px 30px 50px;
+    letter-spacing: 1px;
+    color: rgb(255, 255, 255);
+    padding-right: 150px;
+	font-family: 'Times New Roman', Times, serif;
+}
+
+.aboutus-picture h1{
+	padding-top: 100px;
+}
+.aboutussection .aboutus-picture {
+	padding-left: 180px;
+	padding-right: 80px;
+	padding-top: 10px;
+	
+}
+	/*recommended plans cards*/
+	.planssection{
+		background-color: rgb(255, 255, 255);
+		height: 700px;
 	}
 
-	.secondhalf img {
-		width: 70%;
-		border: 4px solid white;
-		border-radius: 150px;
-		display: block;
-		margin: auto;
-	}
-
-	.text-big {
-		font-family: 'Piazzolla', serif;
-		font-weight: bold;
-		font-size: 35px;
-	}
-
-	.text-small {
-		font-size: 18px;
-	}
-
-	.btn {
-		padding: 8px 20px;
-		margin: 7px 0;
-		border: 2px solid white;
-		border-radius: 8px;
-		background: none;
-		color: white;
-		cursor: pointer;
-	}
-
-	.btn-sm {
-		padding: 6px 10px;
-		vertical-align: middle;
-	}
-
-	.section {
-		height: 400px;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		max-width: 90%;
-		margin: auto;
-	}
-
-	.section-Left {
-		flex-direction: row-reverse;
-	}
-
-	.paras {
-		padding: 0px 65px;
-	}
-
-	.thumbnail img {
-		width: 250px;
-		border: 2px solid black;
-		border-radius: 26px;
-		margin-top: 19px;
-	}
-
-	.center {
+	.plans-text h1{
+		font-size: 40px;
 		text-align: center;
+		color: rgb(3, 68, 247);
+		margin-top: 30px;
+		font-weight: 150;
+		line-height: 1.5;
+		font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+		
+		
+	}
+	.card {
+	  border-radius: 15px !important;
+	  background-color: rgba(255,255,255, 0.3) !important;
+	  margin: 3% 7%;
+	  border: 3px solid rgb(40, 26, 223) !important;
+	  backdrop-filter: blur( 4px );
+	}
+	
+	.card-header {
+	  background-color: white;
+	  margin: -2px;
+	  padding: 1% 2% !important;
+	  border-radius: 15px !important;
+	  font-size: 200%;
+	  font-family: Coda;
+	  font-weight: bold;
+	  text-shadow: 2px 2px 2px grey;
+	  text-transform: uppercase;
+	  text-align: center;
+	}
+	
+	.card-body {
+	  padding: 2% !important;
+	  font-size: 120%;
+	  text-align: center;
 	}
 
-	.text-footer {
-		text-align: center;
-		padding: 30px 0;
-		font-family: 'Ubuntu', sans-serif;
-		display: flex;
-		justify-content: center;
-		color: white;
-	}
-/* </style> */
+/*contactus section*/
+.contactussection{
+	background-color: rgb(3, 68, 247);
+	height: 600px;
+}
+
+.contactus-text h1{
+    font-size: 40px;
+    position: relative;
+    color: rgb(255, 255, 255);
+    margin-top: 30px;
+    font-weight: 100;
+    line-height: 1.5;
+	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.contact-icons a{
+	color: white;
+	font-size:30px;
+	margin-left:20px;
+	
+}
+.btn-submit{
+    display: flex;
+    width: 100%;
+    position: relative;
+}
+
+.btn-submit .submit-btn{
+    cursor: pointer;
+    display: block;
+    color:rgb(3, 68, 247);
+    text-align: center;
+    font-size: 15px;
+    font-weight: 700;
+    border-radius: 32px;
+    background-color: #ffffff;
+    padding: 15px 50px;
+
+}
+
+
+
+ /*footer*/
+ #footer {
+	background: #e9e8e6;
+	padding: 30px 0;
+	color: #222222;
+	font-size: 14px;
+	text-align: center;
+  }
+  #footer .credits {
+	padding-top: 5px;
+	font-size: 13px;
+  }
+  #footer .credits a {
+	color: #34b7a7;
+  }
+
+  

@@ -27,7 +27,7 @@ h1 {
 }
 
 .card-header {
-  background-color: white;
+  background-color: rgb(230, 210, 210);
   margin: -2px;
   padding: 1% 2% !important;
   border-radius: 15px !important;

@@ -7,7 +7,7 @@
     -->
 <mat-toolbar>
     <mat-toolbar-row class="justify-content-between">
-      <button mat-icon-button (click)="toggleSidebar()">
+      <button  style="color: white;"mat-icon-button (click)="toggleSidebar()">
         <mat-icon>menu</mat-icon>
       </button>
       <div class="row mr-2 ml-auto">
@@ -20,10 +20,9 @@
             >
               <img src="./assets/user.jpg" alt="" class="user-image mr-1 p-2" />
   
-              User Name
-              <mat-icon class="user-image-icon ml-1"
-                >keyboard_arrow_down</mat-icon
-              >
+              <h1 style="color: white;">User Name</h1>
+              <mat-icon style="color: white;"class="user-image-icon ml-1"
+                >keyboard_arrow_down</mat-icon>
             </button>
             <mat-menu #menu="matMenu">
               <button (click)="logout_fun()"  mat-menu-item>

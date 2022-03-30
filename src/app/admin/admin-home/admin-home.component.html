@@ -10,24 +10,39 @@
       <div class="d-flex page__box p-3 mt-2">Admin Profile</div>
       <div class="page__content shadow p-3 position-relative">
         <div class="page__content-data position-absolute text-center w-50">
-          <table [border]="2" cellpadding="5" cellspacing="5">
-            <tr>
-              <th>Name:</th>
-              <td [innerHTML]="name"></td>
+          <table cellpadding="8" cellspacing="8">
+            <!-- <table cellpadding="8" cellspacing="8"> -->
+            <div class="profile-card">
+              <tr>
+                <th>Name:</th>
+                <td [innerHTML]="name"></td>
+              </tr>
+              <tr>
+                <th>E-mail:</th>
+                <td [innerHTML]="email"></td>
+              </tr>
+              <tr>
+                <th>City :</th>
+                <td [innerHTML]="city"></td>
+              </tr>
+              <tr>
+                <th>Location:</th>
+                <td [innerHTML]="address"></td>
+              </tr>
+
+              <!-- </table>
+            <th>Contact:</th>
+            <td>9876543210</td>
             </tr>
             <tr>
               <th>E-mail:</th>
-              <td [innerHTML]="email"></td>
-            </tr>
-            <tr>
-              <th>City :</th>
-              <td [innerHTML]="city"></td>
+              <td>xyzabc@gmail.com</td>
             </tr>
             <tr>
               <th>Location:</th>
-              <td [innerHTML]="address"></td>
-            </tr>
-
+              <td>Jamnagar</td>
+            </tr> -->
+            </div>
           </table>
 
         </div>

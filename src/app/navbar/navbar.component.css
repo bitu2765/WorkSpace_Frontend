@@ -5,3 +5,23 @@
 .dropdown-menu {
     min-width: fit-content;
 }
+.navbar{
+    background-color: rgb(8, 47, 156);
+    color: blanchedalmond; 
+    text-align: center;
+    z-index: 2;
+    position: fixed;
+    width: 100%;
+   
+}
+.navbar-nav li a {
+    text-decoration: none;
+    color: white;
+    padding-left: 190px;
+}
+.navbar-brand{
+    text-decoration: none;
+    color: white;
+    padding-left: 50px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}

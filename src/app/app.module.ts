@@ -21,8 +21,9 @@ import { UserauthGuard } from './Authentication/user/userauth.guard';
 import { AdminModule } from './admin/admin.module';
 import { AdminauthGuard } from './Authentication/admin/adminauth.guard';
 
+export const domain_name ="localhost";
 
-export const domain_URL =  "http://localhost:5000"
+export const domain_URL =  "http://"+domain_name+":5000"
 export const admin_verify =  domain_URL + "/admin/verify"
 export const user_verify =  domain_URL + "/user/verify"
 export const login =  domain_URL + "/login"

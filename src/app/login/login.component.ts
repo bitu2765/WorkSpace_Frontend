@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
-import { login } from '../app.module';
+import { domain_name, login } from '../app.module';
 
 @Component({
   selector: 'app-login',
@@ -12,8 +12,10 @@ import { login } from '../app.module';
 })
 export class LoginComponent implements OnInit {
 
+  public id=1;
   public username="";
   public password="";
+  private page="customer";
   constructor(private http:HttpClient,private _router:Router) {  
 
    }
@@ -22,7 +24,7 @@ export class LoginComponent implements OnInit {
   }
 
   public login_fun() {
-    this.http.post<any>(login,{id:2,username:this.username,password:this.password}).subscribe({
+    this.http.post<any>(login,{id:this.id,username:this.username,password:this.password}).subscribe({
       next: data => {
           // console.log(data)
           if(data['status_code']!=200)
@@ -39,10 +41,10 @@ export class LoginComponent implements OnInit {
           var date = new Date();
           date.setTime(date.getTime() + (days*24*60*60*1000));
           expires = "; expires=" + date.toUTCString();
-          document.cookie = "auth_id=" + (data['auth_id'] || "")  + expires + ";domain:localhost:5000; path=/";
-          document.cookie = "auth_token=" + (data['auth_token'] || "")  + expires + ";domain:localhost:5000; path=/";
+          document.cookie = "auth_id=" + (data['auth_id'] || "")  + expires + ";domain:"+domain_name+":5000; path=/";
+          document.cookie = "auth_token=" + (data['auth_token'] || "")  + expires + ";domain:"+domain_name+":5000; path=/";
           // console.log('done');
-          this._router.navigateByUrl('admin');
+          this._router.navigateByUrl(this.page);
       },
       error: error => {
           // this.errorMessage = error.message;
@@ -53,10 +55,14 @@ export class LoginComponent implements OnInit {
 
   public adminLogin() {
     document.getElementById('goToRegister')?.setAttribute("style", "display: none;");
+    this.id=2;
+    this.page="admin";
   }
 
   public userLogin() {
     document.getElementById('goToRegister')?.setAttribute("style", "display: block;");
+    this.id=1;
+    this.page="customer";
   }
 
 }

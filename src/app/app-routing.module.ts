@@ -40,7 +40,7 @@ const routes: Routes = [
   {path: 'admin', children: [
     {path: '', component:AdminDashboardComponent,canActivate:[AdminauthGuard]},
     {path: 'dashboard', component:AdminDashboardComponent,canActivate:[AdminauthGuard]},
-    {path: 'profile', component:AdminHomeComponent},
+    {path: 'profile', component:AdminHomeComponent,canActivate:[AdminauthGuard]},
     {path: 'plans', component:AdminPlansComponent,canActivate:[AdminauthGuard]},
     {path: 'userdetails', component:AdminUserdetailsComponent,canActivate:[AdminauthGuard]},
     {path: 'sidenav' , component:AdminSidenavComponent,canActivate:[AdminauthGuard]},

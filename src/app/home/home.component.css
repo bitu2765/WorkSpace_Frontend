@@ -233,6 +233,23 @@
 
 }
 
+/* plans details */
+
+.thirdhalf {
+	height: 800px;
+	width: 100%;
+}
+
+.plans-container{
+    margin: 0px;
+    padding: 0px;
+    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+  }
+
 
 
  /*footer*/

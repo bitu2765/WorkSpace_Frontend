@@ -43,7 +43,7 @@ export class DashboardComponent implements OnInit {
 
     this.http.get<any>(plans,{headers:headers,withCredentials:true,responseType:'json'}).subscribe({
       next: data => {
-          console.log(data)
+          // console.log(data)
           if (data['status_code'] == 200) {
               this.available_plans = data['plans'];
           } 
@@ -60,7 +60,6 @@ export class DashboardComponent implements OnInit {
           console.error('There was an error!', error);
       }
     });
-
 
     this.http.get<any>(user_upcoming_plan,{headers:headers,withCredentials:true,responseType:'json'}).subscribe({
       next: data => {

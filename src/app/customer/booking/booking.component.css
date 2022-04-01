@@ -1,13 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Coda');
 @import url('https://fonts.googleapis.com/css2?family=Roboto');
 
-/* Heading */
+body {
+  background-color: #ffffff;
+  background-image: none;
+  height: 100%;
+}
+
+/* Heading starts */
 h1 {
-  margin: 3% 2% 2%;
+  margin: 2% 2%;
   font-family: 'Coda';
   font-weight: bold;
-  font-size: 300%;
-  text-shadow: 2px 2px 2px rgba(255,255,255, 0.5);
+  font-size: 250%;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+  color: #fc2338;
 }
 
 /* Modal Heading */
@@ -18,40 +25,63 @@ h2 {
 /* Slots */
 .container {
   width: 40%;
-  background-color: wheat;
+  background-color: #9cdd8e;
   box-shadow: 6px 6px 8px 0 rgba(0, 0, 0, 0.25);
   border-radius: 10px;
+  border: solid 2px #000000;
+  text-align: center;
 }
 
-.col-3 {
-  padding: 0%;
+.demoButtons {
+  margin: 3% auto;
   border: solid 2px #000000;
 }
 
-.col-3:first-child {
-    border-top-left-radius: 10px;
+.col-3, .col-4 {
+  height: 100%;
+  width: 100%;
+  border: solid 2px #000000;
+  padding: 0%;
 }
 
-.col-3:nth-child(4) {
+  .col-4:first-child {
+      border-top-left-radius: 10px;
+      border-bottom-left-radius: 10px;
+  }
+
+  .col-4:last-child {
     border-top-right-radius: 10px;
-}
+    border-bottom-right-radius: 10px;
+  }
+
+  .col-3:first-child {
+    border-top-left-radius: 10px;
+  }
+
+  .col-3:nth-child(4) {
+    border-top-right-radius: 10px;
+  }
 
 /* Check Box */
 input[type=checkbox] {
-    display: none;
+  display: none;
 }
 
-  input[type=checkbox] + label {
+  input[type=checkbox] ~ label {
     width: 100%;
     display: inline-block;
-    padding: 5% 0%;
+    padding: 15% 0%;
+    color: #ffffff;
+    text-shadow: 0.5px 0.5px 0.5px rgba(0, 0, 0, 0.5);
+    font-weight: 500;
   }
 
-  input[type=checkbox]:not(:disabled):hover + label {
-    background-color: rgba(0, 0, 255, 0.5);
+  input[type=checkbox]:not(:disabled):hover ~ label {
+    background-color: rgba(3, 68, 247, 0.5);
   }
-  input[type=checkbox]:not(:disabled):checked + label {
-    background-color: blue;
+
+  input[type=checkbox]:checked ~ label {
+    background-color: rgba(3, 68, 247, 1);
   }
 
 .booked {

@@ -1,2 +1,35 @@
-<app-navbar></app-navbar>
-<h2 style="color:rgb(8, 8, 8);text-align:left">PLAN WORKS</h2>
+<!DOCTYPE html>
+<html>
+
+<head>
+
+</head>
+
+<body>
+    <div>
+        <div>
+            <app-navbar></app-navbar>
+        </div>
+        <!-- <h2 style="color:rgb(8, 8, 8);text-align:left">PLAN WORKS</h2> -->
+        <div class="container">
+            <div class="plans-container">
+                <div class="card" style="height: 180px;width: 300px;" *ngFor="let ind of available_plans">
+                    <h2 class="card-header">
+                        {{ ind.plan_name }}
+                    </h2>
+
+                    <div class="card-body">
+                        <p>
+                            discount: {{ ind.discount }}% <br />
+                            Duration: {{ ind.duration }}
+                        </p>
+
+                        <button type="submit" class="btn btn-primary">Book Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

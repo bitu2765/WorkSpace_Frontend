@@ -1,13 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Coda');
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro');
 
+body {
+    background-color: #ffffff;
+    background-image: none;
+    height: fit-content;
+}
+
 /* Heading starts */
 h1 {
-    margin: 3% 2% 2%;
-    font-family: 'Coda';
-    font-weight: bold;
-    font-size: 300%;
-    text-shadow: 2px 2px 2px rgba(255,255,255, 0.5);
+  margin: 2% 2%;
+  font-family: 'Coda';
+  font-weight: bold;
+  font-size: 250%;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+  color: #fc2338;
 }
 
 .h6 {
@@ -20,23 +27,23 @@ h1 {
 /* Card starts*/
 .card {
   border-radius: 15px !important;
-  background-color: rgba(255,255,255, 0.3) !important;
-  margin: 0% 7%;
-  border: 3px solid white !important;
+  background-color: rgba(3, 68, 247, 0.2) !important;
+  margin: 0% 7% 2%;
+  border: 3px solid rgba(3, 68, 247, 1) !important;
   backdrop-filter: blur( 4px );
 }
 
 .card-header {
-  background-color: rgb(230, 210, 210);
+  background-color: rgba(3, 68, 247, 1);
   margin: -2px;
   padding: 1% 2% !important;
   border-radius: 15px !important;
   font-size: 200%;
   font-family: 'Source Sans Pro';
   font-weight: bold;
-  text-shadow: 2px 2px 2px grey;
   text-transform: uppercase;
   text-align: center;
+  color: #ffffff;
 }
 
 .card-body {
@@ -62,9 +69,45 @@ h1 {
 }
 
 .carousel-control-prev, .carousel-control-next {
-    width: 7%;
+  width: 7%;
+}
+
+.carousel-control-prev-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%230344f7' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
+}
+
+.carousel-control-next-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%230344f7' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
 }
 /* Carousel ends */
+
+/* Recommonded */
+.recommended {
+  background-color: rgba(3, 68, 247, 0.8);
+  height: fit-content;
+  padding: 3% 0.5%;
+}
+
+.recommended h1 {
+    color: #ffffff;
+    margin: 1% 2% 2%;
+}
+
+  .recommended row {
+      width: 100%;
+
+  }
+
+  .recommended .card {
+    background-color: rgba(255, 255, 255, 0.65) !important;
+    border: 3px solid #ffffff !important;
+  }
+
+  .recommended .card-header {
+    background-color: #ffffff;
+    color: rgba(3, 68, 247, 1);
+    padding: 3% 0% !important;
+  }
 
 
 .plans-container{

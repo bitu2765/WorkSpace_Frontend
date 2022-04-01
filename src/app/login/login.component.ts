@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
   public login_fun() {
     this.http.post<any>(login,{id:2,username:this.username,password:this.password}).subscribe({
       next: data => {
-          // console.log(data)
+          console.log(data)
           if(data['status_code']!=200)
           {
             Swal.fire(

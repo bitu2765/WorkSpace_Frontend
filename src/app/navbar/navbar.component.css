@@ -5,7 +5,7 @@
 .dropdown-menu {
     min-width: fit-content;
 }
-.navbar{
+/* .navbar{
     background-color: rgb(8, 47, 156);
     color: blanchedalmond; 
     text-align: center;
@@ -13,7 +13,7 @@
     position: fixed;
     width: 100%;
    
-}
+} */
 .navbar-nav li a {
     text-decoration: none;
     color: white;

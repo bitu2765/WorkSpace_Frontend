@@ -7,7 +7,7 @@
 		color: black;
 		max-width: 80%;
 		margin: auto;
-		height: 80%;
+		height: auto;
 	}
 
 	/* home page*/
@@ -197,7 +197,7 @@
 /*contactus section*/
 .contactussection{
 	background-color: rgb(3, 68, 247);
-	height: 600px;
+	height: auto;
 }
 
 .contactus-text h1{
@@ -237,19 +237,19 @@
 /* plans details */
 
 .thirdhalf {
-	height: 800px;
+	height: auto;
 	width: 100%;
 }
 
-.plans-container{
+/* .plans-container{
     margin: 0px;
     padding: 0px;
     align-items: center;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 10px;
     grid-auto-rows: minmax(100px, auto);
-  }
+  } */
 
 
 

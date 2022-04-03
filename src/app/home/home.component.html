@@ -27,87 +27,83 @@
 			<div class="firstHalf">
 				<table>
 					<div class="banner">
-					<tr>
-						<div class="app-text">
+						<tr>
+							<div class="app-text">
 
-						<td>
-							<h3>Enhance your work style.</h3>
-							<h1>WELCOME TO<br>WORKSPACE.</h1>
-							<div class="btn-group">
-								<div class="signup-btn">Sign up now</div>
-							</div>
-						</td>
+								<td>
+									<h3>Enhance your work style.</h3>
+									<h1>WELCOME TO<br>WORKSPACE.</h1>
+									<div class="btn-group">
+										<div class="signup-btn">Sign up now</div>
+									</div>
+								</td>
 
-						<td>
-							<div class="app-picture">
-								<img src="./assets/workspace1.webp" />
-								<p>
-									"WORK FROM HOME THE FUTURE TREND ,
-									WORKSPACE THE FUTURE DEMAND."
-								</p>
+								<td>
+									<div class="app-picture">
+										<img src="./assets/workspace1.webp" />
+										<p>
+											"WORK FROM HOME THE FUTURE TREND ,
+											WORKSPACE THE FUTURE DEMAND."
+										</p>
+									</div>
+								</td>
 							</div>
-						</td>
+						</tr>
+					</div>
+
+				</table>
+
 			</div>
-			</tr>
-		</div>
-
-		</table>
-
-		</div>
 		</div>
 	</section>
 
 	<section id="aboutus" class="aboutussection">
 		<div class="box-main">
-			<div class="secondHalf">
+			<div class="secondHalf pb-3 ">
 				<table>
 					<div class="aboutus-banner">
-					<tr>
-						<div class="aboutus-text">
+						<tr>
+							<div class="aboutus-text">
 
-						<td>
-							<div class="aboutus-picture">
-								<h1>ABOUT<br>WORKSPACE</h1>
+								<td>
+									<div class="aboutus-picture">
+										<h1>ABOUT<br>WORKSPACE</h1>
 
-								<img src="./assets/aboutus1.jpg" />
+										<img src="./assets/aboutus1.jpg" />
 
+									</div>
+								</td>
+
+								<td>
+
+									<h3>"As we believe better workspace brings out better work outcomes."</h3>
+									<p>
+										Workspace provides the best solution for work home
+										come office atmosphere by overcoming all the obstacles
+										one faces while working at their own place just by
+										subscribing the prefect plan and enjoy all the benefits
+										which they wish while working at their office.
+									</p>
+									<p>
+										Find flexible Workspace on a single click. Here is the best plan model for
+										you...
+									</p>
+								</td>
 							</div>
-						</td>
-
-						<td>
-
-							<h3>"As we believe better workspace brings out better work outcomes."</h3>
-							<p>
-								Workspace provides the best solution for work home
-								come office atmosphere by overcoming all the obstacles
-								one faces while working at their own place just by
-								subscribing the prefect plan and enjoy all the benefits
-								which they wish while working at their office.
-							</p>
-							<p>
-								Find flexible Workspace on a single click. Here is the best plan model for
-								you...
-							</p>
-						</td>
+						</tr>
+					</div>
+				</table>
 			</div>
-			</tr>
-		</div>
-		</table>
-		</div>
 
 		</div>
 	</section>
 
 	<section id="plans" class="planssection">
 		<div class="thirdHalf"></div>
-		<div>
-			<div class="plans-text">
-				<h1>Recommended Plans</h1>
-			</div>
-
-			<!-- <div class="plans-container scrollmenu">
-			<div class="row">
-				<div class="card" style="height: 180px;width: 300px;" *ngFor="let ind of available_plans">
+		<div class="plans-text">
+			<h1>Recommended Plans</h1>
+		</div>
+		<!-- <div class="card" style="height: 180px;width: 300px;" *ngFor="let ind of available_plans">
 					<h2 class="card-header">
 						{{ ind.plan_name }}
 					</h2>
@@ -120,19 +116,29 @@
 
 						<button type="submit" class="btn btn-primary">Book Now</button>
 					</div>
+				</div> -->
+		<ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig"
+			(init)="slickInit($event)" (breakpoint)="breakpoint($event)" (afterChange)="afterChange($event)"
+			(beforeChange)="beforeChange($event)">
+			<div ngxSlickItem class="slide" *ngFor="let ind of available_plans">
+				<div class="card">
+					<h2 class="card-header">
+						{{ ind.plan_name }}
+					</h2>
+
+					<div class="card-body">
+						<p>
+							Discount: {{ ind.discount }}%
+							<br />
+							Duration: {{ ind.duration }} Days
+						</p>
+
+						<button class="btn btn-primary btn-md" type="submit">Book Now</button>
+					</div>
 				</div>
 			</div>
-		</div> -->
-		</div>
-		<ngx-slick-carousel class="carousel"
-												#slickModal="slick-carousel"
-												[config]="slideConfig"
-												(init)="slickInit($event)"
-												(breakpoint)="breakpoint($event)"
-												(afterChange)="afterChange($event)"
-												(beforeChange)="beforeChange($event)">
 
-			<div ngxSlickItem class="slide"> <!-- *ngFor="Write in this div tag"-->
+			<!-- <div ngxSlickItem class="slide">
 				<div class="card">
 					<h2 class="card-header">
 						Mini Pack 1
@@ -147,75 +153,8 @@
 						<button type="submit">Book Now</button>
 					</div>
 				</div>
-			</div>
+			</div> -->
 
-			<div ngxSlickItem class="slide">
-				<div class="card">
-					<h2 class="card-header">
-						Mini Pack 2
-					</h2>
-
-					<div class="card-body">
-						<p>
-							Plan 1 <br />
-							Price: 399/Month
-						</p>
-
-						<button type="submit">Book Now</button>
-					</div>
-				</div>
-			</div>
-
-			<div ngxSlickItem class="slide">
-				<div class="card">
-					<h2 class="card-header">
-						Mini Pack 3
-					</h2>
-
-					<div class="card-body">
-						<p>
-							Plan 1 <br />
-							Price: 399/Month
-						</p>
-
-						<button type="submit">Book Now</button>
-					</div>
-				</div>
-			</div>
-
-			<div ngxSlickItem class="slide">
-				<div class="card">
-					<h2 class="card-header">
-						Mini Pack 4
-					</h2>
-
-					<div class="card-body">
-						<p>
-							Plan 1 <br />
-							Price: 399/Month
-						</p>
-
-						<button type="submit">Book Now</button>
-					</div>
-				</div>
-			</div>
-
-			<div ngxSlickItem class="slide">
-				<div class="card">
-					<h2 class="card-header">
-						Mini Pack 5
-					</h2>
-
-					<div class="card-body">
-						<p>
-							Plan 1 <br />
-							Price: 399/Month
-						</p>
-
-						<button type="submit">Book Now</button>
-					</div>
-				</div>
-			</div>
 		</ngx-slick-carousel>
 	</section>
 
@@ -241,7 +180,7 @@
 								</td>
 								<td>
 									<input name="Name" type="text" maxlength="60" placeholder="Username"
-												 style="width:100%;max-width:250px;border-radius: 5px;" />
+										style="width:100%;max-width:250px;border-radius: 5px;" />
 								</td>
 							</tr>
 							<tr>
@@ -253,7 +192,7 @@
 								</td>
 								<td>
 									<input name="PhoneNumber" type="text" maxlength="43" placeholder="Contact Number"
-												 style="width:100%;max-width:250px;border-radius: 5px;" />
+										style="width:100%;max-width:250px;border-radius: 5px;" />
 								</td>
 							</tr>
 							<tr>
@@ -265,8 +204,8 @@
 								</td>
 								<td>
 									<input name="FromEmailAddress" type="text" maxlength="90"
-												 placeholder="Email Address"
-												 style="width:100%;max-width:250px;border-radius: 5px;" />
+										placeholder="Email Address"
+										style="width:100%;max-width:250px;border-radius: 5px;" />
 								</td>
 							</tr>
 							<tr>
@@ -275,7 +214,7 @@
 								</td>
 								<td>
 									<textarea name="Comments" placeholder="Write your comments here." rows="5" cols="40"
-														style="width:100%;max-width:350px;border-radius: 5px;"></textarea>
+										style="width:100%;max-width:350px;border-radius: 5px;"></textarea>
 								</td>
 							</tr>
 							<tr>
@@ -285,7 +224,7 @@
 										<div class="submit-btn">SUBMIT</div>
 									</div>
 									<script src="https://www.100forms.com/js/FORMKEY:5CLYMWS8UNHM/SEND:my@email.com"
-													type="text/javascript"></script>
+										type="text/javascript"></script>
 								</td>
 							</tr>
 							<tr>

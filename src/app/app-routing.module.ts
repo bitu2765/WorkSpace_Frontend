@@ -21,7 +21,7 @@ import { AdminHomeComponent } from './admin/admin-home/admin-home.component';
 import { AdminauthGuard } from './Authentication/admin/adminauth.guard';
 
 const routes: Routes = [
-  { path: '', component: LoginComponent },
+  { path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'home', component: HomeComponent },

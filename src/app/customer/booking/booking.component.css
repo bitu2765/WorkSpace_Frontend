@@ -1,6 +1,43 @@
 @import url('https://fonts.googleapis.com/css2?family=Coda');
 @import url('https://fonts.googleapis.com/css2?family=Roboto');
 
+
+
+.plans-container{
+  display: grid;
+  grid-template-columns: repeat(8,1fr);
+  grid-gap: 1px;
+}
+.main-content{
+  height: 91vh;
+  overflow-y: scroll;
+}
+.slot-input-box{
+  width: 100vw;
+  /* align-items: center; */
+  display: flex;
+  /* flex-direction: row; */
+  justify-content: center;
+}
+.slot-input{
+  margin: 5px;
+  width: 200px;
+}
+.desk-box{
+  /* margin: 2px; */
+  border-radius: 5px;
+  padding: 0px;
+  height: 70px;
+  width: 90px;
+}
+.slot-available{
+  background-color: green;
+}
+.slot-booked{
+  background-color: red;
+}
+
+
 body {
   background-color: #ffffff;
   background-image: none;

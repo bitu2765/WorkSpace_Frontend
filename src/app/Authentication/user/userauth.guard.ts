@@ -13,10 +13,10 @@ export class UserauthGuard implements CanActivate {
 
   canActivate():Observable<boolean | UrlTree > {
 
-    const headers = new HttpHeaders();
-    headers.set("Access-Control-Allow-Credentials","*");
+    // const headers = new HttpHeaders();
+    // headers.set("Access-Control-Allow-Credentials","*");
     let val=false;
-    return this.http.get<any>(user_verify,{headers:headers,withCredentials:true,responseType:'json'}).pipe(
+    return this.http.get<any>(user_verify).pipe(
       map(res => {
         // console.log(res['success']);
         if (res['status_code'] == 200) {

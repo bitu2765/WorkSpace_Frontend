@@ -39,10 +39,12 @@ export class DashboardComponent implements OnInit {
   
   constructor(private http:HttpClient,private _router:Router) { 
 
-    const headers = new HttpHeaders();
-    headers.set("Access-Control-Allow-Credentials","*");
+    // const headers = new HttpHeaders();
+    // headers.set("Access-Control-Allow-Credentials","*");
 
-    this.http.get<any>(user_active_plan,{headers:headers,withCredentials:true,responseType:'json'}).subscribe({
+    this.http.get<any>(user_active_plan,
+      // {headers:headers,withCredentials:true,responseType:'json'}
+      ).subscribe({
       next: data => {
           // console.log(data)
           if (data['status_code'] == 200) {
@@ -62,7 +64,9 @@ export class DashboardComponent implements OnInit {
       }
     });
 
-    this.http.get<any>(plans,{headers:headers,withCredentials:true,responseType:'json'}).subscribe({
+    this.http.get<any>(plans,
+      // {headers:headers,withCredentials:true,responseType:'json'}
+      ).subscribe({
       next: data => {
           // console.log(data)
           if (data['status_code'] == 200) {
@@ -82,7 +86,9 @@ export class DashboardComponent implements OnInit {
       }
     });
 
-    this.http.get<any>(user_upcoming_plan,{headers:headers,withCredentials:true,responseType:'json'}).subscribe({
+    this.http.get<any>(user_upcoming_plan,
+      // {headers:headers,withCredentials:true,responseType:'json'}
+      ).subscribe({
       next: data => {
           // console.log(data)
           if (data['status_code'] == 200) {

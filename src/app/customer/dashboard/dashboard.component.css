@@ -57,8 +57,8 @@ h1 {
 }
 /* Card ends*/
 
-/* Carousel starts */
-.carousel-inner {
+/* Old Carousel starts */
+/*.carousel-inner {
     padding: 0%;
     margin: 0%;
 }
@@ -78,8 +78,12 @@ h1 {
 
 .carousel-control-next-icon {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%230344f7' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
+}*/
+/* Old Carousel ends */
+
+.carousel {
+    margin: 3%;
 }
-/* Carousel ends */
 
 /* Recommonded */
 .recommended {

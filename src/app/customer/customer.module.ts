@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { SlickCarouselModule } from 'ngx-slick-carousel';
 
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProfileComponent } from './profile/profile.component';
@@ -19,7 +20,8 @@ import { BookingComponent } from './booking/booking.component';
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    SlickCarouselModule,
   ],
 })
 export class CustomerModule { }

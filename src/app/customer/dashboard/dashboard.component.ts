@@ -15,6 +15,27 @@ export class DashboardComponent implements OnInit {
   public available_plans=Array();
   public upcoming_plans=Array();
 
+  slideConfig = {
+    "infinite": true,
+    "slidesToShow": 4,
+    "slidesToScroll": 1,
+    "autoplay": true,
+    "autoplaySpeed": 2000,
+    "arrows": false,
+  };
+
+  slickInit(e: any) {
+    console.log('slick initialized');
+  }
+  breakpoint(e: any) {
+    console.log('breakpoint');
+  }
+  afterChange(e: any) {
+    console.log('afterChange');
+  }
+  beforeChange(e: any) {
+    console.log('beforeChange');
+  }
   
   constructor(private http:HttpClient,private _router:Router) { 
 

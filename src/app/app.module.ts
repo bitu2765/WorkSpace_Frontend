@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
+import { SlickCarouselModule } from 'ngx-slick-carousel';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -59,7 +60,8 @@ export const user_purchase_history =  domain_URL + "/user/purchase_history"
     CustomerModule,
     FormsModule,
     SweetAlert2Module,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    SlickCarouselModule,
     
   ],
   providers: [

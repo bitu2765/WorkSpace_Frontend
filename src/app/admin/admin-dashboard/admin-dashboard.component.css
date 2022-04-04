@@ -1,6 +1,31 @@
 @import "../admin-home/admin-home.component.css";
  
   /* Create two equal columns that floats next to each other */
+  .plans-container{
+    display: grid;
+    margin: 0px;
+    padding: 0px;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 5px;
+    grid-auto-rows: minmax(100px, auto);
+  }
+  .main-content{
+    height: 91vh;
+    overflow-y: scroll;
+  }
+  .desk-box{
+    margin: 2px;
+    border-radius: 5px;
+    padding: 0px;
+    height: 150px;
+    width: 150px;
+  }
+  .slot-available{
+    background-color: green;
+  }
+  .slot-booked{
+    background-color: red;
+  }
  .column {
     float: left;
     width: 25%;
@@ -62,4 +87,6 @@
             .button:hover {
             background: rgb(3, 68, 247);
             }
+
+
            

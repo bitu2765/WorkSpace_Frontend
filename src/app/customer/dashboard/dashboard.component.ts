@@ -15,13 +15,36 @@ export class DashboardComponent implements OnInit {
   public available_plans=Array();
   public upcoming_plans=Array();
 
+  slideConfig = {
+    "infinite": true,
+    "slidesToShow": 4,
+    "slidesToScroll": 1,
+    "autoplay": true,
+    "autoplaySpeed": 2000,
+    "arrows": false,
+  };
+
+  slickInit(e: any) {
+    console.log('slick initialized');
+  }
+  breakpoint(e: any) {
+    console.log('breakpoint');
+  }
+  afterChange(e: any) {
+    console.log('afterChange');
+  }
+  beforeChange(e: any) {
+    console.log('beforeChange');
+  }
   
   constructor(private http:HttpClient,private _router:Router) { 
 
-    const headers = new HttpHeaders();
-    headers.set("Access-Control-Allow-Credentials","*");
+    // const headers = new HttpHeaders();
+    // headers.set("Access-Control-Allow-Credentials","*");
 
-    this.http.get<any>(user_active_plan,{headers:headers,withCredentials:true,responseType:'json'}).subscribe({
+    this.http.get<any>(user_active_plan,
+      // {headers:headers,withCredentials:true,responseType:'json'}
+      ).subscribe({
       next: data => {
           // console.log(data)
           if (data['status_code'] == 200) {
@@ -41,7 +64,9 @@ export class DashboardComponent implements OnInit {
       }
     });
 
-    this.http.get<any>(plans,{headers:headers,withCredentials:true,responseType:'json'}).subscribe({
+    this.http.get<any>(plans,
+      // {headers:headers,withCredentials:true,responseType:'json'}
+      ).subscribe({
       next: data => {
           // console.log(data)
           if (data['status_code'] == 200) {
@@ -61,7 +86,9 @@ export class DashboardComponent implements OnInit {
       }
     });
 
-    this.http.get<any>(user_upcoming_plan,{headers:headers,withCredentials:true,responseType:'json'}).subscribe({
+    this.http.get<any>(user_upcoming_plan,
+      // {headers:headers,withCredentials:true,responseType:'json'}
+      ).subscribe({
       next: data => {
           // console.log(data)
           if (data['status_code'] == 200) {

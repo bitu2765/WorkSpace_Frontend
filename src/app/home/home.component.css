@@ -7,7 +7,7 @@
 		color: black;
 		max-width: 80%;
 		margin: auto;
-		height: 80%;
+		height: auto;
 	}
 
 	/* home page*/
@@ -152,7 +152,7 @@
 	/*recommended plans cards*/
 	.planssection{
 		background-color: rgb(255, 255, 255);
-		height: 700px;
+		height: 400px;
 	}
 
 	.plans-text h1{
@@ -168,23 +168,24 @@
 	}
 	.card {
 	  border-radius: 15px !important;
-	  background-color: rgba(255,255,255, 0.3) !important;
-	  margin: 3% 7%;
+	  background-color: rgba(3, 68, 247, 0.3) !important;
+	  margin: 5% 7%;
 	  border: 3px solid rgb(40, 26, 223) !important;
 	  backdrop-filter: blur( 4px );
 	}
 	
 	.card-header {
-	  background-color: white;
+	  background-color: rgba(3, 68, 247, 1);
 	  margin: -2px;
 	  padding: 1% 2% !important;
 	  border-radius: 15px !important;
 	  font-size: 200%;
 	  font-family: Coda;
 	  font-weight: bold;
-	  text-shadow: 2px 2px 2px grey;
+	  text-shadow: 2px 2px 2px rgba(0,0,0, 0.5);
 	  text-transform: uppercase;
 	  text-align: center;
+    color: white;
 	}
 	
 	.card-body {
@@ -196,7 +197,7 @@
 /*contactus section*/
 .contactussection{
 	background-color: rgb(3, 68, 247);
-	height: 600px;
+	height: auto;
 }
 
 .contactus-text h1{
@@ -236,19 +237,19 @@
 /* plans details */
 
 .thirdhalf {
-	height: 800px;
+	height: auto;
 	width: 100%;
 }
 
-.plans-container{
+/* .plans-container{
     margin: 0px;
     padding: 0px;
     align-items: center;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 10px;
     grid-auto-rows: minmax(100px, auto);
-  }
+  } */
 
 
 
@@ -268,4 +269,3 @@
 	color: #34b7a7;
   }
 
-  

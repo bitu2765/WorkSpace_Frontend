@@ -9,6 +9,7 @@
 </head>
 
 <body>
+
   <body>
     <app-customer-navbar></app-customer-navbar>
 
@@ -17,6 +18,34 @@
         Active Plans
       </h1>
     </div>
+
+    <!-- <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig" (init)="slickInit($event)"
+      (breakpoint)="breakpoint($event)" (afterChange)="afterChange($event)" (beforeChange)="beforeChange($event)">
+
+      <div ngxSlickItem class="slide" *ngFor="let ind of active_plans; index as i">
+        <div class="card">
+          <h2 class="card-header">
+            <div style="display: flex; justify-content: space-between">
+              <span>{{ ind.plan_type }} <span class="h6">({{ ind.duration }} days)</span></span>
+              <span>{{ ind.price }} /-</span>
+            </div>
+          </h2>
+
+          <div class="card-body">
+            <p id="active-plan">
+              Desk : <span *ngFor="let des of ind.desk_no;let isLast=last">
+                {{ des }}
+                <span *ngIf="!isLast">,</span>
+              </span>
+              <br />
+              Expiry Date : {{ ind.expiry_date }}
+              <br />
+              Address : {{ ind.address }} , {{ ind.state }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </ngx-slick-carousel> -->
 
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="3000">
       <div class="carousel-inner">
@@ -31,7 +60,6 @@
 
             <div class="card-body">
               <!-- <p id="active-plan">
-
             </p> -->
               <p id="active-plan">
                 Desk : <span *ngFor="let des of ind.desk_no;let isLast=last">
@@ -62,104 +90,12 @@
     <div class="recommended">
       <h1 style="text-align: center;">Recommended Plans</h1>
 
-      <div class="container">
-        <div class="plans-container">
-          <div class="card" style="height: 180px;width: 300px;" *ngFor="let ind of available_plans">
-            <h2 class="card-header">
-              {{ ind.plan_name }}
-            </h2>
+      <!-- <div class="container"> -->
+      <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig"
+        (init)="slickInit($event)" (breakpoint)="breakpoint($event)" (afterChange)="afterChange($event)"
+        (beforeChange)="beforeChange($event)">
 
-            <div class="card-body">
-              <p>
-                discount: {{ ind.discount }}% <br />
-                Duration: {{ ind.duration }}
-              </p>
-
-              <button type="submit" class="btn btn-primary">Book Now</button>
-            </div>
-          </div>
-          <!-- </div> -->
-          <!-- <div class="col-sm">
-          <div class="card">
-            <h2 class="card-header">
-              Mini Pack 2
-            </h2>
-
-            <div class="card-body">
-              <p>
-                Plan 2 <br />
-                Price: 599/Month
-              </p>
-
-              <button type="submit">Book Now</button>
-            </div>
-          </div>
-        </div> -->
-        <!-- <div class="col-sm">
-          <div class="card">
-            <h2 class="card-header">
-              Mini Pack 3
-            </h2>
-
-            <div class="card-body">
-              <p>
-                Plan 3 <br />
-                Price: 799/Month
-              </p>
-
-              <button type="submit">Book Now</button>
-            </div>
-          </div>
-        </div> -->
-        </div>
-
-        <!-- <div class="row">
-          <div class="col-sm">
-            <div class="card">
-              <h2 class="card-header">
-                Mini Pack 1
-              </h2>
-
-                <div class="card-body">
-                  <p>
-                    Plan 1 <br />
-                    Price: 399/Month
-                  </p>
-
-                  <button type="submit" class="btn btn-success">Book Now</button>
-                </div>
-              </div>
-            </div>
-
-            <div class="col">
-              <div class="card">
-                <h2 class="card-header">
-                  Mini Pack 2
-                </h2>
-
-                <div class="card-body">
-                  <p>
-                    Plan 2 <br />
-                    Price: 599/Month
-                  </p>
-
-                  <button type="submit" class="btn btn-success">Book Now</button>
-                </div>
-              </div>
-            </div>
-
-          <div class="col-sm"></div>
-        </div> -->
-      </div>
-    </div>
-
-    <!-- <div>
-    <h1 style="text-align: center;">Upcoming Plans</h1>
-
-    <div class="container">
-      <div class="row">
-
-        <div class="col-sm">
+        <!-- <div ngxSlickItem class="slide">
           <div class="card">
             <h2 class="card-header">
               Mini Pack 1
@@ -174,9 +110,27 @@
               <button type="submit">Book Now</button>
             </div>
           </div>
+        </div> -->
+
+        <div ngxSlickItem class="slide" *ngFor="let ind of available_plans">
+          <div class="card">
+            <h2 class="card-header">
+              {{ ind.plan_name }}
+            </h2>
+
+            <div class="card-body">
+              <p>
+                Discount: {{ ind.discount }}%
+                <br />
+                Duration: {{ ind.duration }} Days
+              </p>
+
+              <button class="btn btn-primary btn-md" type="submit">Book Now</button>
+            </div>
+          </div>
         </div>
 
-        <div class="col-sm">
+        <!-- <div ngxSlickItem class="slide">
           <div class="card">
             <h2 class="card-header">
               Mini Pack 2
@@ -184,21 +138,86 @@
 
             <div class="card-body">
               <p>
-                Plan 2 <br />
-                Price: 599/Month
+                Plan 1 <br />
+                Price: 399/Month
               </p>
 
               <button type="submit">Book Now</button>
             </div>
           </div>
-        </div>
+        </div> -->
 
-        <div class="col-sm">
+        <!-- <div ngxSlickItem class="slide">
+          <div class="card">
+            <h2 class="card-header">
+              Mini Pack 3
+            </h2>
 
-        </div>
-      </div>
+            <div class="card-body">
+              <p>
+                Plan 1 <br />
+                Price: 399/Month
+              </p>
+
+              <button type="submit">Book Now</button>
+            </div>
+          </div>
+        </div> -->
+
+        <!-- <div ngxSlickItem class="slide">
+          <div class="card">
+            <h2 class="card-header">
+              Mini Pack 4
+            </h2>
+
+            <div class="card-body">
+              <p>
+                Plan 1 <br />
+                Price: 399/Month
+              </p>
+
+              <button type="submit">Book Now</button>
+            </div>
+          </div>
+        </div> -->
+
+        <!-- <div ngxSlickItem class="slide">
+          <div class="card">
+            <h2 class="card-header">
+              Mini Pack 5
+            </h2>
+
+            <div class="card-body">
+              <p>
+                Plan 1 <br />
+                Price: 399/Month
+              </p>
+
+              <button type="submit">Book Now</button>
+            </div>
+          </div>
+        </div> -->
+      </ngx-slick-carousel>
+
+      <!-- <div class="plans-container">
+          <div class="card" style="height: 180px;width: 300px;" *ngFor="let ind of available_plans">
+            <h2 class="card-header">
+              {{ ind.plan_name }}
+            </h2>
+
+            <div class="card-body">
+              <p>
+                discount: {{ ind.discount }}% <br />
+                Duration: {{ ind.duration }}
+              </p>
+
+              <button type="submit" class="btn btn-primary">Book Now</button>
+            </div>
+          </div>
+        </div> -->
+      <!-- </div> -->
     </div>
-  </div> -->
+
 
     <div class="text-center mt-2">
       <h1>
@@ -218,9 +237,9 @@
             </h2>
 
             <div class="card-body">
-              <!-- <p id="active-plan">
+              <p id="active-plan">
 
-    </p> -->
+              </p>
               <p id="active-plan">
                 Desk : <span *ngFor="let des of ind.desk_no;let isLast=last">
                   {{ des }}
@@ -235,7 +254,6 @@
           </div>
         </div>
       </div>
-
       <!-- Buttons -->
       <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>

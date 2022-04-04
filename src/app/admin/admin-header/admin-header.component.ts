@@ -27,10 +27,12 @@ export class AdminHeaderComponent implements OnInit {
 
   logout_fun(){
 
-    const headers = new HttpHeaders();
-    headers.set("Access-Control-Allow-Credentials","*");
+    // const headers = new HttpHeaders();
+    // headers.set("Access-Control-Allow-Credentials","*");
 
-    this.http.get<any>(logout,{headers:headers,withCredentials:true,responseType:'json'}).subscribe({
+    this.http.get<any>(logout,
+      // {headers:headers,withCredentials:true,responseType:'json'}
+      ).subscribe({
       next: data => {
           console.log(data)
           if (data['status_code'] == 200) {

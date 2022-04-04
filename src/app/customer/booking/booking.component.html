@@ -1,20 +1,39 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>Customer</title>
   <link type="text/css" rel="stylesheet" href="booking.component.css" />
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
+
 <body>
+
   <body>
     <app-customer-navbar></app-customer-navbar>
-    
-    <div class="text-center mt-2">
+
+    <div class=" main-content text-center mt-2">
       <h1>
         Slot Booking
       </h1>
+      <div class="slot-input-box">
+        <!-- <div class="row"> -->
+        <input class="form-control slot-input" value="searchdate" type="date" (change)="SendDatetoFunction($event)"
+          name="date" id="date">
+        <select class="form-control slot-input " (change)="SendLocationtoFunction($event)" name="location" id="locate">
+          <option value="">Select Location</option>
+          <option value="{{ ind.id }}" *ngFor=" let ind of locations ">{{ ind.add }} - {{ ind.city }}</option>
+        </select>
+        <!-- </div> -->
+      </div>
+      <div class="slot-input-box">
+        <!-- <div class="row"> -->
+        <input class="btn btn-lg btn-success" type="button" (click)="getdeskdetails()" value="submit" name="Submit" />
+        <!-- </div> -->
+      </div>
 
-      <div class="container demoButtons">
+      <!-- <div class="container demoButtons">
         <div class="row align-items-center">
           <div class="col-4">
             <input type="checkbox" name="demo" value="1" id="available" disabled /> &nbsp;
@@ -31,10 +50,10 @@
             <label for="selected">Selected</label>
           </div>
         </div>
-      </div>
+      </div> -->
 
       <!-- Slot Details -->
-      <div class="container">
+      <!-- <div class="container">
         <div class="row align-items-center">
           <div class="col-3">
             <input type="checkbox" name="slots" value="1" id="one" /> &nbsp;
@@ -61,6 +80,95 @@
             <label for="five">Slot 5</label>
           </div>
         </div>
+      </div> -->
+
+      <div class="d-flex justify-content-center mt-3 ">
+        <div class="row">
+          <div class="col w-75">
+            <div class="plans-container">
+              <!-- <div class="desk-box slot-available">
+            <h2>DESK 1</h2>
+            <p><a class="button" routerLink="/admin/slot-details">Booked</a></p>
+          </div>
+          <div class="desk-box slot-available">
+            <h2>DESK 2</h2>
+            <p><a class="button" routerLink="/admin/slot-details">Booked</a></p>
+          </div>
+          <div class="desk-box slot-booked">
+            <h2>DESK 3</h2>
+            <p><a class="button" routerLink="/admin/slot-details">Booked</a></p>
+          </div>
+          <div class="desk-box slot-booked">
+            <h2>DESK 4</h2>
+            <p><a class="button" routerLink="/admin/slot-details">Booked</a></p>
+          </div>
+          <div class="desk-box slot-available">
+            <h2>DESK 5</h2>
+            <p><a class="button" routerLink="/admin/slot-details">Booked</a></p>
+          </div>
+          <div class="desk-box slot-available">
+            <h2>DESK 6</h2>
+            <p><a class="button" routerLink="/admin/slot-details">Booked</a></p>
+          </div>
+          <div class="desk-box slot-booked">
+            <h2>DESK 7</h2>
+            <p><a class="button" routerLink="/admin/slot-details">Booked</a></p>
+          </div>
+          <div class="desk-box slot-booked">
+            <h2>DESK 8</h2>
+            <p><a class="button" routerLink="/admin/slot-details">Booked</a></p>
+          </div>
+          <div class="desk-box slot-available">
+            <h2>DESK 9</h2>
+            <p><a class="button" routerLink="/admin/slot-details">Booked</a></p>
+          </div>
+          <div class="desk-box slot-available">
+            <h2>DESK 10</h2>
+            <p><a class="button" routerLink="/admin/slot-details">Booked</a></p>
+          </div>
+          <div class="desk-box slot-booked">
+            <h2>DESK 11</h2>
+            <p><a class="button" routerLink="/admin/slot-details">Booked</a></p>
+          </div>
+          <div class="desk-box slot-booked">
+            <h2>DESK 12</h2>
+            <p><a class="button" routerLink="/admin/slot-details">Booked</a></p>
+          </div> -->
+
+              <div class="desk-box" *ngFor="let ind of desk_detail;let i = index" [attr.data-index]="i">
+
+                <div class="desk-box slot-available" *ngIf="!ind">
+                  <h2>
+                    Desk {{ i+1 }}
+                  </h2>
+                </div>
+                <div class="desk-box slot-booked" *ngIf="ind">
+                  <h2>
+                    Desk {{ i+1 }}
+                  </h2>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+          <div class="col">
+            <div class="card" style="height: 200px;width: 200px;">
+              <h2 class="card-header">
+                Mini Pack 1
+              </h2>
+
+              <div class="card-body">
+                <p>
+                  Plan 1 <br />
+                  Price: 399/Month
+                </p>
+
+                <button class="btn btn-lg btn-primary" type="submit" (click)="purchaseplan()"  >Book Now</button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
       <!-- Button trigger modal -->
@@ -69,7 +177,8 @@
       </button>
 
       <!-- Modal -->
-      <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
           <div class="modal-content">
 
@@ -95,4 +204,5 @@
     </div>
   </body>
 </body>
+
 </html>

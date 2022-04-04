@@ -35,4 +35,10 @@
    margin: 30px;
    border-radius: 30px;
    padding-left: 30px;
+   margin-top: 150px;
   }
+  .ScrollStyle
+{
+    max-height: 500px;
+    overflow-y: scroll;
+}

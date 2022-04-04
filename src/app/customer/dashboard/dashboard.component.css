@@ -44,12 +44,16 @@ h1 {
   text-transform: uppercase;
   text-align: center;
   color: #ffffff;
+  line-height: 1;
 }
 
 .card-body {
   padding: 2% !important;
   font-size: 120%;
   text-align: center;
+  height: fit-content;
+  line-height: 1.5;
+
 }
 
 #active-plan {
@@ -119,4 +123,10 @@ h1 {
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
   grid-auto-rows: minmax(100px, auto);
+}
+
+/* Rounded border */
+hr.rounded {
+  border-top: 4px solid rgb(255, 255, 255);
+  border-radius: 5px;
 }

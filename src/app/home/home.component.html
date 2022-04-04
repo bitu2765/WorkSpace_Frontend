@@ -98,62 +98,48 @@
 		</div>
 	</section>
 
+
 	<section id="plans" class="planssection">
 		<div class="thirdHalf"></div>
 		<div class="plans-text">
 			<h1>Recommended Plans</h1>
 		</div>
-		<!-- <div class="card" style="height: 180px;width: 300px;" *ngFor="let ind of available_plans">
-					<h2 class="card-header">
-						{{ ind.plan_name }}
-					</h2>
-
-					<div class="card-body">
-						<p>
-							discount: {{ ind.discount }}% <br />
-							Duration: {{ ind.duration }}
-						</p>
-
-						<button type="submit" class="btn btn-primary">Book Now</button>
-					</div>
-				</div> -->
 		<ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig"
 			(init)="slickInit($event)" (breakpoint)="breakpoint($event)" (afterChange)="afterChange($event)"
 			(beforeChange)="beforeChange($event)">
-			<div ngxSlickItem class="slide" *ngFor="let ind of available_plans">
-				<div class="card">
-					<h2 class="card-header">
-						{{ ind.plan_name }}
+			<div ngxSlickItem class="slide " *ngFor="let ind of available_plans">
+				<div class="card" style="height: 100%;width: 300px;border-radius: 6px;">
+					<h2 style="text-align: center;text-transform: uppercase;font-weight: 800;" class="card-header">
+						{{ ind.plan_name }}<br />
+						<h3 style="text-transform: lowercase;font-style: italic;">Plan for 2
+							memembers.
+						</h3>
+
 					</h2>
 
-					<div class="card-body">
-						<p>
-							Discount: {{ ind.discount }}%
-							<br />
-							Duration: {{ ind.duration }} Days
-						</p>
+					<div style="text-align: center;" class="card-body">
 
-						<button class="btn btn-primary btn-md" type="submit">Book Now</button>
+						<p> 4G WiFi Facility<br /></p>
+						<hr class="rounded">
+						<p> Quite Working Area<br /></p>
+						<hr class="rounded">
+						<p>Personal Desk Area<br /></p>
+						<hr class="rounded">
+
+
+
+						<p> Enjoy for {{ ind.duration }} days<br /> </p>
+						<hr class="rounded">
+						<p style="font-style: italic;font-weight: 700;">Get {{ ind.discount }}%
+							off.</p>
+						<hr class="rounded">
+
+
+
+						<button type="submit" class="btn btn-primary">Book Now</button>
 					</div>
 				</div>
 			</div>
-
-			<!-- <div ngxSlickItem class="slide">
-				<div class="card">
-					<h2 class="card-header">
-						Mini Pack 1
-					</h2>
-
-					<div class="card-body">
-						<p>
-							Plan 1 <br />
-							Price: 399/Month
-						</p>
-
-						<button type="submit">Book Now</button>
-					</div>
-				</div>
-			</div> -->
 
 		</ngx-slick-carousel>
 	</section>
@@ -162,7 +148,7 @@
 		<div class="box-main">
 			<div class="fourthHalf">
 				<div class="contactus-text">
-					<h1>CONTACT US</h1>
+					<h1 style="text-align: center;">CONTACT US</h1>
 					<form action="//submit.form" id="ContactUs100" method="post">
 						<script type="text/javascript">
 							function ValidateForm(frm) {

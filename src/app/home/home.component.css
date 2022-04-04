@@ -5,7 +5,7 @@
 		justify-content: center;
 		align-items: center;
 		color: black;
-		max-width: 80%;
+		max-width: 100%;
 		margin: auto;
 		height: auto;
 	}
@@ -149,10 +149,38 @@
 	padding-top: 10px;
 	
 }
+
+#active-plan {
+    text-align: left;
+}
+/* Carousel starts */
+.carousel-inner {
+    padding: 0%;
+    margin: 0%;
+}
+
+.carousel-item {
+    margin: 0% !important;
+    height:520px !important;
+}
+
+.carousel-control-prev, .carousel-control-next {
+  width: 7%;
+}
+
+.carousel-control-prev-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%230344f7' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
+}
+
+.carousel-control-next-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%230344f7' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
+}
+/* Carousel ends */
+
 	/*recommended plans cards*/
 	.planssection{
 		background-color: rgb(255, 255, 255);
-		height: 400px;
+		height: auto;
 	}
 
 	.plans-text h1{
@@ -172,7 +200,12 @@
 	  margin: 5% 7%;
 	  border: 3px solid rgb(40, 26, 223) !important;
 	  backdrop-filter: blur( 4px );
+		height: 100%;
 	}
+.recommended {
+    width: 100%;
+	background-color:#fff;
+}
 	
 	.card-header {
 	  background-color: rgba(3, 68, 247, 1);
@@ -186,13 +219,39 @@
 	  text-transform: uppercase;
 	  text-align: center;
     color: white;
+	padding: 3% 0.5%;
+  }
+  
+  .recommended h1 {
+	  color: #ffffff;
+	  margin: 1% 2% 2%;
+  }
+  
+	.recommended row {
+		width: 100%;
+        
 	}
-	
-	.card-body {
-	  padding: 2% !important;
-	  font-size: 120%;
-	  text-align: center;
+  
+	.recommended .card {
+	  background-color: rgba(3, 68, 247,0.65) !important;
+	  border: 3px solid #ffffff !important;
+      box-shadow: #000;
+    
 	}
+  
+	.recommended .card-header {
+	  background-color: #ffffff;
+	  color: rgba(3, 68, 247, 1);
+	  padding: 3% 0% !important;
+	}
+    .plans-container{
+        width: fit-content !important;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        grid-auto-rows: minmax(100px, auto);
+        /* height: 50%; */
+      }
+
 
 /*contactus section*/
 .contactussection{

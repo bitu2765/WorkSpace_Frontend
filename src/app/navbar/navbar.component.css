@@ -7,8 +7,17 @@
 }
 
 .navbar {
-  background-color: rgb(3, 68, 247) !important;
+  /* background-color: rgb(3, 68, 247) !important; */
   font-weight: bold;
+  background-color: rgb(8, 47, 156)!important;
+  color: blanchedalmond; 
+  text-align: center;
+  /* z-index: 2;
+  position: fixed; */
+  width: 100%;
+
+  padding-right:100px ;
+ 
 }
 
   .navbar-brand {
@@ -53,10 +62,10 @@
     width: 100%;
    
 } */
-.navbar-nav li a {
+.navbar a {
     text-decoration: none;
     color: white;
-    padding-left: 190px;
+    padding-left: 100px;
 }
 .navbar-brand{
     text-decoration: none;

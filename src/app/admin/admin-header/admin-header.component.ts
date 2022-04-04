@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
-import { logout } from 'src/app/app.module';
+import { admin_profile, logout } from 'src/app/app.module';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -11,7 +11,35 @@ import Swal from 'sweetalert2';
 })
 export class AdminHeaderComponent implements OnInit {
   @Output() toggleSidebarForMe: EventEmitter<any> = new EventEmitter();
-  constructor(private _router:Router,private http:HttpClient) {}
+
+  public name=``;
+
+  constructor(private _router:Router,private http:HttpClient) {
+
+    this.http.get<any>(admin_profile,
+      // {headers:headers,withCredentials:true,responseType:'json'}
+      ).subscribe({
+      next: data => {
+          console.log(data)
+          if (data['status_code'] == 200) {
+            this.name=data['admin']["name"];
+          } 
+          else {
+            Swal.fire(
+              'Something Went Wrong',
+              "Try to Login again",
+              'error'
+            );
+            this._router.navigateByUrl("login");
+          }
+      },
+      error: error => {
+          // this.errorMessage = error.message;
+          console.error('There was an error!', error);
+      }
+    })
+
+  }
 
   ngOnInit(): void {}
   sideBarOpen = true;

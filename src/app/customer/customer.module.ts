@@ -8,6 +8,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { HistoryComponent } from './history/history.component';
 import { CustomerNavbarComponent } from './customer-navbar/customer-navbar.component';
 import { BookingComponent } from './booking/booking.component';
+import { PlanselectionComponent } from './planselection/planselection.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { BookingComponent } from './booking/booking.component';
     ProfileComponent,
     HistoryComponent,
     CustomerNavbarComponent,
-    BookingComponent
+    BookingComponent,
+    PlanselectionComponent
   ],
   imports: [
     CommonModule,

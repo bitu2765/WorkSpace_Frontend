@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Customer</title>
+    <link type="text/css" rel="stylesheet" href="planselection.component.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+<body>
+    <app-customer-navbar></app-customer-navbar>
+
+    <div class="slot-input-box mt-3 ">
+        <!-- <div class="row"> -->
+        <!-- <input class="form-control slot-input" value="searchdate" type="date" (change)="SendDatetoFunction($event)"
+            name="date" id="date"> -->
+        <select class="form-control slot-input " (change)="SendLocationtoFunction($event)" name="location" id="locate">
+            <option value="">Select Location</option>
+            <option value="{{ ind.id }}" *ngFor=" let ind of locations ">{{ ind.add }} - {{ ind.city }}</option>
+        </select>
+        <!-- </div> -->
+    </div>
+    <!-- <div class="slot-input-box">
+        <input class="btn btn-lg btn-success" type="button" (click)="getdeskdetails()" value="submit" name="Submit" />
+    </div> -->
+
+    <div class="plans-container" >
+        <!-- <div ngxSlickItem class="slide " > -->
+        <div class="card" style="height: 100%;width: 300px;border-radius: 6px;" *ngFor="let ind of available_plans">
+            <h2 style="text-align: center;text-transform: uppercase;font-weight: 800;" class="card-header">
+                {{ ind.plan_type }}<br />
+                <h3 style="text-transform: lowercase;font-style: italic;">Plan for 2
+                    memembers.
+                </h3>
+
+            </h2>
+
+            <div style="text-align: center;" class="card-body">
+
+                <p> 4G WiFi Facility<br /></p>
+                <hr class="rounded">
+                <p> Quite Working Area<br /></p>
+                <hr class="rounded">
+                <p>Personal Desk Area<br /></p>
+                <hr class="rounded">
+
+
+
+                <p> Enjoy for {{ ind.duration }} days<br /> </p>
+                <hr class="rounded">
+                <p style="font-style: italic;font-weight: 700;">Get {{ ind.discount }}%
+                    off.</p>
+                <hr class="rounded">
+                <p style="font-style: italic;font-weight: 700;">Price {{ ind.plan_price }} /-</p>
+                <!-- <hr class="rounded"> -->
+
+
+
+                <button type="submit" class="btn btn-primary">Book Now</button>
+            </div>
+        </div>
+        <!-- </div> -->
+    </div>
+
+</body>
+
+</html>

@@ -12,18 +12,20 @@
 
       <div class="container-fluid main-content page">
         <div class="d-flex page__box p-3 mt-2 text-center h1 ">Slots Details</div>
-        <div class="page__content shadow p-3 position-relative d-flex justify-content-center ">
+        <div class="page__content shadow p-3 position-relative d-flex justify-content-center "
+          style="display: flex;flex-direction: column;">
 
-          <table class="table text-center table-striped " style="font-style:italic;font-family:'Times New Roman', Times, serif;" >
-            <thead class="thead-dark h4" >
+          <table class="table text-center table-striped "
+            style="font-style:italic;font-family:'Times New Roman', Times, serif;">
+            <thead class="thead-dark h4">
               <tr>
-                <th scope="col" >Desk No.</th>
-                <th scope="col" >Status</th>
-                <th scope="col" >Customer</th>
-                <th scope="col" >Expiry Date</th>
+                <th scope="col">Desk No.</th>
+                <th scope="col">Status</th>
+                <th scope="col">Customer</th>
+                <th scope="col">Expiry Date</th>
               </tr>
             </thead>
-            <tbody class=" table-striped h5" >
+            <tbody class=" table-striped h5">
               <!-- <tr>
                 <th scope="row" >1</th>
                 <td>Available</td>
@@ -54,14 +56,18 @@
                 <td>bahutik sudani</td>
                 <td>24-04-2022</td>
               </tr> -->
-              <tr *ngFor="let ind of desk_details;let i = index" [attr.data-index]="i">
-                <th scope="row" >{{ i+1 }}</th>
-                <td *ngIf="!ind.booked"><div class="badge badge-success" >Available</div> </td>
-                <td *ngIf="ind.booked" ><div class="badge badge-danger" >Booked</div> </td>
+              <tr *ngFor="let ind of display_desk;let i = index" [attr.data-index]="i">
+                <th scope="row">{{ ind.desk_no }}</th>
+                <td *ngIf="!ind.booked">
+                  <div class="badge badge-success">Available</div>
+                </td>
+                <td *ngIf="ind.booked">
+                  <div class="badge badge-danger">Booked</div>
+                </td>
                 <td *ngIf="ind.booked">{{ ind.customer_name }} </td>
-                <td *ngIf="!ind.booked" > -- </td>
+                <td *ngIf="!ind.booked"> -- </td>
                 <td *ngIf="!ind.booked">-- </td>
-                <td *ngIf="ind.booked" > {{ ind.expiry_date }} </td>
+                <td *ngIf="ind.booked"> {{ ind.expiry_date }} </td>
               </tr>
             </tbody>
 
@@ -128,268 +134,18 @@
                 </div>
               </div>
             </div> -->
-          <div class="plans-container text-center ">
-            <!-- <div class="desk-box" *ngFor="let ind of desk_details;let i = index" [attr.data-index]="i">
-                <div class="desk-box slot-available" *ngIf="!ind">
-                  <div class="h3">
-                    Desk {{ i+1 }}
-                  </div>
-                </div>
-                <div class="desk-box slot-booked" *ngIf="ind">
-                  <div class="h3">
-                    Desk {{ i+1 }}
-                  </div>
-                </div>
-
-              </div> -->
-            <!-- <div class="desk-box slot-available" >
-                <div class="h2" >Desk 1</div>
-                <p><a class="button" routerLink="/admin/slot-details">Booked</a></p>
-              </div>
-              <div class="desk-box slot-available" >
-                <h2>DESK 2</h2>
-                <p><a class="button" routerLink="/admin/slot-details">Booked</a></p>
-              </div>
-              <div class="desk-box slot-booked"  >
-                <h2>DESK 3</h2>
-                <p><a class="button" routerLink="/admin/slot-details">Booked</a></p>
-              </div>
-              <div class="desk-box slot-booked"  >
-                <h2>DESK 4</h2>
-                <p><a class="button" routerLink="/admin/slot-details">Booked</a></p>
-              </div>
-              <div class="desk-box slot-available"  >
-                <h2>DESK 5</h2>
-                <p><a class="button" routerLink="/admin/slot-details">Booked</a></p>
-              </div>
-              <div class="desk-box slot-booked"  >
-                <h2>DESK 6</h2>
-                <p><a class="button" routerLink="/admin/slot-details">Booked</a></p>
-              </div>
-              <div class="desk-box slot-available"  >
-                <h2>DESK 7</h2>
-                <p><a class="button" routerLink="/admin/slot-details">Booked</a></p>
-              </div>
-              <div class="desk-box slot-available"  >
-                <h2>DESK 8</h2>
-                <p><a class="button" routerLink="/admin/slot-details">Booked</a></p>
-              </div>
-              <div class="desk-box slot-booked"  >
-                <h2>DESK 9</h2>
-                <p><a class="button" routerLink="/admin/slot-details">Booked</a></p>
-              </div>
-              <div class="desk-box slot-available"  >
-                <h2>DESK 10</h2>
-                <p><a class="button" routerLink="/admin/slot-details">Booked</a></p>
-              </div>
-              <div class="desk-box slot-available"  >
-                <h2>DESK 11</h2>
-                <p><a class="button" routerLink="/admin/slot-details">Booked</a></p>
-              </div>
-              <div class="desk-box slot-booked"  >
-                <h2>DESK 12</h2>
-                <p><a class="button" routerLink="/admin/slot-details">Booked</a></p>
-              </div> -->
-            <!-- <div class="desk-box slot-available"  >
-                <h2>DESK 13</h2>
-                <p><a class="button" routerLink="/admin/slot-details">Booked</a></p>
-              </div>
-              <div class="desk-box slot-available"  >
-                <h2>DESK 14</h2>
-                <p><a class="button" routerLink="/admin/slot-details">Booked</a></p>
-              </div>
-              <div class="desk-box slot-booked"  >
-                <h2>DESK 15</h2>
-                <p><a class="button" routerLink="/admin/slot-details">Booked</a></p>
-              </div>
-              <div class="desk-box slot-booked" >
-                <h2>DESK 16</h2>
-                <p><a class="button" routerLink="/admin/slot-details">Booked</a></p>
-              </div>
-
-              <div class="desk-box slot-available" >
-                <h2>DESK 17</h2>
-                <p><a class="button" routerLink="/admin/slot-details">Booked</a></p>
-              </div>
-              <div class="desk-box slot-available" >
-                <h2>DESK 18</h2>
-                <p><a class="button" routerLink="/admin/slot-details">Booked</a></p>
-              </div>
-              <div class="desk-box slot-booked" >
-                <h2>DESK 19</h2>
-                <p><a class="button" routerLink="/admin/slot-details">Booked</a></p>
-              </div>
-              <div class="desk-box slot-available" >
-                <h2>DESK 20</h2>
-                <p><a class="button" routerLink="/admin/slot-details">Booked</a></p>
-              </div>
-              <div class="desk-box slot-available" >
-                <h2>DESK 21</h2>
-                <p><a class="button slot-available" routerLink="/admin/slot-details">Booked</a></p>
-              </div>
-              <div class="desk-box slot-booked" >
-                <h2>DESK 22</h2>
-                <p><a class="button" routerLink="/admin/slot-details">Booked</a></p>
-              </div>
-              <div class="desk-box slot-available" >
-                <h2>DESK 23</h2>
-                <p><a class="button" routerLink="/admin/slot-details">Booked</a></p>
-              </div>
-              <div class="desk-box slot-booked" >
-                <h2>DESK 24</h2>
-                <p><a class="button" routerLink="/admin/slot-details">Booked</a></p>
-              </div>
-              <div class="desk-box slot-booked" >
-                <h2>DESK 25</h2>
-                <p><a class="button" routerLink="/admin/slot-details">Booked</a></p>
-              </div>
-              <div class="desk-box slot-available" >
-                <h2>DESK 26</h2>
-                <p><a class="button" routerLink="/admin/slot-details">Booked</a></p>
-              </div>
-              <div class="desk-box slot-booked" >
-                <h2>DESK 27</h2>
-                <p><a class="button" routerLink="/admin/slot-details">Booked</a></p>
-              </div>
-              <div class="desk-box slot-available" >
-                <h2>DESK 28</h2>
-                <p><a class="button" routerLink="/admin/slot-details">Booked</a></p>
-              </div>
-              <div class="desk-box slot-available" >
-                <h2>DESK 29</h2>
-                <p><a class="button" routerLink="/admin/slot-details">Booked</a></p>
-              </div>
-              <div class="desk-box slot-available" >
-                <h2>DESK 30</h2>
-                <p><a class="button slot-available" routerLink="/admin/slot-details">Booked</a></p>
-              </div>
-              <div class="desk-box slot-booked" >
-                <h2>DESK 31</h2>
-                <p><a class="button" routerLink="/admin/slot-details">Booked</a></p>
-              </div>
-              <div class="desk-box slot-available" >
-                <h2>DESK 32</h2>
-                <p><a class="button" routerLink="/admin/slot-details">Booked</a></p>
-              </div>
-              <div class="desk-box slot-booked" >
-                <h2>DESK 33</h2>
-                <p><a class="button" routerLink="/admin/slot-details">Booked</a></p>
-              </div>
-              <div class="desk-box slot-booked" >
-                <h2>DESK 34</h2>
-                <p><a class="button" routerLink="/admin/slot-details">Booked</a></p>
-              </div>
-              <div class="desk-box slot-available" >
-                <h2>DESK 35</h2>
-                <p><a class="button" routerLink="/admin/slot-details">Booked</a></p>
-              </div>
-              <div class="desk-box slot-booked" >
-                <h2>DESK 36</h2>
-                <p><a class="button" routerLink="/admin/slot-details">Booked</a></p>
-              </div>
-              <div class="desk-box slot-available" >
-                <h2>DESK 37</h2>
-                <p><a class="button" routerLink="/admin/slot-details">Booked</a></p>
-              </div>
-              <div class="desk-box slot-available"  >
-                <h2>DESK 38</h2>
-                <p><a class="button" routerLink="/admin/slot-details">Booked</a></p>
-              </div>
-              <div class="desk-box slot-booked"  >
-                <h2>DESK 39</h2>
-                <p><a class="button" routerLink="/admin/slot-details">Booked</a></p>
-              </div>
-              <div class="desk-box slot-booked" >
-                <h2>DESK 40</h2>
-                <p><a class="button" routerLink="/admin/slot-details">Booked</a></p>
-              </div>
-
-              <div class="desk-box slot-available" >
-                <h2>DESK 41</h2>
-                <p><a class="button" routerLink="/admin/slot-details">Booked</a></p>
-              </div>
-              <div class="desk-box slot-available" >
-                <h2>DESK 42</h2>
-                <p><a class="button" routerLink="/admin/slot-details">Booked</a></p>
-              </div>
-              <div class="desk-box slot-booked" >
-                <h2>DESK 43</h2>
-                <p><a class="button" routerLink="/admin/slot-details">Booked</a></p>
-              </div>
-              <div class="desk-box slot-available" >
-                <h2>DESK 44</h2>
-                <p><a class="button" routerLink="/admin/slot-details">Booked</a></p>
-              </div>
-              <div class="desk-box slot-available" >
-                <h2>DESK 45</h2>
-                <p><a class="button slot-available" routerLink="/admin/slot-details">Booked</a></p>
-              </div>
-              <div class="desk-box slot-booked" >
-                <h2>DESK 46</h2>
-                <p><a class="button" routerLink="/admin/slot-details">Booked</a></p>
-              </div>
-              <div class="desk-box slot-available" >
-                <h2>DESK 47</h2>
-                <p><a class="button" routerLink="/admin/slot-details">Booked</a></p>
-              </div>
-              <div class="desk-box slot-booked" >
-                <h2>DESK 48</h2>
-                <p><a class="button" routerLink="/admin/slot-details">Booked</a></p>
-              </div>
-              <div class="desk-box slot-booked" >
-                <h2>DESK 49</h2>
-                <p><a class="button" routerLink="/admin/slot-details">Booked</a></p>
-              </div>
-              <div class="desk-box slot-available" >
-                <h2>DESK 50</h2>
-                <p><a class="button" routerLink="/admin/slot-details">Booked</a></p>
-              </div>
-              <div class="desk-box slot-booked" >
-                <h2>DESK 51</h2>
-                <p><a class="button" routerLink="/admin/slot-details">Booked</a></p>
-              </div>
-              <div class="desk-box slot-available" >
-                <h2>DESK 52</h2>
-                <p><a class="button" routerLink="/admin/slot-details">Booked</a></p>
-              </div>
-              <div class="desk-box slot-available" >
-                <h2>DESK 53</h2>
-                <p><a class="button" routerLink="/admin/slot-details">Booked</a></p>
-              </div>
-              <div class="desk-box slot-available" >
-                <h2>DESK 54</h2>
-                <p><a class="button slot-available" routerLink="/admin/slot-details">Booked</a></p>
-              </div>
-              <div class="desk-box slot-booked" >
-                <h2>DESK 55</h2>
-                <p><a class="button" routerLink="/admin/slot-details">Booked</a></p>
-              </div>
-              <div class="desk-box slot-available" >
-                <h2>DESK 56</h2>
-                <p><a class="button" routerLink="/admin/slot-details">Booked</a></p>
-              </div>
-              <div class="desk-box slot-booked" >
-                <h2>DESK 57</h2>
-                <p><a class="button" routerLink="/admin/slot-details">Booked</a></p>
-              </div>
-              <div class="desk-box slot-booked" >
-                <h2>DESK 58</h2>
-                <p><a class="button" routerLink="/admin/slot-details">Booked</a></p>
-              </div>
-              <div class="desk-box slot-available" >
-                <h2>DESK 59</h2>
-                <p><a class="button" routerLink="/admin/slot-details">Booked</a></p>
-              </div>
-              <div class="desk-box slot-booked" >
-                <h2>DESK 60</h2>
-                <p><a class="button" routerLink="/admin/slot-details">Booked</a></p>
-              </div>
-              <div class="desk-box slot-available" >
-                <h2>DESK 61</h2>
-                <p><a class="button" routerLink="/admin/slot-details">Booked</a></p>
-              </div> -->
-
+          <div class="d-flex h5 justify-content-center " >
+            <nav aria-label="Page navigation example">
+              <ul class="pagination">
+                <li class="page-item"><a class="page-link text-primary " (click)="change_pagination(current_page-1)" >Previous</a></li>
+                <li class="page-item"><a class="page-link text-primary " *ngIf="current_page <= pagination_length"  (click)="display_page(current_page)" >{{ current_page }}</a></li>
+                <li class="page-item"><a class="page-link text-primary " *ngIf="current_page+1 <= pagination_length"  (click)="display_page(current_page+1)" >{{ current_page+1 }}</a></li>
+                <li class="page-item"><a class="page-link text-primary " *ngIf="current_page+2 <= pagination_length"  (click)="display_page(current_page+2)" >{{ current_page+2 }}</a></li>
+                <li class="page-item"><a class="page-link text-primary " (click)="change_pagination(current_page+1)" >Next</a></li>
+              </ul>
+            </nav>
           </div>
+
         </div>
       </div>
     </mat-drawer-content>

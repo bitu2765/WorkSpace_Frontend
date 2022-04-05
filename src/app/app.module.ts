@@ -22,6 +22,7 @@ import { UserauthGuard } from './Authentication/user/userauth.guard';
 import { AdminModule } from './admin/admin.module';
 import { AdminauthGuard } from './Authentication/admin/adminauth.guard';
 import { TokenInterceptorService } from './services/auth/token-interceptor.service';
+import { EmailverifyComponent } from './emailverify/emailverify.component';
 
 
 export const domain_name ="localhost";
@@ -57,6 +58,7 @@ export const user_purchase_history =  domain_URL + "/user/purchase_history"
     NavbarComponent,
     AboutusComponent,
     PlansComponent,
+    EmailverifyComponent,
 
     
   ],

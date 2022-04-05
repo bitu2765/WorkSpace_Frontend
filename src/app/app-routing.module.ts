@@ -19,6 +19,7 @@ import { AdminSidenavComponent } from './admin/admin-sidenav/admin-sidenav.compo
 import { AdminSlotDetailsComponent } from './admin/admin-slot-details/admin-slot-details.component';
 import { AdminHomeComponent } from './admin/admin-home/admin-home.component';
 import { AdminauthGuard } from './Authentication/admin/adminauth.guard';
+import { PlanselectionComponent } from './customer/planselection/planselection.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -34,7 +35,7 @@ const routes: Routes = [
       { path: 'dashboard', component: DashboardComponent,canActivate:[UserauthGuard] },
       { path: 'profile', component: ProfileComponent,canActivate:[UserauthGuard] },
       { path: 'history', component: HistoryComponent,canActivate:[UserauthGuard] },
-      { path: 'booking', component: BookingComponent,canActivate:[UserauthGuard] }
+      { path: 'booking', component: PlanselectionComponent,canActivate:[UserauthGuard] }
     ]
   },
   {path: 'admin', children: [

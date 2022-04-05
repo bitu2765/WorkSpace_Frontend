@@ -20,7 +20,7 @@ export class AdminUserdetailsComponent implements OnInit {
     this.http.get<any>(admin_user_details,
       {
         // headers:headers,withCredentials:true,responseType:'json',
-      params:{page:2,per_page:2}}
+      params:{page:3,per_page:2}}
       ).subscribe({
       next: data => {
           console.log(data)

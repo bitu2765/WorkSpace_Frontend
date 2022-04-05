@@ -11,6 +11,10 @@ import Swal from 'sweetalert2';
 export class AdminDashboardComponent implements OnInit {
 
   public desk_details = Array();
+  public display_desk = Array();
+  public pagination_length=0;
+  public current_page=0;
+
   constructor(private http:HttpClient) {
     this.get_desk_details();
    }
@@ -31,6 +35,9 @@ export class AdminDashboardComponent implements OnInit {
         console.log(data)
         if (data['status_code'] == 200) {
           this.desk_details = data['desks'];
+          this.pagination_length= Math.ceil(this.desk_details.length/10) ;
+          this.current_page=1;
+          this.display_page(this.current_page);
         }
         else {
           // Swal.fire(
@@ -45,6 +52,24 @@ export class AdminDashboardComponent implements OnInit {
         console.error('There was an error!', error);
       }
     });
+  }
+
+  display_page(page_id:any){
+    this.display_desk.length=0
+    // alert(page_id);
+    for(let i=(page_id-1)*10;i<this.desk_details.length && i<page_id*10;i++)
+    {
+      this.display_desk.push(this.desk_details[i]);
+    }
+  }
+
+  change_pagination(page_id:any){
+    // console.log(this.pagination_length)
+    if(page_id>0 && page_id+2<=this.pagination_length)
+    {
+      this.current_page=page_id;
+      this.display_page(this.current_page);
+    }
   }
 
 }

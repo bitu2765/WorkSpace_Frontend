@@ -1,0 +1,52 @@
+.slot-input-box{
+    width: 100vw;
+    /* align-items: center; */
+    display: flex;
+    /* flex-direction: row; */
+    justify-content: center;
+  }
+.slot-input{
+    margin: 5px;
+    width: 250px;
+}
+
+.card {
+    border-radius: 15px !important;
+    background-color: rgba(3, 68, 247, 0.2) !important;
+    margin: 0% 7% 2%;
+    border: 3px solid rgba(3, 68, 247, 1) !important;
+    backdrop-filter: blur( 4px );
+  }
+  
+  .card-header {
+    background-color: rgba(3, 68, 247, 1);
+    margin: -2px;
+    padding: 1% 2% !important;
+    border-radius: 15px !important;
+    font-size: 200%;
+    font-family: 'Source Sans Pro';
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    color: #ffffff;
+    line-height: 1;
+  }
+  
+  .card-body {
+    padding: 2% !important;
+    font-size: 120%;
+    text-align: center;
+    height: fit-content;
+    line-height: 1.5;
+  
+  }
+
+  .plans-container{
+    /* width: 100%; */
+    margin-top: 20px;
+    place-items: center;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 50px;
+    grid-auto-rows: minmax(100px, auto);
+  }

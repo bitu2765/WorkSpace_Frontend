@@ -12,8 +12,9 @@
   background-color: rgb(8, 47, 156)!important;
   color: blanchedalmond; 
   text-align: center;
-  /* z-index: 2;
-  position: fixed; */
+  top: 0px;
+  z-index: 2;
+  position:fixed;
   width: 100%;
 
   padding-right:100px ;

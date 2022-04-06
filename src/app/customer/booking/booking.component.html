@@ -18,7 +18,6 @@
         Slot Booking
       </h1>
       <div class="slot-input-box">
-        <!-- <div class="row"> -->
         <input class="form-control slot-input" value="searchdate" type="date" (change)="SendDatetoFunction($event)"
           name="date" id="date">
         <!-- <select class="form-control slot-input " (change)="SendLocationtoFunction($event)" name="location" id="locate">
@@ -34,58 +33,9 @@
       </div>
 
       <div class="d-flex justify-content-center mt-3 ">
-        <div class="row">
-          <div class="col w-75">
+        <div class="row ">
+          <div class="col">
             <div class="plans-container">
-              <!-- <div class="desk-box slot-available">
-            <h2>DESK 1</h2>
-            <p><a class="button" routerLink="/admin/slot-details">Booked</a></p>
-          </div>
-          <div class="desk-box slot-available">
-            <h2>DESK 2</h2>
-            <p><a class="button" routerLink="/admin/slot-details">Booked</a></p>
-          </div>
-          <div class="desk-box slot-booked">
-            <h2>DESK 3</h2>
-            <p><a class="button" routerLink="/admin/slot-details">Booked</a></p>
-          </div>
-          <div class="desk-box slot-booked">
-            <h2>DESK 4</h2>
-            <p><a class="button" routerLink="/admin/slot-details">Booked</a></p>
-          </div>
-          <div class="desk-box slot-available">
-            <h2>DESK 5</h2>
-            <p><a class="button" routerLink="/admin/slot-details">Booked</a></p>
-          </div>
-          <div class="desk-box slot-available">
-            <h2>DESK 6</h2>
-            <p><a class="button" routerLink="/admin/slot-details">Booked</a></p>
-          </div>
-          <div class="desk-box slot-booked">
-            <h2>DESK 7</h2>
-            <p><a class="button" routerLink="/admin/slot-details">Booked</a></p>
-          </div>
-          <div class="desk-box slot-booked">
-            <h2>DESK 8</h2>
-            <p><a class="button" routerLink="/admin/slot-details">Booked</a></p>
-          </div>
-          <div class="desk-box slot-available">
-            <h2>DESK 9</h2>
-            <p><a class="button" routerLink="/admin/slot-details">Booked</a></p>
-          </div>
-          <div class="desk-box slot-available">
-            <h2>DESK 10</h2>
-            <p><a class="button" routerLink="/admin/slot-details">Booked</a></p>
-          </div>
-          <div class="desk-box slot-booked">
-            <h2>DESK 11</h2>
-            <p><a class="button" routerLink="/admin/slot-details">Booked</a></p>
-          </div>
-          <div class="desk-box slot-booked">
-            <h2>DESK 12</h2>
-            <p><a class="button" routerLink="/admin/slot-details">Booked</a></p>
-          </div> -->
-
               <div class="desk-box" *ngFor="let ind of desk_detail;let i = index" [attr.data-index]="i">
 
                 <div class="desk-box slot-available" *ngIf="!ind">
@@ -106,8 +56,8 @@
           <div class="col">
             <div class="card" style="height: 100%;width: 300px;border-radius: 6px;">
               <h2 style="text-align: center;text-transform: uppercase;font-weight: 800;" class="card-header">
-                solo<br />
-                <h3 style="text-transform: lowercase;font-style: italic;">Plan for 2
+                {{ plan_detail.plan_type }}&nbsp; <span class="h5" >({{ plan_detail.plan_duration }} days)</span><br />
+                <h3 style="text-transform: lowercase;font-style: italic;">Plan for {{ plan_detail.plan_capacity }}
                   memembers.
                 </h3>
   
@@ -117,22 +67,24 @@
   
                 <p> 4G WiFi Facility<br /></p>
                 <hr class="rounded">
+
                 <p> Quite Working Area<br /></p>
                 <hr class="rounded">
+
                 <p>Personal Desk Area<br /></p>
                 <hr class="rounded">
-  
-  
-  
-                <p> Enjoy for 365 days<br /> </p>
+                <p>{{ plan_detail.plan_price }} /-<br /></p>
                 <hr class="rounded">
-                <p style="font-style: italic;font-weight: 700;">Get 10%
+
+                <p style="font-style: italic;font-weight: 700;">Get {{ plan_detail.discount }}%
                   off.</p>
                 <hr class="rounded">
   
+                <p> {{ plan_detail.address }} , {{ plan_detail.state }}<br /> </p>
+                <!-- <hr class="rounded"> -->
   
   
-                <button type="submit" class="btn btn-primary">Book Now</button>
+                <!-- <button type="submit" class="btn btn-primary">Book Now</button> -->
               </div>
             </div>
           </div>
@@ -157,14 +109,17 @@
               </button>
             </div>
 
-            <div class="modal-body">
-              <p>Selected Slots: 1,2,3</p>
-              <p>Total Price: 20000 INR</p>
+            <div class="modal-body text-left ">
+              <!-- <p>Selected Slots: 1,2,3</p> -->
+              <p>Duration : {{ plan_detail.plan_duration }} Days</p>
+              <p>Capacity : {{ plan_detail.plan_capacity }} Member</p>
+              <p>Total Price: {{ plan_detail.plan_price }} INR</p>
+              <p>Location : {{ plan_detail.address }} , {{ plan_detail.state }}</p>
             </div>
 
             <div class="modal-footer">
               <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
-              <button type="button" class="btn btn-primary">Book</button>
+              <button type="button" class="btn btn-primary" (click)="purchaseplan()" data-dismiss="modal">Book</button>
             </div>
           </div>
         </div>

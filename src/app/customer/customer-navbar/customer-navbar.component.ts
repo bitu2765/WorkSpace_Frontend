@@ -19,7 +19,7 @@ export class CustomerNavbarComponent implements OnInit {
       // {headers:headers,withCredentials:true,responseType:'json'}
       ).subscribe({
       next: data => {
-          console.log(data)
+          // console.log(data)
           if (data['status_code'] == 200) {
             this.name=data['customer']["name"];
           } 

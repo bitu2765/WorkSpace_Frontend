@@ -40,6 +40,8 @@ export const locations =  domain_URL + "/locations"
 export const admin_profile =  domain_URL + "/admin/profile"
 export const admin_user_details =  domain_URL + "/admin/user_details"
 export const admin_desk_details =domain_URL+'/admin/desk_details'
+export const particular_plan_detail_on_particular_location =  domain_URL + "/user/location_plan_details"
+
 
 
 export const user_desk_details =domain_URL+'/user/desk_details'

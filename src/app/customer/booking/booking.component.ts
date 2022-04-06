@@ -1,7 +1,8 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, ParamMap, Route } from '@angular/router';
-import { user_desk_details, user_plan_purchase } from 'src/app/app.module';
+import { ActivatedRoute, ParamMap, Route, Router } from '@angular/router';
+import { map } from 'rxjs';
+import { particular_plan_detail_on_particular_location, user_desk_details, user_plan_purchase } from 'src/app/app.module';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -15,8 +16,9 @@ export class BookingComponent implements OnInit {
   public location_id = '';
   public plan_id = 0;
   public searchdate =``;
+  public plan_detail = `` as any;//new Map<String,String | Number>();
 
-  constructor(private http: HttpClient,private route:ActivatedRoute) {
+  constructor(private http: HttpClient,private route:ActivatedRoute,private router:Router) {
     
   }
 
@@ -27,12 +29,30 @@ export class BookingComponent implements OnInit {
       let plan = parseInt(params.get('plan_id') || "0");
       this.location_id = location || "";
       this.plan_id = plan ? plan:0;
-      let temp_date = new Date();
-
-      this.searchdate = temp_date.getFullYear() + `-` + (temp_date.getMonth()<10? `0`+temp_date.getUTCMonth():temp_date.getUTCMonth()) + `-` +(temp_date.getDate()<10? `0`+temp_date.getDate():temp_date.getDate());
-      console.log(this.searchdate);
       this.getdeskdetails();
-
+      this.http.get<any>(particular_plan_detail_on_particular_location, 
+        { 
+          // headers: headers, withCredentials: true, responseType: 'json',
+        params:{ location_id:this.location_id,plan_id:this.plan_id} }).subscribe({
+        next: data => {
+          console.log(data)
+          if (data['status_code'] == 200) {
+            this.plan_detail = data['plan details'];
+            // console.log(this.plan_detail["plan_type"]);
+          }
+          else {
+            // Swal.fire(
+            //   'Something Went Wrong',
+            //   "server Error",
+            //   'error'
+            // );
+          }
+        },
+        error: error => {
+          // this.errorMessage = error.message;
+          console.error('There was an error!', error);
+        }
+      });
     })
 
   }
@@ -48,15 +68,7 @@ export class BookingComponent implements OnInit {
     // const headers = new HttpHeaders();
     // headers.set("Access-Control-Allow-Credentials", "*");
 
-    if(this.searchdate==``)
-    {
-      Swal.fire(
-        "Error!",
-        "select date",
-        'error'
-      );
-      return;
-    }
+    
     if(this.location_id==``)
     {
       Swal.fire(
@@ -72,7 +84,7 @@ export class BookingComponent implements OnInit {
         // headers: headers, withCredentials: true, responseType: 'json',
       params:{ date:this.searchdate,location:this.location_id} }).subscribe({
       next: data => {
-        console.log(data)
+        // console.log(data)
         if (data['status_code'] == 200) {
           this.desk_detail = data['desks'];
         }
@@ -122,7 +134,7 @@ export class BookingComponent implements OnInit {
     // ,{headers:headers,withCredentials:true,responseType:'json'}
     ).subscribe({
       next: data => {
-        console.log(data)
+        // console.log(data)
         if (data['status_code'] == 200) {
           // this.desk_detail = data['desks'];
           Swal.fire(
@@ -130,6 +142,7 @@ export class BookingComponent implements OnInit {
             data['message'],
             'success'
           );
+          this.router.navigateByUrl("customer/history");
         }
         else {
           // Swal.fire(

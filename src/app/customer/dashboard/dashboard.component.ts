@@ -46,7 +46,7 @@ export class DashboardComponent implements OnInit {
       // {headers:headers,withCredentials:true,responseType:'json'}
       ).subscribe({
       next: data => {
-          // console.log(data)
+          console.log(data)
           if (data['status_code'] == 200) {
               this.active_plans = data['active_plans'];
           } 
@@ -90,7 +90,7 @@ export class DashboardComponent implements OnInit {
       // {headers:headers,withCredentials:true,responseType:'json'}
       ).subscribe({
       next: data => {
-          // console.log(data)
+          console.log(data)
           if (data['status_code'] == 200) {
               this.upcoming_plans = data['upcoming_plans'];
           } 

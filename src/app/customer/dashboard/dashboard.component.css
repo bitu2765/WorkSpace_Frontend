@@ -62,7 +62,7 @@ h1 {
 /* Card ends*/
 
 /* Old Carousel starts */
-/*.carousel-inner {
+.carousel-inner {
     padding: 0%;
     margin: 0%;
 }
@@ -82,12 +82,26 @@ h1 {
 
 .carousel-control-next-icon {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%230344f7' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
-}*/
+}
 /* Old Carousel ends */
+
+/* .carousel-inner {
+  padding: 0%;
+  margin: 0%;
+}
+
+.carousel-item {
+  margin: 0% !important;
+  height: fit-content !important;
+}
+
+.carousel-control-prev, .carousel-control-next {
+  width: 7%;
+}
 
 .carousel {
     margin: 3%;
-}
+} */
 
 /* Recommonded */
 .recommended {

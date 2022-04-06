@@ -16,7 +16,7 @@ export class TokenInterceptorService implements HttpInterceptor {
     for (let i: number = 0; i < ck.length; i += 1) {
         let tem = ck[i].split('=');
         // console.log(tem);
-        if(tem[0]=='auth_id')
+        if(tem[0].trim()=='auth_id')
         {
           id=tem[1];
         }

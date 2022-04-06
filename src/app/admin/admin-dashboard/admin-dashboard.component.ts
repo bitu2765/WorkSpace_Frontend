@@ -13,7 +13,8 @@ export class AdminDashboardComponent implements OnInit {
   public desk_details = Array();
   public display_desk = Array();
   public pagination_length=0;
-  public current_page=0;
+  public starting_current_page=0;
+  public displayed_page=0;
 
   constructor(private http:HttpClient) {
     this.get_desk_details();
@@ -36,8 +37,9 @@ export class AdminDashboardComponent implements OnInit {
         if (data['status_code'] == 200) {
           this.desk_details = data['desks'];
           this.pagination_length= Math.ceil(this.desk_details.length/10) ;
-          this.current_page=1;
-          this.display_page(this.current_page);
+          this.starting_current_page=1;
+          this.displayed_page=1;
+          this.display_page(this.starting_current_page);
         }
         else {
           // Swal.fire(
@@ -56,6 +58,7 @@ export class AdminDashboardComponent implements OnInit {
 
   display_page(page_id:any){
     this.display_desk.length=0
+    this.displayed_page=page_id
     // alert(page_id);
     for(let i=(page_id-1)*10;i<this.desk_details.length && i<page_id*10;i++)
     {
@@ -67,8 +70,18 @@ export class AdminDashboardComponent implements OnInit {
     // console.log(this.pagination_length)
     if(page_id>0 && page_id+2<=this.pagination_length)
     {
-      this.current_page=page_id;
-      this.display_page(this.current_page);
+      this.starting_current_page=page_id;
+      // this.display_page(this.starting_current_page);
+    }
+    if(this.starting_current_page>this.displayed_page)
+    {
+      // this.displayed_page=this.starting_current_page;
+      this.display_page(this.starting_current_page);
+    }
+    if(this.starting_current_page+2<this.displayed_page)
+    {
+      // this.displayed_page=this.starting_current_page;
+      this.display_page(this.starting_current_page+2);
     }
   }
 

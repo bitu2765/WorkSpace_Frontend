@@ -6,12 +6,27 @@
         <app-admin-header (toggleSidebarForMe)="sideBarToggler()"></app-admin-header>
         <router-outlet></router-outlet>
 
-        <div class="container-fluid page">
-            <div class="d-flex page__box p-3 mt-2">User Details</div>
-            <div class="page__content shadow p-3 position-relative">
-                <div class="page__content-data position-absolute text-center w-50">
+        <div class="container-fluid main-content page">
+            <div class="d-flex h1 page__box p-3 mt-2">User Details</div>
+            <div class="page__content shadow p-3 position-relative d-flex justify-content-center "
+                style="display: flex;flex-direction: column;">
+                <!-- <div class="page__content-data position-absolute text-center w-50"> -->
+                <div class="m-3 w-100 " style="display: flex;flex-direction: row;">
+                    <div class="h5" style="display: flex;flex-direction: row;">
+                        <span style="width: 100px;">Per Page :</span>
+                        <select class="form-control" (change)="set_user_per_page($event)" style="width: 50px;"
+                            name="users" id="usere">
+                            <option value="{{ i }}" *ngFor="let ind of user_per_page;let i = index"
+                                [attr.data-index]="i">{{ ind }}</option>
+                        </select>
+                    </div>
 
-                    <table cellpadding="8" cellspacing="8">
+                    <div>
+                        <input class="form-control" placeholder="Search User" type="text" name="search" id="search">
+                    </div>
+
+                </div>
+                <!-- <table cellpadding="8" cellspacing="8">
                         <div class="userdetails-card">
                             <div class="ScrollStyle">
                                 <tr>
@@ -112,8 +127,159 @@
                                 </tr>
                             </div>
                         </div>
-                    </table>
+                    </table> -->
+
+                <table class="table text-center table-striped "
+                    style="font-style:italic;font-family:'Times New Roman', Times, serif;">
+                    <thead class="thead-dark h5">
+                        <tr>
+                            <th>SR NO.</th>
+                            <th>USER NAME</th>
+                            <th>USER EMAIL</th>
+                            <th>ACCOUNT STATUS</th>
+                        </tr>
+                    </thead>
+                    <tbody class=" table-striped h5">
+                        <!-- <tr>
+                            <th scope="row">1</th>
+                            <td>Available</td>
+                            <td>bahutik sudani</td>
+                            <td>24-04-2022</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Available</td>
+                            <td>bahutik sudani</td>
+                            <td>24-04-2022</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Available</td>
+                            <td>bahutik sudani</td>
+                            <td>24-04-2022</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">4</th>
+                            <td>Available</td>
+                            <td>bahutik sudani</td>
+                            <td>24-04-2022</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">5</th>
+                            <td>Available</td>
+                            <td>bahutik sudani</td>
+                            <td>24-04-2022</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">5</th>
+                            <td>Available</td>
+                            <td>bahutik sudani</td>
+                            <td>24-04-2022</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">5</th>
+                            <td>Available</td>
+                            <td>bahutik sudani</td>
+                            <td>24-04-2022</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">5</th>
+                            <td>Available</td>
+                            <td>bahutik sudani</td>
+                            <td>24-04-2022</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">5</th>
+                            <td>Available</td>
+                            <td>bahutik sudani</td>
+                            <td>24-04-2022</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">5</th>
+                            <td>Available</td>
+                            <td>bahutik sudani</td>
+                            <td>24-04-2022</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">5</th>
+                            <td>Available</td>
+                            <td>bahutik sudani</td>
+                            <td>24-04-2022</td>
+                        </tr> -->
+                        <tr *ngFor="let ind of displayed_user_details;let i = index" [attr.data-index]="i">
+                            <th scope="row">{{ (displayed_page-1)*user_per_page[per_page_ind] + i + 1 }}</th>
+                            <td>{{ ind.name }}</td>
+                            <td>{{ ind.email }}</td>
+                            <td *ngIf="!ind.is_block">
+                                <div class="badge badge-success">ACTIVE</div>
+                            </td>
+                            <td *ngIf="ind.is_block">
+                                <div class="badge badge-danger">BLOCK</div>
+                            </td>
+                        </tr>
+                    </tbody>
+
+                </table>
+
+
+                <div class="d-flex h5 justify-content-center ">
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination">
+                            <!-- <li class="page-item"><a class="page-link text-secondary"
+                                    (click)="set_starting_page(starting_current_page-1)">Previous</a></li> -->
+
+                            <li class="page-item disabled" *ngIf="starting_current_page-1 == 0">
+                                <a class="page-link text-secondary"
+                                    (click)="set_starting_page(starting_current_page-1)">Previous</a>
+                            </li>
+                            <li class="page-item " *ngIf="starting_current_page-1 != 0">
+                                <a class="page-link text-secondary"
+                                    (click)="set_starting_page(starting_current_page-1)">Previous</a>
+                            </li>
+
+
+                            <li class="page-item active" *ngIf="starting_current_page == displayed_page && starting_current_page<=max_page">
+                                <a class="page-link text-light" (click)="display_page(starting_current_page)">{{
+                                    starting_current_page }}</a>
+                            </li>
+                            <li class="page-item " *ngIf="starting_current_page != displayed_page && starting_current_page<=max_page">
+                                <a class="page-link text-primary" (click)="display_page(starting_current_page)">{{
+                                    starting_current_page }}</a>
+                            </li>
+
+                            <li class="page-item active" *ngIf="starting_current_page+1 == displayed_page && starting_current_page+1<=max_page">
+                                <a class="page-link text-light" (click)="display_page(starting_current_page+1)">{{
+                                    starting_current_page+1 }}</a>
+                            </li>
+                            <li class="page-item " *ngIf="starting_current_page+1 != displayed_page && starting_current_page+1<=max_page">
+                                <a class="page-link text-primary" (click)="display_page(starting_current_page+1)">{{
+                                    starting_current_page+1 }}</a>
+                            </li>
+
+                            <li class="page-item active" *ngIf="starting_current_page+2 == displayed_page && starting_current_page+2<=max_page">
+                                <a class="page-link text-light" (click)="display_page(starting_current_page+2)">{{
+                                    starting_current_page+2 }}</a>
+                            </li>
+                            <li class="page-item " *ngIf="starting_current_page+2 != displayed_page && starting_current_page+2<=max_page">
+                                <a class="page-link text-primary" (click)="display_page(starting_current_page+2)">{{
+                                    starting_current_page+2 }}</a>
+                            </li>
+
+                            <li class="page-item disabled" *ngIf="starting_current_page+1 > max_page">
+                                <a class="page-link text-secondary"
+                                    (click)="set_starting_page(starting_current_page+1)">Next</a>
+                            </li>
+                            <li class="page-item " *ngIf="starting_current_page+1 <= max_page">
+                                <a class="page-link text-primary"
+                                    (click)="set_starting_page(starting_current_page+1)">Next</a>
+                            </li>
+
+                            <!-- <li class="page-item"><a class="page-link text-primary "
+                                    (click)="set_starting_page(starting_current_page+1)">Next</a></li> -->
+                        </ul>
+                    </nav>
                 </div>
+                <!-- </div> -->
             </div>
         </div>
 

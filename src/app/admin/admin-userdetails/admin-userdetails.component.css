@@ -1,13 +1,19 @@
+
+.main-content{
+  height: 91vh;
+  overflow-y: scroll;
+}
 .page {
     color: white;
     padding: 0 1rem;
     background: #f1f5f9;
   }
   .page__box {
-    min-height: 120px;
-    background: rgb(3, 68, 247);;
-    margin: 0 -1rem;
-    font-size: 36px;
+    background-color: rgb(40, 83, 255);
+    width: 100%;
+    height: 100px;
+    border-radius: 20px;
+    font-family: 'Montserrat', sans-serif;
   }
   .page__content {
     min-height: calc(100vh - 178px);

@@ -11,48 +11,97 @@ import Swal from 'sweetalert2';
 })
 export class AdminUserdetailsComponent implements OnInit {
 
-  constructor(private http:HttpClient,private _router:Router) { 
+
+  public displayed_user_details = Array();
+  public displayed_page = 1;
+  public starting_current_page = 1;
+  public max_page = 1;
+  public user_per_page = [1, 2, 3, 4, 5];
+  public per_page_ind = 0;
 
 
-    // const headers = new HttpHeaders();
-    // headers.set("Access-Control-Allow-Credentials","*");
+  constructor(private http: HttpClient, private _router: Router) {
 
-    this.http.get<any>(admin_user_details,
-      {
-        // headers:headers,withCredentials:true,responseType:'json',
-      params:{page:3,per_page:2}}
-      ).subscribe({
-      next: data => {
-          console.log(data)
-          if (data['status_code'] == 200) {
-            // this.plans = data['plans'];
-          } 
-          else {
-            Swal.fire(
-              'Something Went Wrong',
-              "Try to Login again",
-              'error'
-            );
-            this._router.navigateByUrl("login");
-          }
-      },
-      error: error => {
-          // this.errorMessage = error.message;
-          console.error('There was an error!', error);
-      }
-    })
-
+    this.retrive_user_details();
   }
-  // totalLength:any;
-  // page:number=1;
 
   ngOnInit(): void {
-    // this.totalLength=result.length;
   }
   sideBarOpen = true;
 
-  sideBarToggler(){
+  sideBarToggler() {
     this.sideBarOpen = !this.sideBarOpen;
+  }
+
+  set_user_per_page(event: any) {
+    console.log(event.target.value);
+    this.per_page_ind = event.target.value;
+    this.retrive_user_details();
+
+  }
+  set_starting_page(page_id:any)
+  {
+    if(page_id>=1 && page_id+2<=this.max_page)
+    {
+      this.starting_current_page=page_id;
+    }
+    if(this.displayed_page<this.starting_current_page)
+    {
+      this.displayed_page =this.starting_current_page;
+    }
+    if(this.displayed_page>this.starting_current_page+2)
+    {
+      this.displayed_page=this.starting_current_page+2;
+    }
+  }
+
+  display_page(page_id:any)
+  {
+    this.displayed_page = page_id;
+    this.retrive_user_details();
+  }
+
+  retrive_user_details() {
+    this.http.get<any>(admin_user_details,
+      {
+        // headers:headers,withCredentials:true,responseType:'json',
+        params: { page: this.displayed_page, per_page: this.user_per_page[this.per_page_ind] }
+      }
+    ).subscribe({
+      next: data => {
+        console.log(data)
+        if (data['status_code'] == 200) {
+          this.displayed_user_details = data['customers'];
+          this.max_page = data['paginate']['pages'];  
+          this.displayed_page = data['paginate']['page'];
+          if(this.displayed_page-2<=0)
+          {
+            this.starting_current_page=1;
+          }
+          else
+          {
+            this.starting_current_page=this.displayed_page-2;
+          }
+          if(this.displayed_page>this.max_page)
+          {
+            this.displayed_page=this.max_page;
+            this.retrive_user_details();
+          }
+        }
+        else {
+          Swal.fire(
+            'Something Went Wrong',
+            "Try to Login again",
+            'error'
+          );
+          this._router.navigateByUrl("login");
+        }
+      },
+      error: error => {
+        // this.errorMessage = error.message;
+        console.error('There was an error!', error);
+      }
+    })
   }
 
 }

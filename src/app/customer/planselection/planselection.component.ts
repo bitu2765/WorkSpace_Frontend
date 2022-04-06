@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { locations, plans } from 'src/app/app.module';
 
 @Component({
@@ -12,7 +13,7 @@ export class PlanselectionComponent implements OnInit {
   public locations =Array();
   public available_plans =Array();
   public searchlocation =``;
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient,private router:Router) {
     
     this.http.get<any>(locations,).subscribe({
       next: data => {
@@ -59,6 +60,12 @@ export class PlanselectionComponent implements OnInit {
         console.error('There was an error!', error);
       }
     });
+  }
+
+  select_plans_and_book(plan_location:any,subscription_plan_id:any){
+
+    this.router.navigate(["customer/confirmbooking/",{ location_id:plan_location,plan_id:subscription_plan_id }]);
+
   }
 
 }

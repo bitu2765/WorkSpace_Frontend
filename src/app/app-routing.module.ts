@@ -35,7 +35,8 @@ const routes: Routes = [
       { path: 'dashboard', component: DashboardComponent,canActivate:[UserauthGuard] },
       { path: 'profile', component: ProfileComponent,canActivate:[UserauthGuard] },
       { path: 'history', component: HistoryComponent,canActivate:[UserauthGuard] },
-      { path: 'booking', component: PlanselectionComponent,canActivate:[UserauthGuard] }
+      { path: 'booking', component: PlanselectionComponent,canActivate:[UserauthGuard] },
+      { path: 'confirmbooking', component: BookingComponent,canActivate:[UserauthGuard] }
     ]
   },
   {path: 'admin', children: [

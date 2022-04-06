@@ -1,3 +1,7 @@
+.main-content{
+  height: 91vh;
+  overflow-y: scroll;
+}
 .page {
     color: white;
     padding: 0 1rem;

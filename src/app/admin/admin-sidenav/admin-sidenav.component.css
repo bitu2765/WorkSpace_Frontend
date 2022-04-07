@@ -3,7 +3,7 @@
     margin-right: 1rem;
 }
 .mat-nav-list{
-    height: 100%;
+    height: 100vh;
 }
 .logo {
     text-align: center;
@@ -23,7 +23,7 @@
     margin-bottom: 4px;
 }
 .mat-list-item:hover {
-    color: rgb(3, 68, 247) !important;
+    color: rgb(40, 83, 255)!important;
 }
 .mat-list-item ::ng-deep .mat-list-item-content {
     border-radius: 5px;
@@ -33,7 +33,7 @@
     background: #ffffff !important;
 }
 .list-item-active {
-    color:rgb(3, 68, 247) !important;
+    color:rgb(40, 83, 255) !important;
 }
 .list-item-active ::ng-deep .mat-list-item-content {
     background: #ffffff !important;
@@ -42,8 +42,10 @@
     background: #ffffff !important;
 }
 .mat-subheader {
-    color: rgb(3, 68, 247);
-    font-size: 0.6rem;
-    font-weight: 100;
+    color: rgb(255, 255, 255);
+    font-size: x-large;
+    font-weight: 400;
+    font-style: italic;
+    font-family: Georgia, 'Times New Roman', Times, serif;
     letter-spacing: 1px;
 }

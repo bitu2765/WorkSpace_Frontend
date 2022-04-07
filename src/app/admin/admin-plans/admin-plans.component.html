@@ -8,81 +8,44 @@
         <mat-drawer-content>
             <app-admin-header (toggleSidebarForMe)="sideBarToggler()"></app-admin-header>
             <router-outlet></router-outlet>
+            <div class="container-fluid page main-content page">
+                <div class="d-flex page__box p-3 mt-2 text-center h1 ">Plans Details</div>
+                <div class="page__content shadow p-3 position-relative d-flex justify-content-center "
+                    style="display: flex;flex-direction: column; ">
+                    <div class="ScrollStyle">
+                        <div class="plans" *ngFor="let ind of plans; index as i" [ngClass]="{'active': i==0}">
 
-            <div class="container-fluid main-content page">
-                <div class="d-flex page__box h1 p-3 pl-3 mt-2">Plans</div>
-                <div class="page__content h-auto shadow pt-3 position-relative  d-flex justify-content-center ">
-                    <div class="plans-container w-100 ">
-                        <div class="card ml-3 " style="width: 250px;margin: 5px;" *ngFor="let ind of plans">
-                            <div class="plan-badge align-middle" >
-                                30%
-                            </div>
-                            <div class="card-header bg-dark">
-                                <p>{{ ind.plan_name }}</p>
-                            </div>
-                            <div class="card-body">
-                                <p>
-                                    Description:
-                                    <br>
-                                    Capacity : {{ ind.capacity }}
-                                    <br>
-                                    Duration : {{ ind.duration }} Days
-                                    <br>
-                                    Discount : {{ ind.discount }} %
-                                </p>
-                            </div>
-                            <div class="card-footer">
-                                <a href="https://youtu.be/99vHH_6F0Ko">Rs399</a>
-                            </div>
-                        </div>
+                            <div class="card">
 
-                        <!-- <div class="table-row">
-                        <div class="table-cell first-cell">
-                            <p>MINI PACK</p>
+                                <h2 class="card-header">
+                                    <div style="display: flex; justify-content: space-between">
+                                        <span>{{ ind.plan_name }} <span class="h6">({{ ind.duration }}
+                                                days)</span></span>
+                                        <span>599/-</span>
+                                    </div>
+                                </h2>
+
+                                <div class="card-body">
+
+                                    <p id="active-plan">
+                                        Description: Includes personal desk , unlimited WIFI facility and a
+                                        prefect working
+                                        atmosphere.
+                                        <br />
+                                        Capacity : {{ ind.capacity }} Memember/s.
+                                        <br />
+                                    </p>
+                                    <h2 style="text-align: left;padding-left:30px;font-weight: 700;font-style: italic;">
+                                        GET {{ ind.discount }} % OFF ON SUBSRIBTION.</h2>
+
+                                </div>
+                            </div>
                         </div>
-                        <div class="table-cell">
-                            <p>Description: <br>For 28 days<br>4G Wifi<br>guefhbskxzgfeibkdsjxzigkjbscwtfquavs </p>
-                        </div>
-                        <div class="table-cell last-cell">
-                            <a href="https://youtu.be/99vHH_6F0Ko">Rs399</a>
-                        </div>
-                    </div> -->
-                        <!-- <div class="table-row">
-                        <div class="table-cell first-cell">
-                            <p>MINI PACK1</p>
-                        </div>
-                        <div class="table-cell">
-                            <p>Description: <br>For 56 days<br>4G Wifi<br>guefhbskxzgfeibkdsjxzigkjbscwtfquavs </p>
-                        </div>
-                        <div class="table-cell last-cell">
-                            <a href="https://youtu.be/99vHH_6F0Ko">Rs599</a>
-                        </div>
-                    </div> -->
-                        <!-- <div class="table-row">
-                        <div class="table-cell first-cell">
-                            <p>MINI PACK2</p>
-                        </div>
-                        <div class="table-cell">
-                            <p>Description: <br>For 128 days<br>4G Wifi<br>guefhbskxzgfeibkdsjxzigkjbscwtfquavs </p>
-                        </div>
-                        <div class="table-cell last-cell">
-                            <a href="https://youtu.be/99vHH_6F0Ko">Rs1599</a>
-                        </div>
-                    </div> -->
-                        <!-- <div class="table-row">
-                        <div class="table-cell first-cell">
-                            <p>MAHA PACK</p>
-                        </div>
-                        <div class="table-cell">
-                            <p>Description: <br>For 258 days<br>4G Wifi<br>guefhbskxzgfeibkdsjxzigkjbscwtfquavs </p>
-                        </div>
-                        <div class="table-cell last-cell">
-                            <a href="https://youtu.be/99vHH_6F0Ko">Rs3999</a>
-                        </div>
-                    </div> -->
                     </div>
                 </div>
             </div>
+
+
         </mat-drawer-content>
     </mat-drawer-container>
 </body>

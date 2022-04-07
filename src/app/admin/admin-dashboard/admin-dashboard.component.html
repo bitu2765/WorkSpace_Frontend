@@ -26,36 +26,7 @@
               </tr>
             </thead>
             <tbody class=" table-striped h5">
-              <!-- <tr>
-                <th scope="row" >1</th>
-                <td>Available</td>
-                <td>bahutik sudani</td>
-                <td>24-04-2022</td>
-              </tr>
-              <tr>
-                <th scope="row" >2</th>
-                <td>Available</td>
-                <td>bahutik sudani</td>
-                <td>24-04-2022</td>
-              </tr>
-              <tr>
-                <th scope="row" >3</th>
-                <td>Available</td>
-                <td>bahutik sudani</td>
-                <td>24-04-2022</td>
-              </tr>
-              <tr>
-                <th scope="row" >4</th>
-                <td>Available</td>
-                <td>bahutik sudani</td>
-                <td>24-04-2022</td>
-              </tr>
-              <tr>
-                <th scope="row" >5</th>
-                <td>Available</td>
-                <td>bahutik sudani</td>
-                <td>24-04-2022</td>
-              </tr> -->
+             
               <tr *ngFor="let ind of display_desk;let i = index" [attr.data-index]="i">
                 <th scope="row">{{ ind.desk_no }}</th>
                 <td *ngIf="!ind.booked">

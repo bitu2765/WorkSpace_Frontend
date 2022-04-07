@@ -21,7 +21,7 @@
                         </select>
                     </div>
 
-                    <div>
+                    <div class="search">
                         <input class="form-control" placeholder="Search User" type="text" name="search" id="search">
                     </div>
 
@@ -238,29 +238,35 @@
                             </li>
 
 
-                            <li class="page-item active" *ngIf="starting_current_page == displayed_page && starting_current_page<=max_page">
+                            <li class="page-item active"
+                                *ngIf="starting_current_page == displayed_page && starting_current_page<=max_page">
                                 <a class="page-link text-light" (click)="display_page(starting_current_page)">{{
                                     starting_current_page }}</a>
                             </li>
-                            <li class="page-item " *ngIf="starting_current_page != displayed_page && starting_current_page<=max_page">
+                            <li class="page-item "
+                                *ngIf="starting_current_page != displayed_page && starting_current_page<=max_page">
                                 <a class="page-link text-primary" (click)="display_page(starting_current_page)">{{
                                     starting_current_page }}</a>
                             </li>
 
-                            <li class="page-item active" *ngIf="starting_current_page+1 == displayed_page && starting_current_page+1<=max_page">
+                            <li class="page-item active"
+                                *ngIf="starting_current_page+1 == displayed_page && starting_current_page+1<=max_page">
                                 <a class="page-link text-light" (click)="display_page(starting_current_page+1)">{{
                                     starting_current_page+1 }}</a>
                             </li>
-                            <li class="page-item " *ngIf="starting_current_page+1 != displayed_page && starting_current_page+1<=max_page">
+                            <li class="page-item "
+                                *ngIf="starting_current_page+1 != displayed_page && starting_current_page+1<=max_page">
                                 <a class="page-link text-primary" (click)="display_page(starting_current_page+1)">{{
                                     starting_current_page+1 }}</a>
                             </li>
 
-                            <li class="page-item active" *ngIf="starting_current_page+2 == displayed_page && starting_current_page+2<=max_page">
+                            <li class="page-item active"
+                                *ngIf="starting_current_page+2 == displayed_page && starting_current_page+2<=max_page">
                                 <a class="page-link text-light" (click)="display_page(starting_current_page+2)">{{
                                     starting_current_page+2 }}</a>
                             </li>
-                            <li class="page-item " *ngIf="starting_current_page+2 != displayed_page && starting_current_page+2<=max_page">
+                            <li class="page-item "
+                                *ngIf="starting_current_page+2 != displayed_page && starting_current_page+2<=max_page">
                                 <a class="page-link text-primary" (click)="display_page(starting_current_page+2)">{{
                                     starting_current_page+2 }}</a>
                             </li>
@@ -281,7 +287,8 @@
                 </div>
                 <!-- </div> -->
             </div>
-        </div>
+            <!-- </div> -->
 
+        </div>
     </mat-drawer-content>
 </mat-drawer-container>

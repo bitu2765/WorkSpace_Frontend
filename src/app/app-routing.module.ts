@@ -20,6 +20,7 @@ import { AdminSlotDetailsComponent } from './admin/admin-slot-details/admin-slot
 import { AdminHomeComponent } from './admin/admin-home/admin-home.component';
 import { AdminauthGuard } from './Authentication/admin/adminauth.guard';
 import { PlanselectionComponent } from './customer/planselection/planselection.component';
+import { AdminBookingDetailsComponent } from './admin/admin-booking-details/admin-booking-details.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -40,7 +41,7 @@ const routes: Routes = [
     ]
   },
   {path: 'admin', children: [
-    {path: '', component:AdminDashboardComponent,canActivate:[AdminauthGuard]},
+    {path: '', component:AdminBookingDetailsComponent,canActivate:[AdminauthGuard]},
     {path: 'dashboard', component:AdminDashboardComponent,canActivate:[AdminauthGuard]},
     {path: 'profile', component:AdminHomeComponent,canActivate:[AdminauthGuard]},
     {path: 'plans', component:AdminPlansComponent,canActivate:[AdminauthGuard]},

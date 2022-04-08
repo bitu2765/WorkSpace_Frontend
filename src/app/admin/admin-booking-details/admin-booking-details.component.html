@@ -1,0 +1,174 @@
+<p>admin-booking-details works!</p>
+<html>
+
+<body>
+  <!-- <app-admin></app-admin> -->
+  <mat-drawer-container>
+    <mat-drawer mode="side" [opened]="sideBarOpen">
+      <app-admin-sidenav></app-admin-sidenav>
+    </mat-drawer>
+    <mat-drawer-content>
+      <app-admin-header (toggleSidebarForMe)="sideBarToggler()"></app-admin-header>
+      <router-outlet></router-outlet>
+
+      <div class="container-fluid main-content page">
+        <div class="d-flex page__box p-3 mt-2 text-center h1 ">Slots Details</div>
+        <div class="page__content shadow p-3 position-relative d-flex justify-content-center "
+          style="display: flex;flex-direction: column;">
+
+          <!-- <table class="table text-center table-striped "
+            style="font-style:italic;font-family:'Times New Roman', Times, serif;">
+            <thead class="thead-dark h4">
+              <tr>
+                <th scope="col">Desk No.</th>
+                <th scope="col">Status</th>
+                <th scope="col">Customer</th>
+                <th scope="col">Expiry Date</th>
+              </tr>
+            </thead>
+            <tbody class=" table-striped h5">
+             
+              <tr *ngFor="let ind of display_desk;let i = index" [attr.data-index]="i">
+                <th scope="row">{{ ind.desk_no }}</th>
+                <td *ngIf="!ind.booked">
+                  <div class="badge badge-success">Available</div>
+                </td>
+                <td *ngIf="ind.booked">
+                  <div class="badge badge-danger">Booked</div>
+                </td>
+                <td *ngIf="ind.booked">{{ ind.customer_name }} </td>
+                <td *ngIf="!ind.booked"> -- </td>
+                <td *ngIf="!ind.booked">-- </td>
+                <td *ngIf="ind.booked"> {{ ind.expiry_date }} </td>
+              </tr>
+            </tbody>
+
+          </table> -->
+
+          <!-- <div class="page__content-data position-absolute text-center">
+              <link rel="stylesheet"
+                href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+              <h1>Slots details information:</h1>
+              <div class="row">
+                <div class="column desk-box " style="background-color:rgb(23, 182, 44);">
+                  <h2>DESK 1</h2>
+                  <p><a class="button" routerLink="/admin/slot-details">Booked</a></p>
+                </div>
+                <div class="column desk-box " style="background-color:rgb(23, 182, 44);">
+                  <h2>DESK 2</h2>
+                  <p><a class="button" routerLink="/admin/slot-details">Booked</a></p>
+                </div>
+                <div class="column desk-box" style="background-color:rgb(167, 163, 163);">
+                  <h2>DESK 3</h2>
+                  <p><a class="button" routerLink="/admin/slot-details">Available</a></p>
+                </div>
+                <div class="column desk-box" style="background-color:rgb(23, 182, 44);">
+                  <h2>DESK 4</h2>
+                  <p><a class="button" routerLink="/admin/slot-details">Booked</a></p>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="column desk-box" style="background-color:rgb(167, 163, 163);">
+                  <h2>DESK 5</h2>
+                  <p><a class="button" routerLink="/admin/slot-details">Available</a></p>
+                </div>
+                <div class="column desk-box" style="background-color:rgb(23, 182, 44);">
+                  <h2>DESK 6</h2>
+                  <p><a class="button" routerLink="/admin/slot-details">Booked</a></p>
+                </div>
+                <div class="column desk-box" style="background-color:rgb(167, 163, 163);">
+                  <h2>DESK 7</h2>
+                  <p><a class="button" routerLink="/admin/slot-details">Available</a></p>
+                </div>
+                <div class="column desk-box" style="background-color:rgb(23, 182, 44);">
+                  <h2>DESK 8</h2>
+                  <p><a class="button" routerLink="/admin/slot-details">Booked</a></p>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="column desk-box" style="background-color:rgb(167, 163, 163);">
+                  <h2>DESK 9</h2>
+                  <p><a class="button" routerLink="/admin/slot-details">Available</a></p>
+                </div>
+                <div class="column desk-box" style="background-color:rgb(167, 163, 163);">
+                  <h2>DESK10</h2>
+                  <p><a class="button" routerLink="/admin/slot-details">Available</a></p>
+                </div>
+                <div class="column desk-box" style="background-color:rgb(167, 163, 163);">
+                  <h2>DESK11</h2>
+                  <p><a class="button" routerLink="/admin/slot-details">Available</a></p>
+                </div>
+                <div class="column desk-box" style="background-color:rgb(23, 182, 44);">
+                  <h2>DESK12</h2>
+                  <p><a class="button" routerLink="/admin/slot-details">Booked</a></p>
+                </div>
+              </div>
+            </div> -->
+          <!-- <div class="d-flex h5 justify-content-center ">
+            <nav aria-label="Page navigation example">
+              <ul class="pagination">
+                <li class="page-item"><a class="page-link text-secondary "
+                    (click)="change_pagination(starting_current_page-1)">Previous</a></li>
+
+
+                <li class="page-item active" *ngIf="starting_current_page == displayed_page && starting_current_page <=pagination_length" >
+                  <a class="page-link text-light" 
+                    (click)="display_page(starting_current_page)">{{ starting_current_page }}</a>
+                </li>
+                <li class="page-item " *ngIf="starting_current_page != displayed_page && starting_current_page <=pagination_length" >
+                  <a class="page-link text-primary" 
+                    (click)="display_page(starting_current_page)">{{ starting_current_page }}</a>
+                </li>
+
+                <li class="page-item active" *ngIf="starting_current_page+1 == displayed_page && starting_current_page+1 <=pagination_length" >
+                  <a class="page-link text-light" 
+                    (click)="display_page(starting_current_page+1)">{{ starting_current_page+1 }}</a>
+                </li>
+                <li class="page-item " *ngIf="starting_current_page+1 != displayed_page && starting_current_page+1 <=pagination_length" >
+                  <a class="page-link text-primary" 
+                    (click)="display_page(starting_current_page+1)">{{ starting_current_page+1 }}</a>
+                </li>
+
+                <li class="page-item active" *ngIf="starting_current_page+2 == displayed_page && starting_current_page+2 <=pagination_length" >
+                  <a class="page-link text-light" 
+                    (click)="display_page(starting_current_page+2)">{{ starting_current_page+2 }}</a>
+                </li>
+                <li class="page-item " *ngIf="starting_current_page+2 != displayed_page && starting_current_page+2 <=pagination_length" >
+                  <a class="page-link text-primary" 
+                    (click)="display_page(starting_current_page+2)">{{ starting_current_page+2 }}</a>
+                </li>
+
+                <li class="page-item"><a class="page-link text-primary "
+                    (click)="change_pagination(starting_current_page+1)">Next</a></li>
+              </ul>
+            </nav>
+          </div> -->
+          
+          <div class="d-flex justify-content-center mt-3 ">
+            <div class="row ">
+              <div class="col">
+                <div class="plans-container">
+                  <div class="desk-box" *ngFor="let ind of numSequence(location_cpacity);let i = index" [attr.data-index]="i">
+    
+                    <div class="desk-box " >
+                      <h2>
+                        Desk {{ i+1 }}
+                      </h2>
+                    </div>
+    
+                  </div>
+    
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </mat-drawer-content>
+  </mat-drawer-container>
+</body>
+
+</html>

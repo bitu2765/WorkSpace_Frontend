@@ -17,6 +17,7 @@ import { MatListModule } from '@angular/material/list';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { RouterModule } from '@angular/router';
 import { AdminComponent } from './admin.component';
+import { AdminBookingDetailsComponent } from './admin-booking-details/admin-booking-details.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { AdminComponent } from './admin.component';
     AdminUserdetailsComponent,
     AdminSlotDetailsComponent,
     AdminComponent,
+    AdminBookingDetailsComponent,
   ],
   imports: [
     CommonModule,

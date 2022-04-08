@@ -15,6 +15,7 @@ export class AdminDashboardComponent implements OnInit {
   public pagination_length=0;
   public starting_current_page=0;
   public displayed_page=0;
+  public searchdate=0;
 
   constructor(private http:HttpClient) {
     this.get_desk_details();
@@ -28,9 +29,18 @@ export class AdminDashboardComponent implements OnInit {
     this.sideBarOpen = !this.sideBarOpen;
   }
 
+  SendDatetoFunction(event: any) {
+    this.searchdate =event.target.value;
+    console.log(event.target.value);
+    this.get_desk_details();
+  }
+
   get_desk_details()
   {
     this.http.get<any>(admin_desk_details, 
+      {
+        params:{date:this.searchdate}
+      }
       ).subscribe({
       next: data => {
         console.log(data)

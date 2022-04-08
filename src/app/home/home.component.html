@@ -111,12 +111,12 @@
 			<div ngxSlickItem class="slide " *ngFor="let ind of available_plans">
 				<div class="card" style="height: 100%;width: 300px;border-radius: 6px;">
 					<h2 style="text-align: center;text-transform: uppercase;font-weight: 800;" class="card-header">
-						{{ ind.plan_name }}<br />
-						<h3 style="text-transform: lowercase;font-style: italic;">Plan for 2
-							memembers.
+						{{ ind.plan_name }}&nbsp; <span class="h5" >({{ ind.duration }} days)</span><br />
+						<h3 style="text-transform: lowercase;font-style: italic;">Plan for {{ ind.capacity }}
+						  memembers.
 						</h3>
-
-					</h2>
+		  
+					  </h2>
 
 					<div style="text-align: center;" class="card-body">
 

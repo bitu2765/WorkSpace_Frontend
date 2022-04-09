@@ -16,7 +16,10 @@
   text-align: center;
 }
 
-
+.modal-title {
+    font-size: 175%;
+    font-weight: 500;
+}
 
 
 .plans-container{
@@ -107,4 +110,3 @@
             }
 
 
-           

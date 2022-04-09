@@ -28,7 +28,7 @@
       <div class="container-fluid main-content page">
         <div class="d-flex page__box p-3 mt-2 text-center h1 ">Slots Details</div>
         <div class="page__content shadow p-3 position-relative d-flex justify-content-center "
-          style="display: flex;flex-direction: column;">
+             style="display: flex;flex-direction: column;">
 
 
           <div class="d-flex justify-content-center mt-3 ">
@@ -41,57 +41,15 @@
 
                 <div class="plans-container">
                   <div class="desk-box" *ngFor="let ind of numSequence(location_cpacity);let i = index"
-                    [attr.data-index]="i">
+                       [attr.data-index]="i">
 
-                    <div class="desk-box h4" (click)="get_desk_details(i+1)" >
-                      Desk {{ i+1 }}
+                    <div class="desk-box h4" (click)="get_desk_details(i+1)">
+                      <a data-toggle="modal" data-target="#exampleModalCenter">Desk {{ i+1 }}</a>
                     </div>
 
                   </div>
 
                 </div>
-
-
-                <div class=" w-100 m-3  text-primary">
-                  <div class="w-100" style="display: flex;flex-direction: row-reverse;"  >
-                    <select style="width: 200px;" (change)="set_days($event)" class="form-control" name="months" id="months">
-                      <option value="1">Jan</option>
-                      <option value="2">Feb</option>
-                      <option value="3">Mar</option>
-                      <option value="4">Apr</option>
-                      <option value="5">May</option>
-                      <option value="6">Jun</option>
-                      <option value="7">Jul</option>
-                      <option value="8">Aug</option>
-                      <option value="9">Sep</option>
-                      <option value="10">Oct</option>
-                      <option value="11">Nov</option>
-                      <option value="12">Dec</option>
-                    </select>
-                  </div>
-
-                  <div class="m-3" >
-                    <div class="calender-container">
-                      <div class="calender-date h6"   *ngFor="let ind of week_days;let i = index">
-                        {{ ind }}
-                      </div>
-                      <div class="calender-date h6 "   *ngFor="let ind of numSequence(buffer_day);let i = index">
-                        <!-- {{ i }} -->
-                      </div>
-                      <div  *ngFor="let ind of no_of_days;let i = index">
-                        <div class="calender-date bg-light h6" *ngIf="!ind" >
-                          {{ i+1 }}
-                        </div>
-                        <div class="calender-date bg-dark h6" *ngIf="ind" >
-                          {{ i+1 }}
-                        </div>
-                        
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-
               </div>
             </div>
           </div>
@@ -103,6 +61,63 @@
 
     </mat-drawer-content>
   </mat-drawer-container>
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Desk </h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class=" w-100 m-3  text-primary">
+            <div class="w-100" style="display: flex; flex-direction: column; align-items: center;">
+              <select style="width: 200px;" (change)="set_days($event)" class="form-control" name="months" id="months">
+                <option value="1">Jan</option>
+                <option value="2">Feb</option>
+                <option value="3">Mar</option>
+                <option value="4">Apr</option>
+                <option value="5">May</option>
+                <option value="6">Jun</option>
+                <option value="7">Jul</option>
+                <option value="8">Aug</option>
+                <option value="9">Sep</option>
+                <option value="10">Oct</option>
+                <option value="11">Nov</option>
+                <option value="12">Dec</option>
+              </select>
+            </div>
+
+            <div class="m-3">
+              <div class="calender-container">
+                <div class="calender-date h6" *ngFor="let ind of week_days;let i = index">
+                  {{ ind }}
+                </div>
+                <div class="calender-date h6 " *ngFor="let ind of numSequence(buffer_day);let i = index">
+                  <!-- {{ i }} -->
+                </div>
+                <div *ngFor="let ind of no_of_days;let i = index">
+                  <div class="calender-date bg-light h6" *ngIf="!ind">
+                    {{ i+1 }}
+                  </div>
+                  <div class="calender-date bg-dark h6" *ngIf="ind">
+                    {{ i+1 }}
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
 </body>
 

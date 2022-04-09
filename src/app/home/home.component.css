@@ -179,8 +179,8 @@
 
 	/*recommended plans cards*/
 	.planssection{
-		background-color: rgb(255, 255, 255);
 		height: auto;
+    width: 100%;
 	}
 
 	.plans-text h1{
@@ -251,6 +251,18 @@
         grid-auto-rows: minmax(100px, auto);
         /* height: 50%; */
       }
+
+@media only screen and (max-width: 500px) {
+  .slide {
+    margin: 0px 70px;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .slide {
+    margin: 0% 1%;
+  }
+}
 
 
 /*contactus section*/
@@ -327,4 +339,3 @@
   #footer .credits a {
 	color: #34b7a7;
   }
-

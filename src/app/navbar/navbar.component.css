@@ -34,6 +34,8 @@
   color: #ffffff;
   text-decoration: none;
   margin-right: 15px;
+  padding: 0% !important;
+  padding-right: 25px !important;
   font-weight: normal;
 }
 

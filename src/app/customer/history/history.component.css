@@ -1,12 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Coda');
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro');
 
-body {
-  background-color: #ffffff;
-  background-image: none;
-  height: fit-content;
-}
-
 /* Heading starts */
 h1 {
   margin: 2% 2%;

@@ -19,6 +19,26 @@ export class HomeComponent implements OnInit {
     "autoplay": true,
     "autoplaySpeed": 2000,
     "arrows": false,
+    "responsive": [
+      {
+        "breakpoint": 1280,
+        "settings": {
+          "slidesToShow": 3,
+        }
+      },
+      {
+        "breakpoint": 920,
+        "settings": {
+          "slidesToShow": 2,
+        }
+      },
+      {
+        "breakpoint": 650,
+        "settings": {
+          "slidesToShow": 1,
+        }
+      }
+    ],
   };
 
   slickInit(e: any) {

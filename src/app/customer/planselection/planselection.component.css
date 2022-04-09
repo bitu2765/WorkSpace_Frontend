@@ -50,3 +50,21 @@
     gap: 50px;
     grid-auto-rows: minmax(100px, auto);
   }
+
+@media only screen and (max-width: 1320px) {
+  .plans-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media only screen and (max-width: 980px) {
+  .plans-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .plans-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

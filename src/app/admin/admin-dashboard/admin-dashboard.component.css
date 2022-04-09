@@ -55,5 +55,8 @@
             background: rgb(3, 68, 247);
             }
 
-
-           
+@media only screen and (max-width: 920px) {
+  thead, tbody {
+    font-size: 16px;
+  }
+}

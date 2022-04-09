@@ -47,7 +47,7 @@
     place-items: center;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 50px;
+    gap: 45px;
     grid-auto-rows: minmax(100px, auto);
   }
 

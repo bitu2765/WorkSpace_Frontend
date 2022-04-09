@@ -21,18 +21,20 @@ import { AdminHomeComponent } from './admin/admin-home/admin-home.component';
 import { AdminauthGuard } from './Authentication/admin/adminauth.guard';
 import { PlanselectionComponent } from './customer/planselection/planselection.component';
 import { AdminBookingDetailsComponent } from './admin/admin-booking-details/admin-booking-details.component';
+import { EmailverifyComponent } from './emailverify/emailverify.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
+  { path: 'verifyemail/:id', component: EmailverifyComponent },
   { path: 'home', component: HomeComponent },
   { path: 'aboutus', component: AboutusComponent },
   { path: 'plans', component: PlansComponent },
 
   {
     path: 'customer', children: [
-      { path: '', component: DashboardComponent,canActivate:[UserauthGuard] },
+      { path: '', redirectTo:'dashboard',pathMatch:'full' },
       { path: 'dashboard', component: DashboardComponent,canActivate:[UserauthGuard] },
       { path: 'profile', component: ProfileComponent,canActivate:[UserauthGuard] },
       { path: 'history', component: HistoryComponent,canActivate:[UserauthGuard] },
@@ -41,7 +43,8 @@ const routes: Routes = [
     ]
   },
   {path: 'admin', children: [
-    {path: '', component:AdminBookingDetailsComponent,canActivate:[AdminauthGuard]},
+    {path: '', redirectTo:'dashboard',pathMatch:'full'},
+    {path: 'deskdetail', component:AdminBookingDetailsComponent,canActivate:[AdminauthGuard]},
     {path: 'dashboard', component:AdminDashboardComponent,canActivate:[AdminauthGuard]},
     {path: 'profile', component:AdminHomeComponent,canActivate:[AdminauthGuard]},
     {path: 'plans', component:AdminPlansComponent,canActivate:[AdminauthGuard]},

@@ -19,9 +19,9 @@
 
                                 <h2 class="card-header">
                                     <div style="display: flex; justify-content: space-between">
-                                        <span>{{ ind.plan_name }} <span class="h6">({{ ind.duration }}
+                                        <span>{{ ind.plan_type }} <span class="h5">({{ ind.validity }}
                                                 days)</span></span>
-                                        <!-- <span>{{ ind.price }}/-</span> -->
+                                        <span>{{ ind.plan_price }}/-</span>
                                     </div>
                                 </h2>
 
@@ -32,10 +32,10 @@
                                         prefect working
                                         atmosphere.
                                         <br />
-                                        Capacity : {{ ind.capacity }} Member
+                                        Capacity :<strong> {{ ind.capacity }}</strong> Member
                                         <br />
                                     </p>
-                                    <h2 style="text-align: left;padding-left:30px;font-weight: 700;font-style: italic;">
+                                    <h2 style="text-align: left;padding-left:30px;font-weight: 700;">
                                         GET {{ ind.discount }} % OFF ON SUBSCRIPTION.</h2>
 
                                 </div>

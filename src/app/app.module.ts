@@ -35,11 +35,14 @@ export const logout =  domain_URL + "/logout"
 export const plans =  domain_URL + "/plans"
 export const user_register =  domain_URL + "/user/register"
 export const locations =  domain_URL + "/locations"
+export const email_verify =domain_URL+'/verify_user'
+
 
 
 export const admin_profile =  domain_URL + "/admin/profile"
 export const admin_user_details =  domain_URL + "/admin/user_details"
 export const admin_desk_details =domain_URL+'/admin/desk_details'
+export const admin_location_plan =domain_URL+'/admin/plan_details'
 export const admin_desks =domain_URL+'/admin/desks'
 export const admin_desk_statistics =domain_URL+'/admin/desk_statistics'
 export const particular_plan_detail_on_particular_location =  domain_URL + "/user/location_plan_details"

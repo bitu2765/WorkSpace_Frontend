@@ -14,7 +14,7 @@ export class AdminBookingDetailsComponent implements OnInit {
   public week_days = Array("Sun","Mon","Tues","Wed","Thur","Fri","Sat");
   public location_cpacity = 0;
   public desk_no = 1;
-  public cur_month = new Date().getMonth();
+  public cur_month = 1;
   public cur_year = new Date().getFullYear();
   public total_days = new Date(this.cur_year, this.cur_month, 0).getDate();
   public no_of_days = Array();
@@ -107,12 +107,12 @@ export class AdminBookingDetailsComponent implements OnInit {
     for (let i = 0; i < this.booked_date.length; i++) {
       let temp_start = new Date(this.booked_date[i][0]);
       let temp_end = new Date(this.booked_date[i][1]);
-      // console.log(temp_start.getMonth() );
+      // console.log((temp_start.getMonth()+1) + " & "+ this.cur_month + " & "+temp_end.getMonth());
       // console.log(this.booked_date[i][0]);
       if (this.cur_year == temp_start.getFullYear() && this.cur_month == temp_start.getMonth()+1) {
         let end_j = this.no_of_days.length;
         if (this.cur_year == temp_end.getFullYear() && this.cur_month == temp_end.getMonth()+1) {
-          end_j = temp_start.getDate();
+          end_j = temp_end.getDate();
           // console.log(end_j );
         }
         for (let j = temp_start.getDate(); j <= end_j; j++) {
@@ -132,7 +132,7 @@ export class AdminBookingDetailsComponent implements OnInit {
 
         }
       }
-      else if ((this.cur_year >= temp_start.getFullYear() && this.cur_month >= temp_start.getMonth()+1) && (this.cur_year <= temp_end.getFullYear() && this.cur_month <= temp_end.getMonth()+1)) {
+      else if ((this.cur_year >= temp_start.getFullYear() && this.cur_month >= temp_start.getMonth()+1) && ((this.cur_year == temp_end.getFullYear() && this.cur_month <= temp_end.getMonth()+1) || this.cur_year < temp_end.getFullYear() )) {
         for (let j = 1; j <= this.total_days; j++) {
           this.no_of_days[j - 1] = 1;
         }

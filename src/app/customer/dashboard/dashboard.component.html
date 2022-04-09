@@ -68,13 +68,17 @@
         (beforeChange)="beforeChange($event)">
         <div ngxSlickItem class="slide " *ngFor="let ind of available_plans">
           <div class="card" style="height: 100%;width: 300px;border-radius: 6px;">
+
+
             <h2 style="text-align: center;text-transform: uppercase;font-weight: 800;" class="card-header">
-              {{ ind.plan_name }}<br />
-              <h3 style="text-transform: lowercase;font-style: italic;">Plan for 2
-                memembers.
+              {{ ind.plan_name }}&nbsp;<br />
+              <h3 style="text-transform: lowercase;line-height: 40px;">Plan for <strong class="h5" > {{ ind.capacity }} </strong>
+                Member.
               </h3>
 
             </h2>
+
+
 
             <div style="text-align: center;" class="card-body">
 
@@ -84,18 +88,16 @@
               <hr class="rounded">
               <p>Personal Desk Area<br /></p>
               <hr class="rounded">
-
-
-
-              <p> Enjoy for {{ ind.duration }} days<br /> </p>
+              <p> Enjoy for <span class="h4"> {{ ind.duration }}</span> days<br /> </p>
               <hr class="rounded">
-              <p style="font-style: italic;font-weight: 700;">Get {{ ind.discount }}%
+              <p>Get <span class="h4"> {{ ind.discount }}% </span>
                 off.</p>
               <hr class="rounded">
 
 
 
-              <button type="submit" class="btn btn-primary">Book Now</button>
+              <button type="submit" class="btn btn-primary"><a style="text-decoration: none;color: rgb(255, 255, 255);"
+                  href="customer/booking">Book Now</a></button>
             </div>
           </div>
         </div>

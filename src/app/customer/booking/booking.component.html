@@ -57,7 +57,7 @@
             <div class="card" style="height: 100%;width: 300px;border-radius: 6px;">
               <h2 style="text-align: center;text-transform: uppercase;font-weight: 800;" class="card-header">
                 {{ plan_detail.plan_type }}&nbsp; <span class="h5" >({{ plan_detail.plan_duration }} days)</span><br />
-                <h3 style="text-transform: lowercase;font-style: italic;">Plan for {{ plan_detail.plan_capacity }}
+                <h3 style="text-transform: lowercase;">Plan for {{ plan_detail.plan_capacity }}
                   memembers.
                 </h3>
   
@@ -73,15 +73,13 @@
 
                 <p>Personal Desk Area<br /></p>
                 <hr class="rounded">
-                <p>{{ plan_detail.plan_price }} /-<br /></p>
-                <hr class="rounded">
 
-                <p style="font-style: italic;font-weight: 700;">Get {{ plan_detail.discount }}%
+                <p>Get <span class="h4"> {{ plan_detail.discount }}% </span>
                   off.</p>
-                <hr class="rounded">
-  
+                  <hr class="rounded">
                 <p> {{ plan_detail.address }} , {{ plan_detail.state }}<br /> </p>
-                <!-- <hr class="rounded"> -->
+                <hr class="rounded">
+                <strong>{{ plan_detail.plan_price }} /-<br /></strong>
   
   
                 <!-- <button type="submit" class="btn btn-primary">Book Now</button> -->

@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { plans } from 'src/app/app.module';
+import { admin_location_plan, plans } from 'src/app/app.module';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -19,13 +19,13 @@ export class AdminPlansComponent implements OnInit {
     // const headers = new HttpHeaders();
     // headers.set("Access-Control-Allow-Credentials","*");
 
-    this.http.get<any>(plans,
+    this.http.get<any>(admin_location_plan,
       // {headers:headers,withCredentials:true,responseType:'json'}
       ).subscribe({
       next: data => {
           console.log(data)
           if (data['status_code'] == 200) {
-            this.plans = data['plans'];
+            this.plans = data['location_plans'];
           } 
           else {
             Swal.fire(

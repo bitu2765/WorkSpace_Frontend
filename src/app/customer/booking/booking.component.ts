@@ -130,10 +130,13 @@ export class BookingComponent implements OnInit {
       return;
     }
 
+    Swal.showLoading();
+
     this.http.post<any>(user_plan_purchase,{ start_date:this.searchdate,location_id:this.location_id ,plan_id:this.plan_id}
     // ,{headers:headers,withCredentials:true,responseType:'json'}
     ).subscribe({
       next: data => {
+        if(Swal.isLoading())Swal.hideLoading()
         // console.log(data)
         if (data['status_code'] == 200) {
           // this.desk_detail = data['desks'];

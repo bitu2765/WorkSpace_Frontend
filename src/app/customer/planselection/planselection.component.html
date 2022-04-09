@@ -25,13 +25,13 @@
         <input class="btn btn-lg btn-success" type="button" (click)="getdeskdetails()" value="submit" name="Submit" />
     </div> -->
 
-    <div class="plans-container" >
+    <div class="plans-container">
         <!-- <div ngxSlickItem class="slide " > -->
         <div class="card" style="height: 100%;width: 300px;border-radius: 6px;" *ngFor="let ind of available_plans">
             <h2 style="text-align: center;text-transform: uppercase;font-weight: 800;" class="card-header">
                 {{ ind.plan_type }} <br />
-                <h3 style="text-transform: lowercase;font-style: italic;">Plan for 2
-                    memembers.
+                <h3 style="text-transform: lowercase;">Plan for <strong class="h5" > {{ ind.plan_capacity }} </strong>
+                    Member.
                 </h3>
 
             </h2>
@@ -47,9 +47,9 @@
 
 
 
-                <p> Enjoy for {{ ind.duration }} days<br /> </p>
+                <p> Enjoy for <span class="h4"> {{ ind.validity }}</span> days<br /> </p>
                 <hr class="rounded">
-                <p style="font-style: italic;font-weight: 700;">Get {{ ind.discount }}%
+                <p>Get <span class="h4"> {{ ind.discount }}% </span>
                     off.</p>
                 <hr class="rounded">
                 <p style="font-style: italic;font-weight: 700;">Price {{ ind.plan_price }} /-</p>
@@ -57,7 +57,8 @@
 
 
 
-                <button type="submit" (click)="select_plans_and_book(searchlocation,ind.plan_id)" class="btn btn-primary">Book Now</button>
+                <button type="submit" (click)="select_plans_and_book(searchlocation,ind.plan_id)"
+                    class="btn btn-primary">Book Now</button>
             </div>
         </div>
         <!-- </div> -->

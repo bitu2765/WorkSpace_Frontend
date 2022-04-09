@@ -2,6 +2,23 @@
 
 
 
+.calender-container{
+  width: 400px;
+  display: grid;
+  grid-template-columns: repeat(7,1fr);
+  /* grid-gap: 1px; */
+}
+.calender-date{
+  margin: 2px;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+}
+
+
+
+
 .plans-container{
   display: grid;
   grid-template-columns: repeat(7,1fr);
@@ -24,12 +41,13 @@
 }
 .desk-box{
   /* margin: 2px; */
-  text-align: center;
   border-radius: 5px;
-  padding: 0px;
-  height: 70px;
-  width: 90px;
-  background-color: rgb(163, 203, 76);
+  text-align: center;
+  height: 90px;
+  width: 130px;
+  line-height: 90px;
+  background-color: rgb(117, 139, 241);
+  cursor: grab;
 }
 
  

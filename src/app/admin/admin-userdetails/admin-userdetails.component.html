@@ -21,114 +21,12 @@
                         </select>
                     </div>
 
-                    <div class="search">
-                        <input class="form-control" placeholder="Search User" type="text" name="search" id="search">
+                    <div class="search pl-1" style="display: flex;flex-direction: row-reverse; align-items: flex-end;" >
+                        <input style="width: 300px;" class="form-control" (keydown)="search_text($event)" placeholder="Search By name, email" type="text" name="search" id="search">
                     </div>
 
                 </div>
-                <!-- <table cellpadding="8" cellspacing="8">
-                        <div class="userdetails-card">
-                            <div class="ScrollStyle">
-                                <tr>
-                                    <th>SR NO.</th>
-                                    <th>USER EMAIL</th>
-                                    <th>ACTIVE PACKS</th>
-                                </tr>
-                                
-                                <tr>
-                                    <td>1.</td>
-                                    <td>xyz@gmail.com</td>
-                                    <td>Mini Pack</td>
-                                </tr>
-                                <tr>
-                                    <td>2.</td>
-                                    <td>abc@gmail.com</td>
-                                    <td>Mini Pack1</td>
-                                </tr>
-                                <tr>
-                                    <td>3.</td>
-                                    <td>pqr@gmail.com</td>
-                                    <td>Maha Pack</td>
-                                </tr>
-                                <tr>
-                                    <td>1.</td>
-                                    <td>xyz@gmail.com</td>
-                                    <td>Mini Pack</td>
-                                </tr>
-                                <tr>
-                                    <td>2.</td>
-                                    <td>abc@gmail.com</td>
-                                    <td>Mini Pack1</td>
-                                </tr>
-                                <tr>
-                                    <td>3.</td>
-                                    <td>pqr@gmail.com</td>
-                                    <td>Maha Pack</td>
-                                </tr>
-                                <tr>
-                                    <td>1.</td>
-                                    <td>xyz@gmail.com</td>
-                                    <td><button type="submit" class="btn btn-success">ACTIVATE</button></td>
-                                </tr>
-                                <tr>
-                                    <td>2.</td>
-                                    <td>abc@gmail.com</td>
-                                    <td>Mini Pack1</td>
-                                </tr>
-                                <tr>
-                                    <td>3.</td>
-                                    <td>pqr@gmail.com</td>
-                                    <td>Maha Pack</td>
-                                </tr>
-                                <tr>
-                                    <td>1.</td>
-                                    <td>xyz@gmail.com</td>
-                                    <td><button type="submit" class="btn btn-success">ACTIVATE</button></td>
-                                </tr>
-                                <tr>
-                                    <td>2.</td>
-                                    <td>abc@gmail.com</td>
-                                    <td>Mini Pack1</td>
-                                </tr>
-                                <tr>
-                                    <td>3.</td>
-                                    <td>pqr@gmail.com</td>
-                                    <td>Maha Pack</td>
-                                </tr>
-                                <tr>
-                                    <td>1.</td>
-                                    <td>xyz@gmail.com</td>
-                                    <td>Mini Pack</td>
-                                </tr>
-                                <tr>
-                                    <td>2.</td>
-                                    <td>abc@gmail.com</td>
-                                    <td>	<button type="submit" class="btn btn-success">ACTIVATE</button></td>
-                                </tr>
-                                <tr>
-                                    <td>3.</td>
-                                    <td>pqr@gmail.com</td>
-                                    <td>Maha Pack</td>
-                                </tr>
-                                <tr>
-                                    <td>1.</td>
-                                    <td>xyz@gmail.com</td>
-                                    <td>Mini Pack</td>
-                                </tr>
-                                <tr>
-                                    <td>2.</td>
-                                    <td>abc@gmail.com</td>
-                                    <td>Mini Pack1</td>
-                                </tr>
-                                <tr>
-                                    <td>3.</td>
-                                    <td>pqr@gmail.com</td>
-                                    <td>Maha Pack</td>
-                                </tr>
-                            </div>
-                        </div>
-                    </table> -->
-
+                
                 <table class="table text-center table-striped "
                     style="font-style:italic;font-family:'Times New Roman', Times, serif;">
                     <thead class="thead-dark h5">
@@ -140,72 +38,7 @@
                         </tr>
                     </thead>
                     <tbody class=" table-striped h5">
-                        <!-- <tr>
-                            <th scope="row">1</th>
-                            <td>Available</td>
-                            <td>bahutik sudani</td>
-                            <td>24-04-2022</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Available</td>
-                            <td>bahutik sudani</td>
-                            <td>24-04-2022</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>Available</td>
-                            <td>bahutik sudani</td>
-                            <td>24-04-2022</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">4</th>
-                            <td>Available</td>
-                            <td>bahutik sudani</td>
-                            <td>24-04-2022</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">5</th>
-                            <td>Available</td>
-                            <td>bahutik sudani</td>
-                            <td>24-04-2022</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">5</th>
-                            <td>Available</td>
-                            <td>bahutik sudani</td>
-                            <td>24-04-2022</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">5</th>
-                            <td>Available</td>
-                            <td>bahutik sudani</td>
-                            <td>24-04-2022</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">5</th>
-                            <td>Available</td>
-                            <td>bahutik sudani</td>
-                            <td>24-04-2022</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">5</th>
-                            <td>Available</td>
-                            <td>bahutik sudani</td>
-                            <td>24-04-2022</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">5</th>
-                            <td>Available</td>
-                            <td>bahutik sudani</td>
-                            <td>24-04-2022</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">5</th>
-                            <td>Available</td>
-                            <td>bahutik sudani</td>
-                            <td>24-04-2022</td>
-                        </tr> -->
+                        
                         <tr *ngFor="let ind of displayed_user_details;let i = index" [attr.data-index]="i">
                             <th scope="row">{{ (displayed_page-1)*user_per_page[per_page_ind] + i + 1 }}</th>
                             <td>{{ ind.name }}</td>

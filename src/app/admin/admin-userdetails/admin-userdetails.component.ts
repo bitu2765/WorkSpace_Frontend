@@ -16,8 +16,9 @@ export class AdminUserdetailsComponent implements OnInit {
   public displayed_page = 1;
   public starting_current_page = 1;
   public max_page = 1;
-  public user_per_page = [1, 2, 3, 4, 5];
+  public user_per_page = [5,10,15,20,25];
   public per_page_ind = 0;
+  public search_tag=``;
 
 
   constructor(private http: HttpClient, private _router: Router) {
@@ -62,10 +63,12 @@ export class AdminUserdetailsComponent implements OnInit {
   }
 
   retrive_user_details() {
+    console.log(this.search_tag);
+
     this.http.get<any>(admin_user_details,
       {
         // headers:headers,withCredentials:true,responseType:'json',
-        params: { page: this.displayed_page, per_page: this.user_per_page[this.per_page_ind] }
+        params: { page: this.displayed_page, per_page: this.user_per_page[this.per_page_ind],search_tag:this.search_tag }
       }
     ).subscribe({
       next: data => {
@@ -102,6 +105,16 @@ export class AdminUserdetailsComponent implements OnInit {
         console.error('There was an error!', error);
       }
     })
+  }
+
+  search_text(event:any)
+  {
+    if(event.key == 'Enter')
+    {
+      console.log(event.target.value);
+      this.search_tag = event.target.value;
+      this.retrive_user_details();
+    }
   }
 
 }

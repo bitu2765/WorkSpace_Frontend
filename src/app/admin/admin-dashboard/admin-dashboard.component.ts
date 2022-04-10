@@ -15,7 +15,7 @@ export class AdminDashboardComponent implements OnInit {
   public pagination_length=0;
   public starting_current_page=0;
   public displayed_page=0;
-  public searchdate=0;
+  public searchdate=``;
 
   constructor(private http:HttpClient) {
     this.get_desk_details();

@@ -60,6 +60,7 @@ export class BookingComponent implements OnInit {
   SendDatetoFunction(event: any) {
     this.searchdate =event.target.value;
     // console.log(event.target.value);
+    this.getdeskdetails();
   }
 
 
@@ -137,7 +138,7 @@ export class BookingComponent implements OnInit {
     ).subscribe({
       next: data => {
         if(Swal.isLoading())Swal.hideLoading()
-        // console.log(data)
+        console.log(data)
         if (data['status_code'] == 200) {
           // this.desk_detail = data['desks'];
           Swal.fire(
@@ -147,12 +148,34 @@ export class BookingComponent implements OnInit {
           );
           this.router.navigateByUrl("customer/history");
         }
-        else {
-          // Swal.fire(
-          //   'Something Went Wrong',
-          //   "server Error",
-          //   'error'
-          // );
+        else if(data['status_code'] == 422) {
+          Swal.fire(
+            "Error",
+            data['message'],
+            'error'
+          );
+        }
+        else if(data['status_code'] == 404) {
+          let msg = ``;
+          if(data.hasOwnProperty("message"))
+          {
+            msg=data["message"];
+          }
+          else if(data.hasOwnProperty("error"))
+          {
+            for(let i=0;i<data["error"].length;i++)
+            {
+              msg=msg+data['error'][i]+" ";
+            }
+          }
+          
+            Swal.fire(
+              "Error",
+              msg,
+              'error'
+            );
+          
+          
         }
       },
       error: error => {

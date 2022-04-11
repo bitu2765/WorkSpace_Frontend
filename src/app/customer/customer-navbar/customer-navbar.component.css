@@ -11,6 +11,7 @@
 .navbar-brand {
   color: rgb(255,255,255) !important;
   letter-spacing: 1px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
   .navbar-brand:hover {

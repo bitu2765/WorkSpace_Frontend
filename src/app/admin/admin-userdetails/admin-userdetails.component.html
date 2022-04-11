@@ -10,7 +10,7 @@
             <div class="d-flex h1 page__box p-3 mt-2">User Details</div>
             <div class="page__content shadow p-3 position-relative d-flex justify-content-center "
                 style="display: flex;flex-direction: column;">
-                <!-- <div class="page__content-data position-absolute text-center w-50"> -->
+            
                 <div class="m-3 w-100 " style="display: flex;flex-direction: row;">
                     <div class="h5" style="display: flex;flex-direction: row;">
                         <span style="width: 100px;">Per Page :</span>
@@ -28,7 +28,7 @@
                 </div>
                 
                 <table class="table text-center table-striped "
-                    style="font-style:italic;font-family:'Times New Roman', Times, serif;">
+                    style="font-style:normal;font-family: Verdana, Geneva, Tahoma, sans-serif;">
                     <thead class="thead-dark h5">
                         <tr>
                             <th>SR NO.</th>
@@ -58,8 +58,7 @@
                 <div class="d-flex h5 justify-content-center ">
                     <nav aria-label="Page navigation example">
                         <ul class="pagination">
-                            <!-- <li class="page-item"><a class="page-link text-secondary"
-                                    (click)="set_starting_page(starting_current_page-1)">Previous</a></li> -->
+                            
 
                             <li class="page-item disabled" *ngIf="starting_current_page-1 == 0">
                                 <a class="page-link text-secondary"
@@ -113,15 +112,13 @@
                                     (click)="set_starting_page(starting_current_page+1)">Next</a>
                             </li>
 
-                            <!-- <li class="page-item"><a class="page-link text-primary "
-                                    (click)="set_starting_page(starting_current_page+1)">Next</a></li> -->
+                           
                         </ul>
                     </nav>
                 </div>
-                <!-- </div> -->
+             
             </div>
-            <!-- </div> -->
-
+           
         </div>
     </mat-drawer-content>
 </mat-drawer-container>

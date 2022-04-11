@@ -18,8 +18,13 @@
 
 
 body {
-  font-family: "Roboto", sans-serif;
+  /* font-family: "Roboto", sans-serif; */
   height: auto;
+  background-color: #ffffff;
+  background-image: none; 
+  /* font-family: "Roboto", sans-serif; */
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  /* height: 100%; */
 }
 
 /*LOGIN Starts*/

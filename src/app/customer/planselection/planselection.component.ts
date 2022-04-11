@@ -63,7 +63,7 @@ export class PlanselectionComponent implements OnInit {
   }
 
   select_plans_and_book(plan_location:any,subscription_plan_id:any){
-
+    console.log(plan_location,subscription_plan_id)
     this.router.navigate(["customer/confirmbooking/",{ location_id:plan_location,plan_id:subscription_plan_id }]);
 
   }

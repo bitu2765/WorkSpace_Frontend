@@ -10,7 +10,8 @@ body {
 /* Heading starts */
 h1 {
   margin: 2% 2%;
-  font-family: 'Coda';
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  /* font-family: 'Coda'; */
   font-weight: bold;
   font-size: 250%;
   text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
@@ -39,7 +40,8 @@ h1 {
   padding: 1% 2% !important;
   border-radius: 15px !important;
   font-size: 200%;
-  font-family: 'Source Sans Pro';
+  /* font-family: 'Source Sans Pro'; */
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-weight: bold;
   text-transform: uppercase;
   text-align: center;
@@ -85,23 +87,7 @@ h1 {
 }
 /* Old Carousel ends */
 
-/* .carousel-inner {
-  padding: 0%;
-  margin: 0%;
-}
 
-.carousel-item {
-  margin: 0% !important;
-  height: fit-content !important;
-}
-
-.carousel-control-prev, .carousel-control-next {
-  width: 7%;
-}
-
-.carousel {
-    margin: 3%;
-} */
 
 /* Recommonded */
 .recommended {

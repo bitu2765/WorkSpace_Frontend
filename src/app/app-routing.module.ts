@@ -31,6 +31,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'aboutus', component: AboutusComponent },
   { path: 'plans', component: PlansComponent },
+  // { path: 'emailverify', component: EmailverifyComponent},
 
   {
     path: 'customer', children: [

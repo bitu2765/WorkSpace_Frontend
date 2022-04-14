@@ -1,27 +1,33 @@
-# Workspace
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.5.
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/68993493/163378362-b89ed510-435d-4195-907e-d62a87e09b98.png" alt="WorkSpace" >
+</p>
 
-## Development server
+# Frontend Repository
+## Work From Home Future Trend, Work Space Future Demand
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+##### This repositoy contains all the necessary components to build UI for admin,customer and open site. Admin Dashboard Related Components availabe in admin [Folder](https://github.com/bitu2765/WorkSpace_Frontend/tree/main/src/app/admin). Customer Dashboard Related Components availabe in customer [Folder](https://github.com/bitu2765/WorkSpace_Frontend/tree/main/src/app/customer).
+<!-- <img src="https://drive.google.com/file/d/1V1pu_CUw2vIFc-d_pK4qjv6_rt_X54Y1/view?usp=sharing" /> -->
+##### Here we have build Web-Application using Micro-Services Archietecture and below technologies :
+1. `Front-end: Angular`
+2. `Back-end: Flask` [Repo](https://github.com/bitu2765/WorkSpace_Backend)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Steps to setup project :
 
-## Build
+### To use Angular project you should have Angular install and setup in your computer.
+#### 1. Clone repositoy using below command :
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+    git clone https://github.com/bitu2765/WorkSpace_Frontend.git
+#### 2. Move to folder and install all dependancies to run our application
+     
+    npm install
 
-## Running unit tests
+#### 3. Now to run angular project use below command
+     ng serve
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+#### Note : If you want to change IP Adress or PORT number use below command.     
+     ng serve --host "<ip>" --port <port>
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/68993493/163380497-57c5b44e-f23c-4d14-b92e-3a27d90b1ab5.jpg" alt="WorkSpace" >
+</p>
